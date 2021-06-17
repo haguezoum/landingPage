@@ -1,6 +1,6 @@
 <template>
-  <header class="mx-auto bg-transparent px-2 py-3  top-0 left-0 w-full fixed z-50">
-    <div class="header-area flex justify-between">
+  <header class="bg-purple-900 px-2 py-3  top-0 left-0 w-full fixed z-50">
+    <div class="header-area flex justify-between border container mx-auto">
       <!--left-->
       <div
         class="
@@ -11,10 +11,10 @@
           items-center
           flex-1
           p-4
+          border
         "
       >
-        <div class="logo-img w-1/5">
-          <!-- <img src="" alt="LOGO" /> -->
+        <div class="logo-img w-1/5 border align-middle">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="h-10 w-10"
