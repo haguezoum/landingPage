@@ -57,19 +57,19 @@
             </div>
           </div>
           <div class="img w-2/5 ">
-            <img src="../../public/img/desktop.png" class="w-full" />
+            <img src="../../public/img/desktop.png" class="w-full transform scale-125" />
           </div>
         </div>
       </div>
       <div class="deco-wave h-28 w-full relative pt-6 overflow-hidden">
         <div class="absolute w-full h-full top-0 left-0  z-20 delay-100">
-              <img src="../../public/img/deco-wave-light.png" class="w-full h-full " alt="" srcset="">
+              <img src="../../public/img/deco-wave-light.png" class="w-full h-full object-cover " alt="" srcset="">
         </div>
           <div class="absolute w-full h-full top-0 left-1/2 transform translate-y-8  z-10 animate-wave">
-                <img src="../../public/img/deco-wave-light.png" class="w-full h-full  opacity-50" alt="" srcset="">
+                <img src="../../public/img/deco-wave-light.png" class="w-full h-full object-cover opacity-50" alt="" srcset="">
           </div>
           <div class=" absolute w-full h-full top-0 left-0 transform z-10 translate-y-10  translate-x-32 animate-wave ">
-                <img src="../../public/img/deco-wave-light.png" class="w-full h-full opacity-50" alt="" srcset="">
+                <img src="../../public/img/deco-wave-light.png" class="w-full h-full object-cover opacity-50" alt="" srcset="">
           </div>
        </div>
      
@@ -79,6 +79,7 @@
    <Service/>
    <Statistics/>
    <Feature/>
+   <Testimonials/>
   </main>
 </template>
 
@@ -87,6 +88,7 @@ import Button from '@/components/Button'
 import Service from '@/components/Service'
 import Statistics from '@/components/Statistics'
 import Feature from '@/components/Feature'
+import Testimonials from '@/components/Testimonial'
 
 
 export default {
@@ -95,7 +97,8 @@ export default {
       Button,
       Service,
       Statistics,
-      Feature
+      Feature,
+      Testimonials
   }
 };
 </script>

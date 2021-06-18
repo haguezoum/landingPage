@@ -1,7 +1,7 @@
 <template>
     <section id="servics" class="h-40 p-20">
-        <div class="mx-auto flex justify-around items-center w-full h-full">
-            <img :src="imgName" alt="" srcset=""  class="w-20 " v-for="imgName in imgsName" :key="imgName">
+        <div class="mx-auto flex justify-around items-center w-full h-full filter grayscale  hover:filter-none">
+            <img :src="imgName" alt="" srcset=""  class="w-20" v-for="imgName in imgsName" :key="imgName">
         </div>
     </section>
 </template>
