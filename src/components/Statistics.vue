@@ -2,9 +2,21 @@
   <section id="statistics" class="mt-10">
     <div class="conatiner px-8 mx-auto w-full flex justify-around items-center">
       <!-- ----------------------------------------------------- -->
-      <div class="p-5 ">
+      <div class="p-5">
         <span><p class="font-bold text-6xl text-purple-600">12 Month</p></span>
-        <span class="flex items-center justify-start space-x-5 mt-8 text-3xl font-semibold w-full  text-gray-500">
+        <span
+          class="
+            flex
+            items-center
+            justify-start
+            space-x-5
+            mt-8
+            text-3xl
+            font-semibold
+            w-full
+            text-gray-500
+          "
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="h-10 w-10"
@@ -23,9 +35,21 @@
         </span>
       </div>
       <!-- ----------------------------------------------------- -->
-      <div class="p-5 ">
+      <div class="p-5">
         <span><p class="font-bold text-6xl text-purple-600">+80M</p></span>
-        <span class="flex items-center justify-start space-x-5 mt-8 text-3xl font-semibold w-full  text-gray-500">
+        <span
+          class="
+            flex
+            items-center
+            justify-start
+            space-x-5
+            mt-8
+            text-3xl
+            font-semibold
+            w-full
+            text-gray-500
+          "
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="h-10 w-10"
@@ -40,9 +64,21 @@
         </span>
       </div>
       <!-- ----------------------------------------------------- -->
-      <div class="p-5 ">
+      <div class="p-5">
         <span><p class="font-bold text-6xl text-purple-600">+180K</p></span>
-        <span class="flex items-center justify-start space-x-5 mt-8 text-3xl font-semibold w-full  text-gray-500">
+        <span
+          class="
+            flex
+            items-center
+            justify-start
+            space-x-5
+            mt-8
+            text-3xl
+            font-semibold
+            w-full
+            text-gray-500
+          "
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="h-10 w-10"
@@ -65,8 +101,7 @@
 </template>
 
 <script>
-
 export default {
-    name:'Statistics'
-}
+  name: "Statistics",
+};
 </script>
