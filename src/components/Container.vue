@@ -117,7 +117,8 @@
     <Service />
     <Statistics />
     <Feature />
-    <Testimonials />
+    <!-- <Testimonials class="" /> -->
+    <Tabs/>
   </main>
 </template>
 
@@ -126,7 +127,8 @@
 import Service from "@/components/Service";
 import Statistics from "@/components/Statistics";
 import Feature from "@/components/Feature";
-import Testimonials from "@/components/Testimonial";
+// import Testimonials from "@/components/Testimonial";
+import Tabs from "@/components/Tabs";
 
 export default {
   name: "Container",
@@ -135,7 +137,8 @@ export default {
     Service,
     Statistics,
     Feature,
-    Testimonials,
+    // Testimonials,
+    Tabs
   },
   data() {
     return {

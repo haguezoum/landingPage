@@ -12,6 +12,7 @@
     "
     :class="classes"
   >
+   
     <span :class="iconBeforClass">{{ iconBefor }}</span>
     <span v-html="svgBefor"   class="text-red-300 absolute left-1/3 transform -translate-x-1/3" :class="svgClassBefore"></span>
     <span class="absolute left-1/2 transform -translate-x-1/2">

@@ -17,6 +17,10 @@ module.exports = {
           '50%': { left: '10rem',top:'10%' },
           '100%':{left:'30rem',top:'20%'}
         }
+       },
+       rotate:{
+         '19' :'19deg',
+         '-19':'-19deg'
        }
 
     },

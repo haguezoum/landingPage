@@ -17,8 +17,8 @@
         alt=""
         srcset=""
         class="w-16 filter grayscale hover:filter-none hover:border"
-        v-for="imgName in imgsName"
-        :key="imgName"
+        v-for="(imgName,index) in imgsName"
+        :key="index"
       />
     </div>
   </section>
