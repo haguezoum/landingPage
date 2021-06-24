@@ -7,6 +7,7 @@ module.exports = {
         'waveLeft':"url('/img/bg-wave-left.png')",
         'waveRight':"url('/img/bg-wave-right.png')",
         'wave':"url('/img/wave.svg')",
+        'wave3':"url('/img/wave-3.svg')",
       }),
       animation: {
         wave: 'wave 8s ease-in-out infinite',

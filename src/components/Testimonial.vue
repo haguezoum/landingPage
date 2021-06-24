@@ -1,99 +1,52 @@
 <template>
-  <section id="testimonial">
-    <div class="flex justify-between items-start">
-      <div class="testimonials flex-1 relative">
-        <div
-          class="
-            bg-shape
-            absolute
-            -top-3/4
-            left-0
-            transform
-            scale-150
-            -rotate-12
-            z-10
-          "
-        >
-          <!--?xml version="1.0" standalone="no"?-->
-          <svg
-            id="sw-js-blob-svg"
-            viewBox="0 0 100 100"
-            xmlns="http://www.w3.org/2000/svg"
-            version="1.1"
-          >
-            <defs>
-              <linearGradient id="sw-gradient" x1="0" x2="1" y1="1" y2="0">
-                <stop
-                  id="stop1"
-                  stop-color="rgba(100.628, 55, 248, 1)"
-                  offset="0%"
-                ></stop>
-                <stop
-                  id="stop2"
-                  stop-color="rgba(251, 31, 187.965, 1)"
-                  offset="100%"
-                ></stop>
-              </linearGradient>
-            </defs>
-            <path
-              fill="url(#sw-gradient)"
-              d="M17.2,-30.5C23.3,-26.3,29.9,-23.7,34.4,-18.9C38.9,-14.1,41.2,-7,41.6,0.2C42,7.5,40.4,15,37,21.6C33.5,28.2,28.2,33.9,21.8,38.1C15.3,42.2,7.6,44.7,-0.3,45.2C-8.1,45.6,-16.3,44,-22.7,39.8C-29.2,35.7,-33.9,29,-36.1,21.9C-38.3,14.9,-37.9,7.4,-36.5,0.9C-35,-5.7,-32.4,-11.5,-30.2,-18.5C-27.9,-25.5,-26.1,-33.7,-21.1,-38.6C-16.2,-43.4,-8.1,-44.8,-1.3,-42.6C5.6,-40.4,11.1,-34.6,17.2,-30.5Z"
-              width="100%"
-              height="100%"
-              transform="translate(50 50)"
-              stroke-width="0"
-              style="transition: all 0.3s ease 0s"
-            ></path>
-          </svg>
-        </div>
-        <div
-          class="
-            conent
-            z-20
-            absolute
-            top-1/2
-            bg-red-300
-            left-1/2
-            transform
-            -translate-x-1/2
-          "
-        >
-          <h1 class="text-white text-4xl font-semibold">
-            What our Customers testimonial
-          </h1>
-          <div>
-            <div class="customer">
-              <div class="">
-                <img src="" alt="" srcset="" />
-              </div>
-              <div>
-                <p>Hasan Aguezoum</p>
+  <section id="testimonial" class="lg:mt-20 h-screen w-full">
+        <div class="testimonialContant w-full h-full relative flex ">       
+          <!-- start -->
+          <div class="flex lg:w-3/5 flex-col justify-center space-y-20 relative bg-transparentsm:space-x-0 bg-purple-900 lg:bg-transparent">
+                 <div class="hidden lg:block"><img src="/img/shape.png" alt="" srcset="" class="absolute top-0 -left-16 w-full h-full object-cover transform scale-150"></div>
+                  <h3 class="block mx-auto w-3/5 mt-10  text-center text-2xl sm:text-3xl font-bold text-white z-30">What Our Customers Testimonial</h3>
+                  <span class="absolute top-20 left-5 sm:left-1/2 sm:transform sm:-translate-x-1/2 opacity-20 z-10"><svg xmlns="http://www.w3.org/2000/svg" class="h-32 w-32" viewBox="0 0 20 20" fill="#fff"><path fill-rule="evenodd" d="M18 13V5a2 2 0 00-2-2H4a2 2 0 00-2 2v8a2 2 0 002 2h3l3 3 3-3h3a2 2 0 002-2zM5 7a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1zm1 3a1 1 0 100 2h3a1 1 0 100-2H6z" clip-rule="evenodd" /></svg></span>
+                
+                  <section class="customer flex flex-col sm:flex-row sm:items-start sm:justify-center md:justify-start p-4   z-30">
+                   <div class="customer text-center  sm:w-1/3 sm:mt-5">
+                      <div class="w-full ">
+                        <span class="rounded-full overflow-hidden h-24 w-24 block mx-auto "> <img src="/img/customer/1.jpg" alt="man 1" srcset=""> </span>
+                        </div>
+                        <div class="info mt-8 text-white ">
+                          <p class="text-xl font-bold">Yassine Abdel</p>
+                          <p class="text-lg font-semibold">Front-end developer</p>
+                      </div>
+                   </div>
+                    <div class="mt-12  sm:w-2/3">
+                      <p class="text-lg text-white w-full px-2">
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta, animi.
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta, animi.
+                      </p>
+                    </div>
+                  </section>  
+          </div>
+           <!-- end -->
+          <!-- icons start -->
+            <div class="icons w-2/5  hidden lg:flex items-center justify-center verflow-hidden  ">
+              <div class="grid grid-cols-3 gap-10 grid-rows-3  o">
+                <div v-for="(icon, index) in icons" :key="index" class="h-20 w-20">
+                  <img
+                    :src="icon.iconPath"
+                    :alt="icon.title"
+                    class="
+                      w-full
+                      transform
+                      ease-in-out
+                      duration-700
+                      object-cover
+                      hover:scale-150
+                      hover:rotate-3
+                    "
+                  />
+                </div>
               </div>
             </div>
-          </div>
         </div>
-      </div>
-
-      <!-- icons start -->
-      <div class="icons flex-1 flex items-center justify-center">
-        <div class="grid grid-cols-3 gap-10 grid-rows-3">
-          <div v-for="(icon, index) in icons" :key="index" class="h-24 w-24">
-            <img
-              :src="icon.iconPath"
-              :alt="icon.title"
-              class="
-                w-full
-                transform
-                ease-in-out
-                duration-700
-                object-cover
-                hover:scale-150 hover:rotate-3
-              "
-            />
-          </div>
-        </div>
-      </div>
-    </div>
   </section>
 </template>
 
@@ -116,4 +69,9 @@ export default {
     };
   },
 };
+
+/*
+ 
+*/
 </script>
+ 

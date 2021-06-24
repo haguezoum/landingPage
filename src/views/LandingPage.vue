@@ -1,6 +1,6 @@
 <template>
   <main>
-    <Header class="" />
+    <Header class="hidden"/>
     <Container/>
   </main>
 </template>
