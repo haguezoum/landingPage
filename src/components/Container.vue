@@ -31,12 +31,12 @@
                 <div class="flex md:justify-start items-center  flex-col-reverse sm:flex-row  lg:py-0w-full md:w-3/5  space-x-2 px-8 lg:px-0">
                 
                  <div class="w-full ">
-                    <button class="hover:bg-white hover:bg-opacity-10 rounded-full md:w-full sm:w-3/4 uppercase py-3 px-5 sm:px-0 mx-auto text-whit font-bold  lg:px-0">
+                    <button class="hover:bg-white hover:bg-opacity-10 rounded-full md:w-full w-full sm:w-3/4 uppercase py-3 px-5 sm:px-0 mx-auto text-whit font-bold  lg:px-0">
                         Watch Video 
                     </button>
                  </div>
                   <div class="w-full ">
-                     <button class="bg-green-500 rounded-full hover:bg-green-600 md:w-full sm:w-3/4 uppercase py-3 px-5 sm:px-0 text-whit font-bold  lg:px-0 mb-8 sm:mb-0 mx-auto">
+                     <button class="bg-green-500 rounded-full hover:bg-green-600 md:w-full w-full sm:w-3/4 uppercase py-3 px-5 sm:px-0 text-whit font-bold  lg:px-0 mb-8 sm:mb-0 mx-auto">
                         Get started 
                     </button>
                   </div>
@@ -118,6 +118,7 @@
     <Statistics />
     <Feature />
     <Testimonials/>
+    <Pricing/>
     <!-- <Tabs/> -->
   </main>
 </template>
@@ -128,6 +129,7 @@ import Service from "@/components/Service";
 import Statistics from "@/components/Statistics";
 import Feature from "@/components/Feature";
 import Testimonials from "@/components/Testimonial";
+import Pricing from "@/components/Pricing";
 // import Tabs from "@/components/Tabs";
 
 export default {
@@ -138,6 +140,7 @@ export default {
     Statistics,
     Feature,
     Testimonials,
+    Pricing
     // Tabs
   },
   data() {

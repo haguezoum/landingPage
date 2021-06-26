@@ -1,9 +1,9 @@
 <template>
-  <section id="testimonial" class="lg:mt-20 h-screen w-full">
-        <div class="testimonialContant w-full h-full relative flex ">       
+  <section id="testimonial" class="lg:mt-20 h-screen w-full border-2 border-blue-500">
+        <div class="testimonialContant w-full h-full relative flex lg:mt-32 ">       
           <!-- start -->
-          <div class="flex lg:w-3/5 flex-col justify-center space-y-20 relative bg-transparentsm:space-x-0 bg-purple-900 lg:bg-transparent">
-                 <div class="hidden lg:block"><img src="/img/shape.png" alt="" srcset="" class="absolute top-0 -left-16 w-full h-full object-cover transform scale-150"></div>
+          <div class=" flex lg:w-3/5 flex-col justify-center space-y-20 relative bg-transparentsm:space-x-0 bg-purple-900 lg:bg-transparent">
+                 <div class="hidden lg:block"><img src="/img/wavy.svg" alt="" srcset="" class="absolute left-8 -top-16  w-full h-full object-cover transform scale-150"></div>
                   <h3 class="block mx-auto w-3/5 mt-10  text-center text-2xl sm:text-3xl font-bold text-white z-30">What Our Customers Testimonial</h3>
                   <span class="absolute top-20 left-5 sm:left-1/2 sm:transform sm:-translate-x-1/2 opacity-20 z-10"><svg xmlns="http://www.w3.org/2000/svg" class="h-32 w-32" viewBox="0 0 20 20" fill="#fff"><path fill-rule="evenodd" d="M18 13V5a2 2 0 00-2-2H4a2 2 0 00-2 2v8a2 2 0 002 2h3l3 3 3-3h3a2 2 0 002-2zM5 7a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1zm1 3a1 1 0 100 2h3a1 1 0 100-2H6z" clip-rule="evenodd" /></svg></span>
                 

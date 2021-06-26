@@ -1,5 +1,5 @@
 <template>
-  <section id="feature" class="py-32 relative overflow-hidden">
+  <section id="feature" class="py-32 overflow- ">
     <!--  -->
     <div
       class="
@@ -13,12 +13,14 @@
         justify-between
         container
         mx-auto
-        
-        bg-red-400
+        relative
       "
     >
+    <!-- <div class="w-full h-full z-10 transform scale-125">
+      <img src="/img/wave-3.svg" alt="" srcset="" class="absolute top-0 w-full h-full obj-ect-cover ">
+    </div> -->
       <!-- ------------------------------------------- -->
-      <div class="item w-full h-screen mb-20">
+      <div class="item w-full h-screen mb-20 z-20">
         <section
           class="
             flex
@@ -84,7 +86,7 @@
         </section>
       </div>
       <!-- ---------------------- -->
-      <div class="item w-full h-screen mb-20 lg:mb-5">
+      <div class="item w-full h-screen mb-20 lg:mb-5 z-20">
         <section
           class="
             flex
@@ -149,7 +151,7 @@
         </section>
       </div>
       <!-- ---------------------- -->
-      <div class="item last w-full h-screen">
+      <div class="item last w-full h-screen z-20 md:pb-24">
         <section class="flex justify-center flex-col-reverse w-full mx-auto">
           <div class="text w-full">
             <section class="">
@@ -208,9 +210,9 @@
                     <p class=" w-full text-lg lg:text-2xl text-gray-800 py-10">
                       {{ tab.content }}
                     </p>
-                    <div class="w-5/6 md:w-3/4 lg:w-4/6  mx-auto">
-                      <figure class=" transform skew-y-12 overflow-hidden rounded-md shadow-md border-2 border-purple-400"
-                        style="transform: perspective(718px) rotateX(19deg) translateX(0rem);"
+                    <div class="w-5/6 md:w-3/4 lg:w-3/6  mx-auto pb-24">
+                      <figure class=" transform skew-y-12 overflow-hidden rounded-md shadow-md border-2 border-purple-400 top-0 -translate-y-20"
+                        style="transform: perspective(718px) rotateX(19deg) translateX(0rem) ;"
                       >
                         <img :src="tab.img" class="w-full" />
                       </figure>
