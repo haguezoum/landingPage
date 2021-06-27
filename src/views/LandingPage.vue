@@ -1,6 +1,6 @@
 <template>
   <main>
-    <Header class="hidden"/>
+    <Header class="bg-purple-800"/>
     <Container/>
   </main>
 </template>

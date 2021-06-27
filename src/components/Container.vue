@@ -14,7 +14,7 @@
         <!-- end fixed asaid decoration -->
 
         <!-- start content -->
-        <div class="conent-fixed z-20  w-full lg:h-screen mt-20">
+        <div class="conent-fixed z-20  w-full lg:h-screen mt-20  lg:px-20">
           <div class="slider  w-full mt-16  flex justify-center items-center">
 
             <!--end text -->
@@ -119,6 +119,7 @@
     <Feature />
     <Testimonials/>
     <Pricing/>
+    <FAQ/>
     <!-- <Tabs/> -->
   </main>
 </template>
@@ -130,6 +131,7 @@ import Statistics from "@/components/Statistics";
 import Feature from "@/components/Feature";
 import Testimonials from "@/components/Testimonial";
 import Pricing from "@/components/Pricing";
+import FAQ from "@/components/FAQ";
 // import Tabs from "@/components/Tabs";
 
 export default {
@@ -140,7 +142,8 @@ export default {
     Statistics,
     Feature,
     Testimonials,
-    Pricing
+    Pricing,
+    FAQ
     // Tabs
   },
   data() {

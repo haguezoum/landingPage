@@ -1,5 +1,5 @@
 <template>
-  <header class="lg:px-2 pt-10 top-0 left-0 w-full fixed z-50">
+  <header class="lg:px-2 top-0 left-0 w-full fixed z-50">
     <div
       class="
         header-area

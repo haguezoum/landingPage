@@ -1,5 +1,5 @@
 <template>
-  <section id="testimonial" class="lg:mt-20 h-screen w-full border-2 border-blue-500">
+  <section id="testimonial" class="lg:mt-20 h-screen w-full">
         <div class="testimonialContant w-full h-full relative flex lg:mt-32 ">       
           <!-- start -->
           <div class=" flex lg:w-3/5 flex-col justify-center space-y-20 relative bg-transparentsm:space-x-0 bg-purple-900 lg:bg-transparent">
