@@ -16,7 +16,7 @@
         :src="imgName"
         alt=""
         srcset=""
-        class="w-16 filter grayscale hover:filter-none hover:border"
+        class="icons w-16 filter grayscale  transform ease-in-out duration-200"
         v-for="(imgName,index) in imgsName"
         :key="index"
       />
@@ -41,3 +41,8 @@ export default {
   },
 };
 </script>
+<style lang="css" scoped>
+.icons:hover{
+  filter: unset;
+}
+</style>

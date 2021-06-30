@@ -1,5 +1,5 @@
 <template>
-  <section id="feature" class="py-32 overflow- ">
+  <section id="feature" class="py-32 lg:px-20 ">
     <!--  -->
     <div
       class="
@@ -19,7 +19,8 @@
     <!-- <div class="w-full h-full z-10 transform scale-125">
       <img src="/img/wave-3.svg" alt="" srcset="" class="absolute top-0 w-full h-full obj-ect-cover ">
     </div> -->
-      <!-- ------------------------------------------- -->
+
+      <!-- -------------- first----------------------------- -->
       <div class="item w-full h-screen mb-20 z-20">
         <section
           class="
@@ -33,16 +34,7 @@
         >
           <div class="img w-full lg:w-5/12 p-10 lg:p-0 mb-20 lg:mb-5">
             <figure
-              class="
-                transform
-                overflow-hidden
-                rounded-md
-                shadow-md
-                -translate-x-8
-                lg:translate-x-16
-                w-9/12
-                lg:w-full
-              "
+              class=" transform overflow-hidden rounded-md shadow-md -translate-x-8 lg:translate-x-16 w-9/12 lg:w-full"
               style="transform: perspective(718px) rotateY(-19deg)"
             >
               <img
@@ -54,7 +46,7 @@
             </figure>
           </div>
 
-          <div class="text w-full lg:w-6/12 mb-6 lg:mb-0 text-center">
+          <div class="text w-full lg:w-6/12 mb-6 lg:mb-0 text-center lg:text-left">
             <section>
               <strong>
                 <p class="title text-3xl pb-9">
@@ -69,15 +61,7 @@
             </section>
             <div class="btn">
               <button
-                class="
-                  px-6
-                  py-2
-                  text-xl
-                  font-semibold
-                  rounded-full
-                  bg-purple-800
-                  text-white
-                "
+                class="  px-6 py-2  text-xl font-semibold rounded-full bg-purple-800 text-white"
               >
                 Hello World
               </button>
@@ -85,7 +69,7 @@
           </div>
         </section>
       </div>
-      <!-- ---------------------- -->
+      <!-- ---------seconde------------- -->
       <div class="item w-full h-screen mb-20 lg:mb-5 z-20">
         <section
           class="
@@ -96,19 +80,11 @@
             lg:flex-row-reverse
           "
         >
-          <div class="img w-full lg:w-5/12 md:w-4/5 p-10 lg:p-0">
+          <div class="img w-full lg:w-5/12 mx-auto md:w-4/5 p-10 lg:p-0 h-full">
             <figure
-              class="
-                transform
-                overflow-hidden
-                rounded-md
-                shadow-md
-                -translate-x-8
-                lg:translate-x-16
-                w-9/12
-                lg:w-full
-              "
-              style="transform: perspective(718px) rotateY(-19deg)"
+              class="transform overflow-hidden rounded-md shadow-md left-1/2 -translate-x-1/2 lg:translate-x-16 w-9/12 lg:w-full"
+            style="transform: perspective(718px) rotateY(19deg)  translateX(2rem)"
+              
             >
               <img
                 src="/img/app-screen-2.jpg"
@@ -119,7 +95,7 @@
             </figure>
           </div>
 
-          <div class="text w-full lg:w-6/12 mb-6 lg:mb-0 text-center">
+          <div class="text w-full lg:w-6/12 mb-6 lg:mb-0 text-center lg:text-right">
             <section>
               <strong>
                 <p class="title text-3xl pb-9">
@@ -150,7 +126,7 @@
           </div>
         </section>
       </div>
-      <!-- ---------------------- -->
+      <!-- ------------last ---------- -->
       <div class="item last w-full h-screen z-20 md:pb-24">
         <section class="flex justify-center flex-col-reverse w-full mx-auto">
           <div class="text w-full">
@@ -188,7 +164,7 @@
                         transition-all
                         delay-200
                         ease-in-out
-                        hover:bg-gray-100 hover:bg-opacity-20
+                        hover:bg-purple-500 hover:bg-opacity-20
                       "
                       v-text="tab.title"
                       @click="activeTab = index"
@@ -206,16 +182,19 @@
                     v-for="(tab, index) in tabContent"
                     :key="index"
                     class="transform transition-all ease-in-out duration-150"
-                  >
+                   >
                     <p class=" w-full text-lg lg:text-2xl text-gray-800 py-10">
                       {{ tab.content }}
                     </p>
                     <div class="w-5/6 md:w-3/4 lg:w-3/6  mx-auto pb-24">
-                      <figure class=" transform skew-y-12 overflow-hidden rounded-md shadow-md border-2 border-purple-400 top-0 -translate-y-20"
-                        style="transform: perspective(718px) rotateX(19deg) translateX(0rem) ;"
-                      >
-                        <img :src="tab.img" class="w-full" />
-                      </figure>
+                    <transition name="bounce">
+                        <figure class=" transform skew-y-12 overflow-hidden rounded-md shadow-md border-2 border-purple-400 top-0 -translate-y-20"
+                          style="transform: perspective(718px) rotateX(19deg) translateX(0rem) ;">
+                         
+                          <img :src="tab.img" class="w-full" />
+                       
+                        </figure>
+                       </transition>
                     </div>
                   </div>
                 </div>
@@ -225,7 +204,6 @@
         </section>
       </div>
     </div>
-    <!-- <div class="absolute top-0 lef-0 w-full h-full z-10 bg-purple-300 transform skew-y-12 bg-opacity-50"></div> -->
   </section>
 </template>
 
@@ -263,5 +241,18 @@ export default {
 
 <style scoped>
 #feature {
+}
+
+.bounce.enter-active{
+  animation: bounce-in .5;
+} 
+.bounce.leave-active{
+  animation: bounce-in .5 reverse;
+} 
+
+@keyframes bounce-in{
+  0%{ transform: scale(0);}
+  50%{transform: scale(1.5);}
+  100%{transform: scale(1);}
 }
 </style>

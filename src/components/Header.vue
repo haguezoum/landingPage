@@ -1,133 +1,51 @@
 <template>
-  <header class="lg:px-2 top-0 left-0 w-full fixed z-50">
-    <div
-      class="
-        header-area
-        flex
-        w-full
-        h-full
-        justify-between
-        my-auto
-        mx-auto
-       
-      ">
+  <header class="lg:px-12 top-0 left-0 w-full fixed z-50 " id="navbar" >
+    <div class=" header-area flex w-full h-full justify-between items-center my-auto mx-auto relative">
       <!--left-->
-      <div class="logo nav-links w-1/2 sm:w-2/5 lg:w-3/5 flex  items-center ">
+      <div class="logo nav-links w-1/2 h-full sm:w-2/5 lg:w-3/5 flex  items-center border">
        
         <div class="flex space-x-4 justify-start items-center lg:w-1/5 ">
           <div class="lg:hidden relative w-1/3 ">
-            <nav x-data="{ open: false }">
+            <nav >
               <button
-                class="text-white w-10 h-10 relative focus:outline-none"
+                class="text-white w-12 h-12 relative focus:outline-none hover:bg-purple-600 hover:bg-opacity-20 rounded-full ml-3"
                 @click="open = !open"
+                style="z-index:999999"
               >
                 <span class="sr-only">Open menu</span>
-                <div
-                  class="
-                    block
-                    w-5
-                    absolute
-                    left-1/2
-                    top-1/2
-                    transform
-                    -translate-x-1/2 -translate-y-1/2
-                  "
-                >
+
+                <!--start humberger menu-->
+                <div class=" block w-5 absolute left-4 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
                   <span
                     aria-hidden="true"
-                    class="
-                      block
-                      absolute
-                      h-1
-                      w-7
-                      rounded-full
-                      bg-current
-                      transform
-                      transition
-                      duration-500
-                      ease-in-out
-                    "
+                    class="block absolute h-0.5 w-7  bg-current transform transition duration-500 ease-in-out"
                     :class="{ 'rotate-45': open, ' -translate-y-1.5': !open }"
                   ></span>
                   <span
                     aria-hidden="true"
-                    class="
-                      block
-                      absolute
-                      h-1
-                      w-7
-                      rounded-full
-                      bg-current
-                      transform
-                      transition
-                      duration-500
-                      ease-in-out
-                    "
+                    class="block absolute h-0.5 w-5  bg-current transform transition duration-500 ease-in-out"
                     :class="{ 'opacity-0': open }"
                   ></span>
                   <span
                     aria-hidden="true"
-                    class="
-                      block
-                      absolute
-                      h-1
-                      w-7
-                      rounded-full
-                      bg-current
-                      transform
-                      transition
-                      duration-500
-                      ease-in-out
-                    "
+                    class="block absolute h-0.5 w-7  bg-current transform transition duration-500 ease-in-out"
                     :class="{ '-rotate-45': open, ' translate-y-1.5': !open }"
                   ></span>
                 </div>
+                <!--end humberger menu-->
               </button>
             </nav>
           </div>
 
-          <div class="logo-img p-4 md:p-0 w-2/3 ">
-              <img
-                src="/img/logo.png"
-                alt=""
-                srcset=""
-                class="w-2/5 md:w-2/6 lg:w-2/5 xl:w-1/5 mx-auto"
-                style="width:50px"
-
-              />
+          <div class="logo-img p-4 md:p-0 w-2/3 border relative"  style="z-index:999999">
+              <img src="/img/logo.png" alt="" srcset="" class="w-2/5 md:w-2/6 lg:w-2/5 xl:w-1/5 absolute left-1/2 top-1/2 transform -translate-y-1/2 -translate-x-1/2" style="width:50px;"/>
           </div>
         </div>
         <!-- nav links -->
         <div class="nav-links hidden lg:flex">
-          <ul
-            class="
-              flex
-              w-3/4
-              justify-between
-              space-x-4
-              font-bold
-              text-md text-white
-            "
-          >
-            <li
-              v-for="(navLink, index) in navLinks"
-              :key="index"
-              class="
-                navLink
-                relative
-                hover:border-b-4
-                rounded-full
-                hover:border-white
-                cursor-pointer
-                p-2
-                px-3
-                transition-all
-                ease-in-out
-                duration-100
-                delay-100
-                hover:opacity-40 hover:bg-purple-900
-                bg-opacity-30
-              "
+          <ul class="flex w-3/4 justify-between space-x-4 font-bold text-md text-white" >
+            <li v-for="(navLink, index) in navLinks" :key="index"
+              class="navLink relative hover:border-b-4 rounded-full hover:border-white cursor-pointer p-2 px-3 transition-all ease-in-out duration-100 delay-100 hover:opacity-40 hover:bg-purple-900 bg-opacity-30"
             >
               {{ navLink.name }}
             </li>
@@ -135,10 +53,9 @@
         </div>
 
       </div>
-
-<!-- ---------------------------------------------------------------- -->
+     <!-- ---------------------------------------------------------------- -->
       <!--right-->
-      <div class="menu w-1/2  sm:w-3/5 lg:w-2/5  my-auto">
+      <div class="menu w-1/2 h-full sm:w-3/5 lg:w-2/5  border">
         <div class="flex justify-end md:justify-between items-center">
           <div
             class="hidden btn-area p-4 sm:flex justify-end space-x-4 w-3/4 uperrcase text-md md:text-xl">
@@ -149,17 +66,54 @@
               <button class="bg-transparent rounded-full  bg-green-300 hover:bg-green-400 text-white  px-8 font-semibold py-2">Log in</button>
             </div>
           </div>
-          <div class="setting-btn w-1/5 flex justify-start items-center">
-            <span class="">
+
+          <div class="setting-btn border-2 border-pink-500 h-full  flex justify-start items-center relative "  style="z-index:999999" @click="openSettings = !openSettings" @blur="openSettings =false">
+            <div class="relative bg-yellow-300 h-10 w-10">
+            <span class="absolute transform hover:rotate-12 border left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
              <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" viewBox="0 0 20 20" fill="#fff">
               <path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd" />
             </svg>
             </span>
+                <transition name="settings-bounced">
+                  <div class="settings absolute right-0 transform  top-10 w-36 h-64 border-2 border-white " v-if="openSettings">
+                  <div class="w-full h-full bg-red-500 ">
+                  </div> 
+                </div>
+                </transition>
+            </div>
+            
           </div>
         </div>
       </div>
+  <!-- start asaid menu -->
+  <transition name="poper">
+<aside class="h-screen w-full sm:w-1/3 shadow-lg bg-purple-800 block  absolute left-0 top-0 z-40 " @click="open = !open" v-if="open">
+  <div class="h-full w-full flex flex-col justify-start items-start py-32 px-10 font-medium relative" v-if="open">
+      <div class="pb-10 border-b w-full">
+          <ul class="flex w-full   flex-col  text-md text-left text-white" >
+            <li v-for="(navLink, index) in navLinks" :key="index"
+              class="hover:border-b-4 text-2xl  hover:border-white cursor-pointer p-2 px-3 transition-all ease-in-out duration-100 delay-100 hover:opacity-40 hover:bg-purple-900 bg-opacity-30"
+            >
+              {{ navLink.name }}
+            </li>
+          </ul>
+        </div>
+        <div class="btn-area flex w-full flex-col  text-2xl text-left mt-10">
+          <p class="relative text-white hover:border-b-4 rounded-full hover:border-white cursor-pointer p-2 px-3 transition-all ease-in-out duration-100 delay-100 hover:opacity-40 hover:bg-purple-900 bg-opacity-30">
+            Login
+          </p>
+          <p class="relative text-white hover:border-b-4 rounded-full hover:border-white cursor-pointer p-2 px-3 transition-all ease-in-out duration-100 delay-100 hover:opacity-40 hover:bg-purple-900 bg-opacity-30">
+            Get started
+          </p>
+      </div>
+  </div>
+</aside>
+</transition>
+      <div class="overly absolute w-full h-screen bg-gray-900 bg-opacity-50 hidden md:block  filter blur-md z-30" v-show="open" @click="open = !open"></div>
 
+<!-- end asaid menu -->
     </div>
+
   </header>
 </template>
 
@@ -173,29 +127,17 @@ export default {
   data() {
     return {
       open: false,
-      navLinks: [
-        {
-          name: "Feature",
-        },
-        {
-          name: "Testimonials",
-        },
-        {
-          name: "Pricing",
-        },
-        {
-          name: "FAQ",
-        },
-        {
-          name: "Contact",
-        },
-      ],
+      openSettings:false,
+      navLinks: [{name: "Feature",},{name: "Testimonials",},{name: "Pricing",},{name: "FAQ",},{name: "Contact",},],
     };
   },
 };
 </script>
 
 <style lang="css" scoped>
+#navbar{
+ z-index:9999;
+}
 .navLink::after {
   content: "";
   position: absolute;
@@ -211,5 +153,34 @@ export default {
 .navLink:hover::after {
   width: 100%;
   left: 0%;
+}
+
+
+/* ************ animation said menu ************* */
+.poper-enter-active{
+  animation: poper-in 1s;
+}
+.poper-leave-active{
+  animation: poper-in 1s reverse;
+}
+
+.settings-bounced.enter-active{
+  animation: settings 1s;
+}
+
+.settings-bounced.leave-active{
+  animation: settings 1s reverse;
+}
+
+@keyframes poper-in{
+  0%{height: 0; }
+  100%{height: 100%;}
+}
+@keyframes settings{
+ 0%{top: 0; opacity: .0;}
+ 250%{top: 0.5rem; opacity: .25;}
+ 50%{top: 1rem; opacity: .5;}
+ 75%{top: 2rem; opacity: .75;}
+ 100%{top: 2.5rem; opacity: 1;}
 }
 </style>

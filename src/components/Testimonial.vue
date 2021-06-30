@@ -29,7 +29,7 @@
           <!-- icons start -->
             <div class="icons w-2/5  hidden lg:flex items-center justify-center verflow-hidden  ">
               <div class="grid grid-cols-3 gap-10 grid-rows-3  o">
-                <div v-for="(icon, index) in icons" :key="index" class="h-20 w-20">
+                <div v-for="(icon, index) in icons" :key="index" class="h-20 w-20" ref="icons">
                   <img
                     :src="icon.iconPath"
                     :alt="icon.title"
@@ -68,6 +68,12 @@ export default {
       ],
     };
   },
+  computed:{
+    cgangeFilter:function () {
+       console.log(this.$refs.icons)
+       return true;
+     }
+  }
 };
 
 /*
