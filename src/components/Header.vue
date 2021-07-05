@@ -1,6 +1,7 @@
 <template>
-  <header class="lg:px-12 top-0 left-0 w-full fixed z-50 " id="navbar" >
-    <div class=" header-area flex w-full h-full justify-between items-center my-auto mx-auto relative">
+  <header class="lg:px-12 top-0 left-0 w-full fixed z-50 bg-transparent duration-300 transform delay-200  ease-in-out" id="navbar" ref="navbar" :class="{'bg-gradient-to-r from-purple-900 to-pink-400 p-4': !view.atTopOfPage}">
+      <div class="overly overflow-y-hidden  absolute w-full h-screen bg-gray-900 bg-opacity-50 hidden md:block lg:hidden filter blur-md z-30 transform scale-150" v-show="open" @click="open = !open"></div>
+    <div class=" header-area flex w-full h-full justify-between items-center  my-auto mx-auto relative">
       <!--left-->
       <div class="logo nav-links w-1/2 h-full sm:w-2/5 lg:w-3/5 flex  items-center">
        
@@ -47,7 +48,11 @@
             <li v-for="(navLink, index) in navLinks" :key="index"
               class="navLink relative hover:border-b-4 rounded-full hover:border-white cursor-pointer p-2 px-3 transition-all ease-in-out duration-100 delay-100 hover:opacity-40 hover:bg-purple-900 bg-opacity-30"
             >
+            <router-link :to="{path:'/', hash: navLink.id}">
+            
               {{ navLink.name }}
+            </router-link>
+              
             </li>
           </ul>
         </div>
@@ -86,30 +91,34 @@
         </div>
       </div>
   <!-- start asaid menu -->
-  <transition name="" enter-active-class=" animate__animated  animate__fadeInTopLeft animate__slow " leave-active-class="animate__animated animate__fadeOutBottomLeft animate__slow">
-      <aside class="h-screen w-full sm:w-1/3 shadow-lg bg-purple-800 block  absolute left-0 top-0 z-40 " @click="open = !open" v-if="open">
+  <transition name="" enter-active-class=" animate__animated  animate__backInLeft animate__faster " leave-active-class="animate__animated animate__backOutLeft animate__fast">
+      <aside class="h-screen  w-screen sm:w-1/3 overflow-y-hidden shadow-lg bg-purple-800 block lg:hidden absolute  z-40 " @click="open = !open" v-if="open" :class="!view.atTopOfPage ? '-left-4 -top-4':'top-0 left-0'">
         <div class="h-full w-full flex flex-col justify-start items-start py-32 px-10 font-medium relative" v-if="open">
             <div class="pb-10 border-b w-full">
                 <ul class="flex w-full   flex-col  text-md text-left text-white" >
-                  <li v-for="(navLink, index) in navLinks" :key="index"
-                    class="hover:border-b-4 text-2xl  hover:border-white cursor-pointer p-2 px-3 transition-all ease-in-out duration-100 delay-100 hover:opacity-40 hover:bg-purple-900 bg-opacity-30"
-                  >
-                    {{ navLink.name }}
-                  </li>
+                      <!-- <transition name="" enter-active-class=" animate__animated  animate__backInLeft animate__slow " leave-active-class="animate__animated animate__backOutLeft animate__slow"> -->
+                        
+                        <li v-for="(navLink, index) in navLinks" :key="index"
+                          class="hover:border-b-4 text-2xl  hover:border-white cursor-pointer p-2 px-3 transition-all ease-in-out duration-100 delay-100 hover:opacity-40 hover:bg-purple-900 bg-opacity-30"
+                        >
+                          <router-link to="#testimonials">
+                              {{ navLink.name }}
+                           </router-link>
+                        </li> 
+                      <!-- </transition> -->
                 </ul>
               </div>
-              <div class="btn-area flex w-full flex-col  text-2xl text-left mt-10">
+              <!-- <div class="btn-area flex w-full flex-col  text-2xl text-left mt-10">
                 <p class="relative text-white hover:border-b-4 rounded-full hover:border-white cursor-pointer p-2 px-3 transition-all ease-in-out duration-100 delay-100 hover:opacity-40 hover:bg-purple-900 bg-opacity-30">
                   Login
                 </p>
                 <p class="relative text-white hover:border-b-4 rounded-full hover:border-white cursor-pointer p-2 px-3 transition-all ease-in-out duration-100 delay-100 hover:opacity-40 hover:bg-purple-900 bg-opacity-30">
                   Get started
                 </p>
-            </div>
+            </div> -->
         </div>
       </aside>
 </transition>
-      <div class="overly absolute w-full h-screen bg-gray-900 bg-opacity-50 hidden md:block lg:hidden filter blur-md z-30" v-show="open" @click="open = !open"></div>
 
 <!-- end asaid menu -->
     </div>
@@ -126,16 +135,33 @@ export default {
   },
   data() {
     return {
+      view:{
+        atTopOfPage:true
+      },
       open: false,
       openSettings:false,
-      navLinks: [{name: "Feature",},{name: "Testimonials",},{name: "Pricing",},{name: "FAQ",},{name: "Contact",},],
+      navLinks: [{name: "Feature",id:'feature'},{name: "Testimonials",id:'testimonials',},{name: "Pricing",id:'pricing'},{name: "FAQ",id:'faq'},{name: "Contact",id:'contact'},],
     };
+  },
+  beforeMount(){
+    window.addEventListener('scroll',this.togelNavBar)
   },
   methods:{
     closeSettingsbar(){
-      console.log(12333);
        this.openSettings = false;
     }
+    ,
+    togelNavBar(){
+      if(window.pageYOffset > 150){
+         if(this.view.atTopOfPage){
+           this.view.atTopOfPage = false
+         }
+      }else{
+          if(!this.view.atTopOfPage){
+            this.view.atTopOfPage = true
+          } 
+      }
+    },
   }
 };
 </script>

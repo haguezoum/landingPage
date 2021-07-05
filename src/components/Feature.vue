@@ -1,38 +1,17 @@
 <template>
-  <section id="feature" class="py-32 lg:px-20 ">
+  <section id="feature" class="feature relative py-32">
     <!--  -->
     <div
-      class="
-        left-0
-        top-0
-        w-full
-        h-full
-        feature-blogs
-        flex flex-wrap
-        items-center
-        justify-between
-        container
-        mx-auto
-        relative
-      "
-    >
+      class="left-0 top-0 w-full h-full feature-blogs flex flex-wrap items-center justify-between container mx-auto ">
     <!-- <div class="w-full h-full z-10 transform scale-125">
       <img src="/img/wave-3.svg" alt="" srcset="" class="absolute top-0 w-full h-full obj-ect-cover ">
     </div> -->
 
       <!-- -------------- first----------------------------- -->
-      <div class="item w-full h-screen mb-20 z-20">
+      <div class="item w-full  mb-20 z-20" v-animation>
         <section
-          class="
-            flex
-            lg:items-center
-            justify-between
-            flex-col-reverse
-            lg:flex-row
-            
-          "
-        >
-          <div class="img w-full lg:w-5/12 p-10 lg:p-0 mb-20 lg:mb-5">
+          class="flex lg:items-center justify-between flex-col-reverse lg:flex-row ">
+           <div class="img w-full lg:w-5/12 p-10 lg:p-0 mb-20 lg:mb-5">
             <figure
               class=" transform overflow-hidden rounded-md shadow-md -translate-x-8 lg:translate-x-16 w-9/12 lg:w-full"
               style="transform: perspective(718px) rotateY(-19deg)"
@@ -70,22 +49,13 @@
         </section>
       </div>
       <!-- ---------seconde------------- -->
-      <div class="item w-full h-screen mb-20 lg:mb-5 z-20">
+      <div class="item w-full  mb-20 lg:my-52  z-20" v-animation>
         <section
-          class="
-            flex
-            lg:items-center
-            justify-between
-            flex-col-reverse
-            lg:flex-row-reverse
-          "
-        >
+          class=" flex lg:items-center justify-between flex-col-reverse lg:flex-row-reverse">
           <div class="img w-full lg:w-5/12 mx-auto md:w-4/5 p-10 lg:p-0 h-full">
             <figure
               class="transform overflow-hidden rounded-md shadow-md left-1/2 -translate-x-1/2 lg:translate-x-16 w-9/12 lg:w-full"
-            style="transform: perspective(718px) rotateY(19deg)  translateX(2rem)"
-              
-            >
+            style="transform: perspective(718px) rotateY(19deg)  translateX(2rem)">
               <img
                 src="/img/app-screen-2.jpg"
                 alt=""
@@ -127,7 +97,8 @@
         </section>
       </div>
       <!-- ------------last ---------- -->
-      <div class="item last w-full h-screen z-20 md:pb-24">
+
+      <div class="item last w-full  z-20 md:pb-4" v-animation>
         <section class="flex justify-center flex-col-reverse w-full mx-auto">
           <div class="text w-full">
             <section class="">
@@ -254,5 +225,31 @@ export default {
   0%{ transform: scale(0);}
   50%{transform: scale(1.5);}
   100%{transform: scale(1);}
+}
+
+/*************************************/
+.befor-active{
+  opacity:0;
+  transform: translateX(-100%);
+  transition: all 1s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+}
+.active{
+  opacity:1;
+  transform: translateX(0%);
+  transition: all 1s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+}
+.feature::before{
+  content: '';
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  width: 100%;
+  height: 100%;
+  background-image: url('/img/wave-3.svg');
+  background-size: 100% 100%;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  /* transform: scale(1.5); */
+  overflow: hidden;
 }
 </style>

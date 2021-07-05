@@ -1,0 +1,6 @@
+<svg id="wave"  viewBox="0 0 1300 1000" version="1.1" xmlns="http://www.w3.org/2000/svg" style="transform:translateX(0rem) rotate(0deg) scaleX(1.1); opacity:0.5">
+		<defs>
+	    	<linearGradient id="sw-gradient-0" x1="0" x2="0" y1="1" y2="0"><stop stop-color="rgba(64.938, 62, 243, 0.5)" offset="0%"></stop><stop stop-color="rgba(0, 0, 0, 0)" offset="100%"></stop></linearGradient>
+		</defs>
+	<path id="Rectangle" fill="url(#sw-gradient-0)" d="M1280,925c-133.8-192.4-264-288.5-390.5-288.5c-189.8,0-387.2,389.8-606.5,268   C136.8,823.2,42.5,750.6,0,686.5V81c114.5,99.3,229.7,148.9,345.8,148.9c174.1,0,228.2-332.1,454.9-198   C951.8,121.3,1118.6,137.7,1301,81L1280,925z"></path>   
+</svg>

@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <main ref="mainSec">
     <section id="container" class="bg-gradient-to-br from-purple-900 to-pink-400 w-full">
       <div class="relative home flex flex-wrap flex-row">
         <!-- start fixed asaid decoration -->
@@ -29,7 +29,7 @@
                 <div class="flex md:justify-start items-center  flex-col-reverse sm:flex-row  lg:py-0w-full md:w-3/5  space-x-2 px-8 lg:px-0">
                 
                  <div class="w-full ">
-                    <button class="hover:bg-white hover:bg-opacity-10 rounded-full md:w-full w-full sm:w-3/4 uppercase py-3 px-5 sm:px-0 mx-auto text-whit font-bold  lg:px-0">
+                    <button class="hover:bg-white hover:bg-opacity-10 rounded-full md:w-full w-full sm:w-3/4 uppercase py-3 px-5 sm:px-0 mx-auto text-whit font-bold  lg:px-0" @click="showRef">
                         Watch Video 
                     </button>
                  </div>
@@ -61,13 +61,13 @@
         <!-- end wave decoration -->
       </div>
     </section>
-    <Service />
-    <Statistics />
-    <Feature class="" />
-    <Testimonials />
-    <Pricing/>
-    <FAQ />
-    <Footer />
+    <Service id="service"/>
+    <Statistics id="Statistics"/>
+    <Feature id="feature"/>
+    <Testimonials id="testimonials"/>
+    <Pricing id="pricing"/>
+    <FAQ id="faq"/>
+    <Footer id="footer"/>
     <!-- <Tabs/> -->
   </main>
 </template>
@@ -98,11 +98,17 @@ export default {
   },
   data() {
     return {
-      Svgpath: `<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
-</svg>`,
+    
     };
   },
+  methods:{
+    showRef(){
+      console.log(this.$refs['mainSec']);
+    }
+  },
+  created(){
+  
+  }
 };
 </script>
 <style lang="css" scoped>
@@ -113,7 +119,7 @@ export default {
   height:100%;
   background-image: url('/img/deco-wave-light.png');
   left: 0;
-  top: 0;
+  top: 10px;
   background-size: cover;
   background-position: 0 0;
   background-repeat: no-repeat;
@@ -132,17 +138,17 @@ export default {
 }
 .moved-wave::before{
   left: 30%;
-  animation: wavey 10s ease-in-out 0s infinite  ;
+  animation: wavey 10s ease-in-out 0s infinite alternate  ;
 }
 .moved-wave::after{
   left: 70%;
-  animation: wavey 8s ease-in-out 8s infinite  ;
+  animation: wavey 8s ease-in-out 8s infinite alternate ;
 }
 @keyframes wavey{
-  0%   {left: 0%; top: 40%; }
+  from   {left: 0%; top: 50%; }
   /* 25%  {left: 25%; top:30px}*/
-  50%  {top:20%}
+  50%  {top:40%}
   /*75%   {left:75%;top:30px} */
-  100% {left: 100%;top:60%}
+  to {left: 100%;top:60%}
 }
 </style>

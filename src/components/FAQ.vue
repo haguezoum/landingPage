@@ -32,7 +32,7 @@
                                 </svg>
                             </span>
                         </button>
-                        <div class="lorem" v-show="article.isOpen">
+                        <div class="lorem transition-all ease-in-out delay-300" v-show="article.isOpen">
                             <p class="p-4" v-text="article.text"></p>
                         </div>
                     </article>

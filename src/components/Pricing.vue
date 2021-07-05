@@ -1,6 +1,7 @@
 <template>
-    <section id="pricing" class="lg:mt-32 w-full py-24 lg:px-20">
-        <header class="w-full mx-auto text-center p-6 mb-10">
+    <section id="pricing" class="pricing relative lg:mt-32 w-full py-24 lg:px-20 z-10">
+
+        <header class="w-full mx-auto text-center p-6 mb-10 z-20">
             <div class="title text-3xl font-bold mb-16">
                 <h3 class="titleSection relative">Pricing <span class="font-mono"> & </span> Plan</h3>
             </div>
@@ -11,8 +12,8 @@
             </div>
         </header>
 
-        <section class="cards-area flex flex-col sm:flex-row flex-wrap md:flex-nowrap justify-center sm:justify-around  md:-space-x-3 px-5 py-5 items-center">
-            <div class="card border border-transparent hover:border-green-800  overflow-hidden flex flex-col w-80 md:w-2/6 mb-10 z-20 hover:z-50" v-for="plan,index in plans" :key="index" :class="plan.title==='BEST Value'?'border border-purple-900  active':''" >
+        <section class="cards-area flex flex-col sm:flex-row flex-wrap md:flex-nowrap justify-center sm:justify-around  md:-space-x-3 px-5 py-5 items-center z-20">
+            <div class="card border border-transparent hover:border-green-800 shadow-lg overflow-hidden flex flex-col w-80 md:w-2/6 mb-10 z-20 hover:z-50" v-for="plan,index in plans" :key="index" :class="plan.title==='BEST Value'?'border border-purple-900  active':''" >
                 <header class="bg-white p-4 text-center z-20 px-4 relative" :class="plan.title==='BEST Value'?'active text-white':''">
                      <p class="planTitle py-2 text-white uppercase font-semibold" :class="plan.title !=='BEST Value'?'text-green-600':''">{{plan.title}}</p> 
                      <p class="planPrice text-4xl font-semibold py-2 text-white uppercase" :class="plan.title !=='BEST Value'?'text-gray-400':''"> {{plan.priceing}}</p>
@@ -50,6 +51,20 @@ export default {
 </script>
 
 <style lang="css" scoped>
+.pricing::before{
+  content: '';
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  width: 100%;
+  height: 100%;
+  background-image: url('/img/pricing-wave.svg');
+  background-size: 100% 100%;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  /* transform: scale(1.5); */
+  overflow: hidden;
+}
 .titleSection::after{
     content: '';
     position: absolute;
@@ -77,7 +92,6 @@ header.active::before{
 .card{
     z-index: 1;
     border-radius: 40px;
-    filter: drop-shadow(0 0 0.3rem rgb(143, 143, 143));
 }
 .card:hover{
     z-index: 3;

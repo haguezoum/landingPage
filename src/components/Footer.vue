@@ -1,50 +1,70 @@
 <template>
-    <footer class="w-full  bg-gradient-to-br from-purple-900 to-pink-400 border-2 border-red-400 ">
-        <div class="decoration relative w-full pt-28 md:pt-52">
+    <footer class="w-full  bg-gradient-to-br from-purple-900 to-pink-400 relative">
+        <div class="decoration absolute top-0 left-0 w-full ">
             <!-- wave decoration :) -->
         </div>
 
-        <div class="content flex flex-col justify-center items-center border-2 border-yellow-300 p-2">
+        <div class="content flex flex-col justify-center items-center p-2 px-20 py-52">
             <!-- part 1 -->
-            <div class="header w-full titile text-center border border-green-300 mb-2">
+            <div class="header w-full titile text-center mb-2">
                 <h3 class="text-3xl text-white font-bold py-6">What are you waiting for?</h3>
-                    <button class="py-2  mt-6 px-6 uppercase text-white bg-green-300 bg-opacity-60 text-lg rounded-full hover:bg-green-700">Get started</button>
+                <button class="py-2  mt-6 px-6 uppercase text-white bg-green-300 bg-opacity-60 text-lg rounded-full hover:bg-green-700">Get started</button>
             </div>
 
             <!-- part 2 -->
-            <div class="content w-full flex justify-between items-center border border-yellow-300 p-2">
+            <div class="content w-full flex justify-between flex-col lg:flex-row items-start p-2">
 
-                <div class="img  flex justify-center items-center border-2 border-pink-400 mb-2">
-                    <img src="/img/icone-3.png" alt="" srcset="">
-                    <p>Hello world</p>
+                <div class="img lg:w-1/4 flex justify-end flex-col items-center  mb-2">
+                    <img src="/img/icone-3.png" alt="" srcset="" class="w-1/2">
+                    <p class="text-2xl text-white font-semibold">Hello</p>
                 </div>
 
-                <!-- ---------------------------------------------------------------- -->
+                <div class="justify-around items-center w-full lg:h-2/4 p-2 lg:px-20">
+        
+                   <div class="flex flex-col lg:hidden">
+                        <el-dropdown type="w-full" class=" text-white">
+                            <span class="el-dropdown-link">
+                                COMPANY<i class="el-icon-arrow-down el-icon--right"></i>
+                            </span>
+                            <el-dropdown-menu slot="dropdown">
+                                <el-dropdown-item>Team</el-dropdown-item>
+                                <el-dropdown-item>History</el-dropdown-item>
+                                <el-dropdown-item>Contact us</el-dropdown-item>
+                                <el-dropdown-item>Location</el-dropdown-item>
+                            </el-dropdown-menu>
+                        </el-dropdown>
 
-                <div class="justify-around items-center border border-blue-300 p-2">
-                    <!-- sm:dropdown   lg:columns -->
-                    <!-- <el-dropdown>
-                        <span class="el-dropdown-link">
-                            Dropdown List<i class="el-icon-arrow-down el-icon--right"></i>
-                        </span>
-                        <el-dropdown-menu slot="dropdown">
-                            <el-dropdown-item>Action 1</el-dropdown-item>
-                            <el-dropdown-item>Action 2</el-dropdown-item>
-                            <el-dropdown-item>Action 3</el-dropdown-item>
-                            <el-dropdown-item disabled>Action 4</el-dropdown-item>
-                            <el-dropdown-item divided>Action 5</el-dropdown-item>
-                        </el-dropdown-menu>
-                    </el-dropdown> -->
-                    <div class="flex lfex-row">
-                            <div class="border " v-for="item,index in 3" :key="index">
-                            <div class="title w-full text-center">Hello</div>
+                        <el-dropdown type="w-full" class=" text-white">
+                            <span class="el-dropdown-link">
+                                RESOURCES<i class="el-icon-arrow-down el-icon--right"></i>
+                            </span>
+                            <el-dropdown-menu slot="dropdown">
+                                <el-dropdown-item>Resources</el-dropdown-item>
+                                <el-dropdown-item>Resources name</el-dropdown-item>
+                                <el-dropdown-item>Another resources</el-dropdown-item>
+                                <el-dropdown-item>Final resources</el-dropdown-item>
+                            </el-dropdown-menu>
+                        </el-dropdown>
+         
+                        <el-dropdown type="w-full" class=" text-white">
+                            <span class="el-dropdown-link">
+                                LEGAL<i class="el-icon-arrow-down el-icon--right"></i>
+                            </span>
+                            <el-dropdown-menu slot="dropdown">
+                                <el-dropdown-item>Privacy policy</el-dropdown-item>
+                                <el-dropdown-item>Terms of use</el-dropdown-item>
+                            </el-dropdown-menu>
+                        </el-dropdown>    
+                   </div>
+                    <div class="lg:flex w-full justify-around items-center felx-row  hidden">
+                            <div class=" px-4 text-white" v-for="item,index in 3" :key="index" >
+                            <div class="title w-full text-left px-4 mb-9 text-md font-bold">COMPANY</div>
                             <div class="list w-full">
-                                <ul class="w-full flex flex-col justify-center">
-                                    <li>Lorem, ipsum dolor.</li>
-                                    <li>Lorem, ipsum dolor.</li>
-                                    <li>Lorem, ipsum dolor.</li>
-                                    <li>Lorem, ipsum dolor.</li>
-                                    <li>Lorem, ipsum dolor.</li>
+                                <ul class="w-full flex flex-col justify-start  text-md space-y-1  font-medium px-4">
+                                    <li class="hover:bg-purple-700 cursor-pointer">Team</li>
+                                    <li class="hover:bg-purple-700 cursor-pointer">History</li>
+                                    <li class="hover:bg-purple-700 cursor-pointer">Contact us</li>
+                                    <li class="hover:bg-purple-700 cursor-pointer">Location</li>
                                 </ul>
                             </div>
                         </div>
@@ -54,18 +74,35 @@
 
                 <!-- ---------------------------------------------------------------- -->
                 
-                <div class=" flex flex-col">
-                    <div class="social-media">
+                <div class=" flex flex-col w-full lg:w-1/4">
+
+                    <div class="social-media flex flex-col space-y-12 py-20 pt-0">
                         <ul class="flex justify-around items-center">
-                          <li class="h-10 w-10 rounded-full border-green-400"><a href="">fb</a></li>
-                          <li class="h-10 w-10 rounded-full border-green-400"><a href="">tw</a></li>
-                          <li class="h-10 w-10 rounded-full border-green-400"><a href="">ig</a></li>
-                          <li class="h-10 w-10 rounded-full border-green-400"><a href="">gg</a></li>
+                          <li class="h-10 w-10 p-4  rounded-full bg-purple-400 hover:bg-purple-600 text-white flex justify-center items-center"><a href="">fb</a></li>
+                          <li class="h-10 w-10 p-4  rounded-full bg-purple-400 hover:bg-purple-600 text-white flex justify-center items-center"><a href="">tw</a></li>
+                          <li class="h-10 w-10 p-4  rounded-full bg-purple-400 hover:bg-purple-600 text-white flex justify-center items-center"><a href="">ig</a></li>
+                          <li class="h-10 w-10 p-4  rounded-full bg-purple-400 hover:bg-purple-600 text-white flex justify-center items-center"><a href="">gg</a></li>
                         </ul>
                     </div>
-                    <div class="languages">
-                        <!-- dropdown --> <p class="text-3xl">test</p>
+
+                    <div class="languages w-full text-center">
+                        <el-dropdown class="w-full bg-green-400">
+                            <el-button type="primary" class="flex w-full justify-around items-center focus:outline-none">
+                
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                                </svg>
+                                
+                                <span>languages</span>
+                                 <i class="el-icon-arrow-down el-icon--right"></i>
+                            </el-button>
+                            <el-dropdown-menu slot="dropdown">
+                                <el-dropdown-item>Francais</el-dropdown-item>
+                                <el-dropdown-item>Arabe</el-dropdown-item>
+                            </el-dropdown-menu>
+                        </el-dropdown>
                     </div>
+
                 </div>
                 <!-- ---------------------------------------------------------------- -->
 
@@ -77,16 +114,19 @@
 </template>
 
 <script>
-
+// import dropdown from 'element-ui'
 export default {
     name:'Footer',
+    components:{
+        // 'el-dropdown':dropdown
+    }
 }
 </script>
 <style lang="css" scoped>
 .decoration::before{
     content: '';
     width: 100%;
-    height: 720px;
+    height: 720px; 
     position: absolute;
     left: 0;
     top: -3px;
@@ -95,4 +135,6 @@ export default {
     background-position: 0 0;
     background-repeat: no-repeat;
 }
+
+
 </style>
