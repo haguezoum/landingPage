@@ -86,7 +86,7 @@
                     </div>
 
                     <div class="languages w-full text-center">
-                        <el-dropdown class="w-full bg-green-400">
+                        <!-- <el-dropdown class="w-full bg-green-400">
                             <el-button type="primary" class="flex w-full justify-around items-center focus:outline-none">
                 
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -100,7 +100,8 @@
                                 <el-dropdown-item>Francais</el-dropdown-item>
                                 <el-dropdown-item>Arabe</el-dropdown-item>
                             </el-dropdown-menu>
-                        </el-dropdown>
+                        </el-dropdown> -->
+                        <Dropdown :data="language"/>
                     </div>
 
                 </div>
@@ -114,11 +115,20 @@
 </template>
 
 <script>
-// import dropdown from 'element-ui'
+import Dropdown from "@/components/Dropdown";
+
 export default {
     name:'Footer',
     components:{
-        // 'el-dropdown':dropdown
+       Dropdown
+    },
+    data(){
+       return{
+            language:[{id:0,title:'Language',text:'Arabic'}]
+       }
+    },
+    methods:{
+        
     }
 }
 </script>
