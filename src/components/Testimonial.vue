@@ -1,13 +1,16 @@
-<template ref="testimonial">
-  <section id="testimonial" class="lg:mt-20 h-screen w-full" >
-        <div class="testimonialContant w-full h-full relative flex lg:mt-32 ">       
+<template >
+  <section id="testimonial" class="pt-5  w-full  bg-white dark:bg-gray-800" >
+        <div class="testimonialContant w-full h-full flex  items-start">       
+         
           <!-- start -->
-          <div class=" flex lg:w-3/5 flex-col justify-center space-y-20 relative bg-transparentsm:space-x-0 bg-purple-900 lg:bg-transparent">
-                 <div class="hidden lg:block"><img src="/img/wavy.svg" alt="" srcset="" class="absolute left-8 -top-16  w-full h-full object-cover transform scale-150"></div>
-                  <h3 class="block mx-auto w-3/5 mt-10  text-center text-2xl sm:text-3xl font-bold text-white z-30">What Our Customers Testimonial</h3>
+          <div class="relative flex w-full flex-col justify-center bg-transparentsm z-20 space-x-0 bg-purple-900 dark:bg-gray-800 border-t-2 border-b-2 lg:border-none border-transparent border-opacity-50 dark:border-gray-500 lg:bg-transparent">
+                  <div class="hidden lg:block absolute left-0  w-full   transform scale-x-150 scale-y-125 -translate-x-3 -translate-y-10 -rotate-2">
+                   <img src="/img/wavy.svg" alt="" srcset="" class="left-0 top-0 ">
+                  </div>
+                  <h3 class="block mx-auto w-full mt-10  text-center text-2xl  sm:text-3xl font-bold text-white z-30 ">What Our Customers Testimonial</h3>
                   <span class="absolute top-20 left-5 sm:left-1/2 sm:transform sm:-translate-x-1/2 opacity-20 z-10"><svg xmlns="http://www.w3.org/2000/svg" class="h-32 w-32" viewBox="0 0 20 20" fill="#fff"><path fill-rule="evenodd" d="M18 13V5a2 2 0 00-2-2H4a2 2 0 00-2 2v8a2 2 0 002 2h3l3 3 3-3h3a2 2 0 002-2zM5 7a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1zm1 3a1 1 0 100 2h3a1 1 0 100-2H6z" clip-rule="evenodd" /></svg></span>
                 
-                <dir class="w-full relative z-30" ref="testimonials">
+                <div class="w-full relative z-30" ref="testimonials">
                   <transition name="fade" enter-active-class="animate__animated animate__flipInY animate__slow" leave-active-class="animate__animated animate__flipOutY animate__fast">
                     <section 
                       class="customer flex  w-full  flex-col sm:flex-row sm:items-start sm:justify-center md:justify-start p-4 z-30 "
@@ -15,7 +18,7 @@
                       >
                       <div class="user text-center  sm:w-1/3 sm:mt-5 transform ease-in-out delay-500 ">
                           <div class="w-full ">
-                            <span class="rounded-full border-4 border-white overflow-hidden h-24 w-24 block mx-auto "> 
+                            <span class="rounded-full border-4 border-white dark:border-purple-700 overflow-hidden h-24 w-24 block mx-auto "> 
                                  <img :src="currentSlider.avatar" alt="man 1" srcset="">
                                </span>
                             </div>
@@ -30,12 +33,12 @@
                     </section> 
                   </transition>
 
-                </dir> 
+                </div> 
           </div>
            <!-- end -->
           <!-- icons start -->
-            <div class="icons w-2/5  hidden lg:flex items-center justify-center verflow-hidden   ">
-              <div class="grid grid-cols-3 gap-10 grid-rows-3  o">
+            <div class="icons w-2/5  hidden lg:flex items-center justify-center verflow-hidden">
+              <div class="p-4 grid grid-cols-3 gap-10 grid-rows-3">
                 <div v-for="(icon, index) in icons" :key="index" class="imgContainer h-20 w-20 " :class="'delay-'+icon.delay" ref="icons" >
                   <img
                     :src="icon.iconPath"

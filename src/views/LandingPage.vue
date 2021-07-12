@@ -1,7 +1,7 @@
 <template>
-  <main ref="mainWindow">
-    <Header class="" ref="header"/>
-    <Container  />
+  <main ref="mainWindow" class="dark:bg-gray-800">
+    <Header class="" ref="header" @toggalDarkMode="sayDark($event)"/>
+    <Container />
   </main>
 </template>
 
@@ -14,5 +14,17 @@ export default {
     Header,
     Container
   },
+  methods:{
+    sayDark(e){
+      console.log('Hello World');
+      console.log(e);
+      if(e){
+        this.$refs.mainWindow.classList.add('dark')
+      }else{
+        this.$refs.mainWindow.classList.remove('dark')
+
+      }
+    }
+  }
 };
 </script>

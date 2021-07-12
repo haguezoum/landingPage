@@ -1,13 +1,12 @@
 <template>
-  <header class="lg:px-12 top-0 left-0 w-full fixed z-50 bg-transparent duration-300 transform delay-200  ease-in-out" id="navbar" ref="navbar" :class="{'bg-gradient-to-r from-purple-900 to-pink-400 p-4': !view.atTopOfPage}">
-      <div class="overly overflow-y-hidden  absolute w-full h-screen bg-gray-900 bg-opacity-50 hidden md:block lg:hidden filter blur-md z-30 transform scale-150" v-show="open" @click="open = !open"></div>
-    <div class=" header-area flex w-full h-full justify-between items-center  my-auto mx-auto relative">
+  <div class="lg:px-12 top-0 left-0 w-full fixed z-50 bg-transparent duration-300 transform delay-200 ease-in-out" id="navbar" ref="navbar" :class="[{'bg-gradient-to-r from-purple-900 to-pink-400 p-1':!view.atTopOfPage},{'p-4':view.atTopOfPage}]">
+    <div class="overly overflow-y-hidden  absolute w-full h-screen bg-gray-900 bg-opacity-50 hidden md:block lg:hidden filter blur-md z-30 transform scale-150" v-show="open" @click="open = !open"></div>
+      <div class=" header-area flex w-full h-full justify-between items-center  my-auto mx-auto relative">
       <!--left-->
       <div class="logo nav-links w-1/2 h-full sm:w-2/5 lg:w-3/5 flex  items-center">
        
         <div class="flex space-x-4 justify-start items-center lg:w-1/5 ">
           <div class="lg:hidden relative w-1/3 ">
-            <nav >
               <button
                 class="text-white w-12 h-12 relative focus:outline-none hover:bg-purple-600 hover:bg-opacity-20 rounded-full ml-3"
                 @click="open = !open"
@@ -35,17 +34,20 @@
                 </div>
                 <!--end humberger menu-->
               </button>
-            </nav>
           </div>
-
-          <div class="logo-img p-4 md:p-0 w-2/3 relative"  style="z-index:999999">
-              <img src="/img/logo.png" alt="" srcset="" class="w-2/5 md:w-2/6 lg:w-2/5 xl:w-1/5 absolute left-1/2 top-1/2 transform -translate-y-1/2 -translate-x-1/2" style="width:50px;"/>
-          </div>
+          <router-link :to="{path:'/', hash:'#home'}">
+            <div class="logo-img p-4 md:p-0 w-2/3 relative"  style="z-index:999999">
+              <svg class="h-7 w-7 -mt-2 flex-shrink-0" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 27"><path d="M22.487.658s5.03 13.072-1.822 22.171C16.476 28.39 9.84 27.26 5.484 25.68c1.513-3.391 3.441-6.067 5.784-8.03 1.176.623 3.186.792 6.03.51-2.535-.221-4.284-.654-5.246-1.3l.125.08c2.122-1.546 4.556-2.556 7.303-3.029-3.16-.285-6.026.315-8.598 1.804-.577-.742-1.157-1.748-1.74-3.018.07 1.534.339 2.734.809 3.6-2.64 1.797-4.953 4.58-6.94 8.351a7.583 7.583 0 01-.188-.088c-.802-.358-1.328-1.037-1.755-2.036C-1.9 13.366 4.645 8.273 11.123 7.989 23.046 7.465 22.487.658 22.487.658z" fill="#0ED3CF"/></svg>
+                <!-- <img src="/img/logo.png" alt="" srcset="" class="w-2/5 md:w-2/6 lg:w-2/5 xl:w-1/5 absolute left-1/2 top-1/2 transform -translate-y-1/2 -translate-x-1/2" style="width:50px;"/> -->
+            </div>
+          </router-link>
         </div>
         <!-- nav links -->
-        <div class="nav-links hidden lg:flex">
+        <nav class="nav-links hidden lg:flex">
           <ul class="flex w-3/4 justify-between space-x-4 font-bold text-md text-white" >
             <li v-for="(navLink, index) in navLinks" :key="index"
+              :name="navLink.name"
+              :title="navLink.name"
               class="navLink relative hover:border-b-4 rounded-full hover:border-white cursor-pointer p-2 px-3 transition-all ease-in-out duration-100 delay-100 hover:opacity-40 hover:bg-purple-900 bg-opacity-30"
             >
             <router-link :to="{path:'/', hash: navLink.id}">
@@ -55,75 +57,59 @@
               
             </li>
           </ul>
-        </div>
-
+        </nav>
       </div>
-     <!-- ---------------------------------------------------------------- -->
+      <!-- ---------------------------------------------------------------- -->
       <!--right-->
       <div class="menu w-1/2 h-full sm:w-3/5 lg:w-2/5  ">
-        <div class="flex justify-end md:justify-between items-center">
-          <div
-            class="hidden btn-area p-4 sm:flex justify-end space-x-4 w-3/4 uperrcase text-md md:text-xl">
-            <div>
-              <button class="bg-transparent rounded-full hover:bg-white hover:bg-opacity-10 text-white  px-8 font-semibold py-2">Log in</button>
+        <div class="flex justify-end items-center">
+              <div class="flex justify-center items-center">
+                <!-- dark mode toggal -->
+                  <span class="h-8 overflow-hidden" @click="darkMode">
+                    <!-- sun -->
+                      <transition name="" enter-active-class="animate__animated animate__fadeInLeft animate__slow" leave-active-class="animate__animated animate__fadeOutRight animate__fast">
+                            <svg v-if="!isDark" xmlns="http://www.w3.org/2000/svg" class="text-yellow-300 h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                            </svg>
+                      </transition>
+                
+                      <!-- moon -->
+                      <transition name="" enter-active-class="animate__animated animate__fadeInLeft animate__slow" leave-active-class="animate__animated animate__fadeOutRight animate__fast">
+                            <svg v-if="isDark" xmlns="http://www.w3.org/2000/svg" class="text-gray-400 h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                            </svg>
+                      </transition>
+                  </span>
               </div>
-            <div>
-              <button class="bg-transparent rounded-full  bg-green-300 hover:bg-green-400 text-white  px-8 font-semibold py-2">Log in</button>
-            </div>
-          </div>
 
-          <div class="setting-btn h-full flex justify-start items-center relative"  style="z-index:999999" @click="openSettings = !openSettings">
-            <div class="relative">
-            <span class="absolute transform hover:rotate-12 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-             <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" viewBox="0 0 20 20" fill="#fff">
-              <path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd" />
-            </svg>
-            </span>
-                <transition name="settings-bounced" enter-active-class="animate__animated animate__flipInY animate__slow" leave-active-class="animate__animated animate__flipOutY animate__fast">
-                  <div class="settings absolute right-0 transform  top-10 w-36 h-64 border-2 border-white " v-if="openSettings">
-                  <div class="w-full h-full bg-purple-500 bg-opacity-20">
-                  </div> 
-                </div>
-                </transition>
-            </div>
-            
-          </div>
+         
         </div>
       </div>
-  <!-- start asaid menu -->
-  <transition name="" enter-active-class=" animate__animated  animate__backInLeft animate__faster " leave-active-class="animate__animated animate__backOutLeft animate__fast">
+       <!-- start asaid menu -->
+      <transition name="" enter-active-class=" animate__animated  animate__backInLeft animate__faster " leave-active-class="animate__animated animate__backOutLeft animate__fast">
       <aside class="h-screen  w-screen sm:w-1/3 overflow-y-hidden shadow-lg bg-purple-800 block lg:hidden absolute  z-40 " @click="open = !open" v-if="open" :class="!view.atTopOfPage ? '-left-4 -top-4':'top-0 left-0'">
         <div class="h-full w-full flex flex-col justify-start items-start py-32 px-10 font-medium relative" v-if="open">
-            <div class="pb-10 border-b w-full">
-                <ul class="flex w-full   flex-col  text-md text-left text-white" >
-                      <!-- <transition name="" enter-active-class=" animate__animated  animate__backInLeft animate__slow " leave-active-class="animate__animated animate__backOutLeft animate__slow"> -->
-                        
-                        <li v-for="(navLink, index) in navLinks" :key="index"
-                          class="hover:border-b-4 text-2xl  hover:border-white cursor-pointer p-2 px-3 transition-all ease-in-out duration-100 delay-100 hover:opacity-40 hover:bg-purple-900 bg-opacity-30"
-                        >
-                          <router-link to="#testimonials">
-                              {{ navLink.name }}
-                           </router-link>
-                        </li> 
-                      <!-- </transition> -->
-                </ul>
-              </div>
-              <!-- <div class="btn-area flex w-full flex-col  text-2xl text-left mt-10">
-                <p class="relative text-white hover:border-b-4 rounded-full hover:border-white cursor-pointer p-2 px-3 transition-all ease-in-out duration-100 delay-100 hover:opacity-40 hover:bg-purple-900 bg-opacity-30">
-                  Login
-                </p>
-                <p class="relative text-white hover:border-b-4 rounded-full hover:border-white cursor-pointer p-2 px-3 transition-all ease-in-out duration-100 delay-100 hover:opacity-40 hover:bg-purple-900 bg-opacity-30">
-                  Get started
-                </p>
-            </div> -->
+          <nav class="pb-10 border-b w-full">
+            <ul class="flex w-full   flex-col  text-md text-left text-white" >                        
+              <li v-for="(navLink, index) in navLinks" :key="index"
+                :name="navLink.name"
+                :title="navLink.name"
+                class="hover:border-b-4 text-2xl  hover:border-white cursor-pointer p-2 px-3 transition-all ease-in-out duration-100 delay-100 hover:opacity-40 hover:bg-purple-900 bg-opacity-30"
+                role="nav" >
+                <router-link :to="{path:'/', hash: navLink.id}">
+                    {{ navLink.name }}
+                  </router-link>
+              </li> 
+            </ul>
+          </nav>
+              
         </div>
       </aside>
-</transition>
-
-<!-- end asaid menu -->
+      </transition>
+       <!-- end asaid menu -->
     </div>
 
-  </header>
+  </div>
 </template>
 
 <script>
@@ -140,6 +126,7 @@ export default {
       },
       open: false,
       openSettings:false,
+      isDark:false,
       navLinks: [{name: "Feature",id:'feature'},{name: "Testimonials",id:'testimonials',},{name: "Pricing",id:'pricing'},{name: "FAQ",id:'faq'},{name: "Contact",id:'contact'},],
     };
   },
@@ -162,6 +149,11 @@ export default {
           } 
       }
     },
+    darkMode(){
+      this.isDark = !this.isDark,
+      this.$emit('toggalDarkMode', this.isDark)
+      console.log('Hey froù Header');
+    }
   }
 };
 </script>

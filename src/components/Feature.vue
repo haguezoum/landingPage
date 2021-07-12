@@ -1,5 +1,5 @@
 <template>
-  <section id="feature" class="feature relative py-32">
+  <section id="feature" class="feature relative py-8  bg-white dark:bg-gray-800">
     <!--  -->
     <div
       class="left-0 top-0 w-full h-full feature-blogs flex flex-wrap items-center justify-between container mx-auto ">
@@ -8,7 +8,7 @@
     </div> -->
 
       <!-- -------------- first----------------------------- -->
-      <div class="item w-full  mb-20 z-20" v-animation>
+      <div class="item w-full z-20" v-animation>
         <section
           class="flex lg:items-center justify-between flex-col-reverse lg:flex-row ">
            <div class="img w-full lg:w-5/12 p-10 lg:p-0 mb-20 lg:mb-5">
@@ -28,11 +28,11 @@
           <div class="text w-full lg:w-6/12 mb-6 lg:mb-0 text-center lg:text-left">
             <section>
               <strong>
-                <p class="title text-3xl pb-9">
+                <p class="title text-3xl pb-9 dark:text-white">
                   Act on it-all in one dashboard
                 </p>
               </strong>
-              <p class="text text-lg lg:text-2xl text-gray-800 py-10">
+              <p class="text text-lg lg:text-2xl text-gray-800 py-10 dark:text-gray-300">
                 Our audience dashboard shows you pre-built segments like top
                 locations, recent sources of growth, and even customer lifetime
                 value (CLV).
@@ -49,7 +49,7 @@
         </section>
       </div>
       <!-- ---------seconde------------- -->
-      <div class="item w-full  mb-20 lg:my-52  z-20" v-animation>
+      <div class="item w-full  my-20 lg:my-40 z-20" v-animation>
         <section
           class=" flex lg:items-center justify-between flex-col-reverse lg:flex-row-reverse">
           <div class="img w-full lg:w-5/12 mx-auto md:w-4/5 p-10 lg:p-0 h-full">
@@ -68,11 +68,11 @@
           <div class="text w-full lg:w-6/12 mb-6 lg:mb-0 text-center lg:text-right">
             <section>
               <strong>
-                <p class="title text-3xl pb-9">
+                <p class="title text-3xl pb-9 dark:text-white">
                   Act on it-all in one dashboard
                 </p>
               </strong>
-              <p class="text text-lg lg:text-2xl text-gray-800 py-10">
+              <p class="text text-lg lg:text-2xl text-gray-800 py-10 dark:text-gray-300">
                 Our audience dashboard shows you pre-built segments like top
                 locations, recent sources of growth, and even customer lifetime
                 value (CLV).
@@ -98,12 +98,12 @@
       </div>
       <!-- ------------last ---------- -->
 
-      <div class="item last w-full  z-20 md:pb-4" v-animation>
+      <div class="item last w-full  z-30 " v-animation>
         <section class="flex justify-center flex-col-reverse w-full mx-auto">
           <div class="text w-full">
             <section class="">
               <strong class="text-center">
-                <p class="title text-3xl">
+                <p class="title text-3xl dark:text-white">
                   Accelerating to Intelligent Enterprise
                 </p>
               </strong>
@@ -136,13 +136,14 @@
                         delay-200
                         ease-in-out
                         hover:bg-purple-500 hover:bg-opacity-20
+                        
                       "
                       v-text="tab.title"
                       @click="activeTab = index"
                       :class="
                         activeTab === index
                           ? 'text-purple-600 border-purple-500 border-b-4'
-                          : ''
+                          : 'dark:text-gray-300'
                       "
                     ></li>
                   </span>
@@ -154,18 +155,18 @@
                     :key="index"
                     class="transform transition-all ease-in-out duration-150"
                    >
-                    <p class=" w-full text-lg lg:text-2xl text-gray-800 py-10">
+                    <p class=" w-full text-lg lg:text-2xl text-gray-800 dark:text-gray-300 py-10">
                       {{ tab.content }}
                     </p>
-                    <div class="w-5/6 md:w-3/4 lg:w-3/6  mx-auto pb-24">
-                    <transition name="bounce">
-                        <figure class=" transform skew-y-12 overflow-hidden rounded-md shadow-md border-2 border-purple-400 top-0 -translate-y-20"
-                          style="transform: perspective(718px) rotateX(19deg) translateX(0rem) ;">
-                         
-                          <img :src="tab.img" class="w-full" />
-                       
-                        </figure>
-                       </transition>
+                    <div class="w-5/6 md:w-3/4 lg:w-3/6  mx-auto pb-16">
+                      <transition name="bounce">
+                          <figure class=" transform skew-y-12 overflow-hidden rounded-md shadow-md border-2 border-purple-400 top-0 -translate-y-20"
+                            style="transform: perspective(718px) rotateX(19deg) translateX(0rem) ;">
+                          
+                            <img :src="tab.img" class="w-full" />
+                        
+                          </figure>
+                      </transition>
                     </div>
                   </div>
                 </div>
@@ -241,8 +242,9 @@ export default {
 .feature::before{
   content: '';
   position: absolute;
+  /* border:1px solid #000; */
   left: 0%;
-  top: 0%;
+  top: -5%;
   width: 100%;
   height: 100%;
   background-image: url('/img/wave-3.svg');

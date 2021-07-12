@@ -101,7 +101,25 @@
                                 <el-dropdown-item>Arabe</el-dropdown-item>
                             </el-dropdown-menu>
                         </el-dropdown> -->
-                        <Dropdown :data="language"/>
+                        <!-- <Dropdown :data="language"/> -->
+                        <article class="rounded-xl overflow-hidden text-xl bg-white shadow-lg mb-10 transition-all ease-in-out  transform duration-1000 delay-100 "   >
+                            <button :class="!isOpen?'py-3':''" class="bg-purple-500 bg-opacity-90 text-white  w-full p-2 focus:outline-none flex justify-between items-center"  @click="isOpen = !isOpen">
+    
+                                <p>Language</p>
+
+                                <span :class="isOpen?'transform duration-1000 delay-100 rotate-180 ':'transform duration-1000 delay-100 rotate-0'">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                    </svg>
+                                </span>
+                            </button>
+                            <div class="lorem transition-all  ease-in-out delay-300 transform duration-1000 " :class="isOpen?'h-auto':'h-0'">
+                                <ul>
+                                    <li>Ar</li>
+                                    <li>Fr</li>
+                                </ul>                
+                            </div>
+                        </article>
                     </div>
 
                 </div>
@@ -115,15 +133,16 @@
 </template>
 
 <script>
-import Dropdown from "@/components/Dropdown";
+// import Dropdown from "@/components/Dropdown";
 
 export default {
     name:'Footer',
     components:{
-       Dropdown
+    //    Dropdown
     },
     data(){
        return{
+           isOpen:false,
             language:[{id:0,title:'Language',text:'Arabic'}]
        }
     },

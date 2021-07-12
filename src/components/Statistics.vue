@@ -1,5 +1,5 @@
 <template>
-  <section id="statistics" class="mt-10">
+  <section id="statistics" class="py-5 bg-white dark:bg-gray-800">
     <div class="conatiner px-8 mx-auto w-full flex flex-col md:flex-row justify-around items-center">
       <!-- ----------------------------------------------------- -->
       <div class="p-5  flex justify-center flex-col">

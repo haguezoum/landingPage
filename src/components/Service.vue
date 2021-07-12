@@ -1,5 +1,5 @@
 <template>
-  <section id="servics" class="h-40">
+  <section id="servics" class="bg-white dark:bg-gray-800">
     <div
       class="
         mx-auto

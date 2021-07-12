@@ -29,6 +29,7 @@ const router = new VueRouter({
       return {
         selector: to.hash,
         behavior: 'smooth',
+        offset:{x:0 ,y:60}
       }
     }
   }

@@ -1,29 +1,29 @@
 <template>
-    <section id="pricing" class="pricing relative lg:mt-32 w-full py-24 lg:px-20 z-10">
+    <section id="pricing" class="pricing relative lg:pt-20 w-full lg:py-5 lg:px-20 z-10  bg-white dark:bg-gray-800">
 
-        <header class="w-full mx-auto text-center p-6 mb-10 z-20">
+        <header class="w-full mx-auto text-center p-3 mb-5 z-40">
             <div class="title text-3xl font-bold mb-16">
-                <h3 class="titleSection relative">Pricing <span class="font-mono"> & </span> Plan</h3>
+                <h3 class="titleSection relative dark:text-gray-200 z-50 ">Pricing <span class="font-mono"> & </span> Plan</h3>
             </div>
-            <div class="text-md font-normal text-gray-700">
-                <p class="subtitle">       
+            <div class="text-md font-normal text-gray-700 dark:text-gray-200">
+                <p class="subtitle  ">       
                     The best value designed for your workplace, starting at just $24/user/month.
                 </p>
             </div>
         </header>
 
         <section class="cards-area flex flex-col sm:flex-row flex-wrap md:flex-nowrap justify-center sm:justify-around  md:-space-x-3 px-5 py-5 items-center z-20">
-            <div class="card border border-transparent hover:border-green-800 shadow-lg overflow-hidden flex flex-col w-80 md:w-2/6 mb-10 z-20 hover:z-50" v-for="plan,index in plans" :key="index" :class="plan.title==='BEST Value'?'border border-purple-900  active':''" >
-                <header class="bg-white p-4 text-center z-20 px-4 relative" :class="plan.title==='BEST Value'?'active text-white':''">
+            <div class="card border border-transparent hover:border-green-800 dark:border-purple-400 shadow-lg overflow-hidden flex flex-col w-80 md:w-2/6 mb-10 z-20 hover:z-50" v-for="plan,index in plans" v-animation :key="index" :class="plan.title==='BEST Value'?'border border-purple-900  active':''" >
+                <header class="bg-white dark:bg-gray-700 p-4 text-center z-20 px-4 relative" :class="plan.title==='BEST Value'?'active text-white':''">
                      <p class="planTitle py-2 text-white uppercase font-semibold" :class="plan.title !=='BEST Value'?'text-green-600':''">{{plan.title}}</p> 
                      <p class="planPrice text-4xl font-semibold py-2 text-white uppercase" :class="plan.title !=='BEST Value'?'text-gray-400':''"> {{plan.priceing}}</p>
                 </header>
-                <div class="cardContent bg-white">
-                    <ul class="flex justify-center flex-col  px-4 my-4   text-gray-400">
+                <div class="cardContent bg-white dark:bg-gray-700">
+                    <ul class="flex justify-center flex-col  px-4 my-4   text-gray-400 dark:text-gray-200">
                         <li v-for="feature,index in plan.planfeature" :key="index"  class="p-2 border-b-2 border-dashed border-gray-400 text-center" :class="index === plan.planfeature.length-1?'border-none':''">{{feature}}</li>
                     </ul>
                 </div>
-                <footer class="bg-white p-4 text-center relative">
+                <footer class="bg-white dark:bg-gray-700 p-4 text-center relative">
                     <p class="text-gray-500  mb-8 ">{{plan.notice}}</p>
                     <button class="bg-gradient-to-tr from-blue-500 to-purple-800 z-40 text-white font-semibold px-6 py-2 rounded-full">Chose plan</button>
                 </footer>
@@ -62,7 +62,7 @@ export default {
   background-size: 100% 100%;
   background-position: 0 0;
   background-repeat: no-repeat;
-  /* transform: scale(1.5); */
+  transform:scaleX(2);
   overflow: hidden;
 }
 .titleSection::after{
@@ -112,5 +112,17 @@ footer::before{
     z-index: 2;
     background-color: rgb(62, 158, 86);
     opacity: .3; 
+}
+
+/* ************************ */
+.befor-active{
+  opacity:0;
+  transform: translateY(-100%);
+  transition: all 1s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+}
+.active{
+  opacity:1;
+  transform: translateX(0%);
+  transition: all 1s cubic-bezier(0.68, -0.6, 0.32, 1.6);
 }
 </style>
