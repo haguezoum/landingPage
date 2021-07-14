@@ -1,13 +1,13 @@
 <template>
-  <main ref="mainSec" >
-    <Home id="home"/>
-    <Service id="service"/>
-    <Statistics id="Statistics"/>
-    <Feature id="feature"/>
-    <Testimonials id="testimonials"/>
-    <Pricing id="pricing"/>
-    <FAQ id="faq"/>
-    <Footer id="footer"/>
+  <main ref="mainSec">
+    <Home id="home" />
+    <Service id="service" />
+    <Statistics id="Statistics" />
+    <Feature id="feature" />
+    <Testimonials id="testimonials" />
+    <Pricing id="pricing" />
+    <FAQ id="faq" />
+    <Footer id="footer" />
     <!-- <Tabs/> -->
   </main>
 </template>
@@ -35,24 +35,18 @@ export default {
     Testimonials,
     Pricing,
     FAQ,
-    Footer
+    Footer,
     // Tabs
   },
   data() {
-    return {
-    
-    };
+    return {};
   },
-  methods:{
-    showRef(){
-      console.log(this.$refs['mainSec']);
-    }
+  methods: {
+    showRef() {
+      console.log(this.$refs["mainSec"]);
+    },
   },
-  created(){
-  
-  }
+  created() {},
 };
 </script>
-<style lang="css" scoped>
-
-</style>
+<style lang="css" scoped></style>
