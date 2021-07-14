@@ -143,8 +143,10 @@
       <!-- end content -->
 
       <!-- start wave decoration -->
-      <div class=" h-28 z-20 w-full relative overflow-hidden"
-      :class="!isThemeIark? 'dark-wave' : 'deco-wave'" >
+      <div
+        class="h-28 z-20 w-full relative overflow-hidden deco-wave"
+        :class="{ 'dark-wave': isThemDark }"
+      >
         <div class="moved-wave relative z-10 w-full h-full"></div>
       </div>
       <!-- end wave decoration -->
@@ -153,31 +155,33 @@
 </template>
 
 <script>
-export default {
-  name:'Home',
-  data(){
-    return{
-        darkWave:`url("/img/deco-wave-light.png")`
-    }
-  },
-  computed:{
-    isThemeIark(){
-      return localStorage.getItem('dark');
-      }
-    },
-  watch:{
-    themeIsDark(){
-      let theme = localStorage.getItem('dark');
-      theme?true:false;
-      }
-    }
-  }
+import { mapGetters } from "vuex";
 
+export default {
+  name: "Home",
+  data() {
+    return {
+      darkWave: `url("/img/deco-wave-light.png")`,
+    };
+  },
+  computed: {
+    // isThemeIark() {
+    //   return localStorage.getItem("dark");
+    // },
+    ...mapGetters({
+      isThemDark: "isThemDark",
+    }),
+  },
+  watch: {
+    // themeIsDark() {
+    //   return localStorage.getItem("dark");
+    // },
+  },
+};
 </script>
 
 <style lang="css" scoped>
-.deco-wave::before, 
-.dark-wave::before {
+.deco-wave::before {
   content: "";
   position: absolute;
   width: 100%;
@@ -190,9 +194,8 @@ export default {
   background-repeat: no-repeat;
   z-index: 20;
 }
-.dark-wave.deco-wave::before {
-  background-image: url("/img/deco-wave-dark.png");
-
+.dark-wave::before {
+  background-image: url("/img/deco-wave-dark.png") !important;
 }
 .moved-wave::before,
 .moved-wave::after {

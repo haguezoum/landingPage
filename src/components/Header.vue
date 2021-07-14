@@ -203,29 +203,137 @@
       <div class="menu w-1/2 h-full sm:w-3/5 lg:w-2/5">
         <div class="flex justify-end items-center space-x-4 px-4">
           <!-- dropwdown -->
-            <div class="dropwdown relative" @click="langOpen = ! langOpen;">
-              <span class="overflow-hidden shadow-lg text-white">
-                <button class="flew flex justify-between rounded-full hover:bg-opacity-20  hover:bg-purple-50 hover:text-purple-900 items-center space-x-4 px-4 py-2  focus:outline-none" type="button" aria-haspopup="true">
-                  <span>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
-                    </svg>
-                  </span>
-                </button>
-              </span>
-              <!-- dropdown-menu -->
-              <div class="dropdown-menu transition-all duration-300 transform origin-top-right -translate-y-2 scale-95 rounded-sm" v-if="langOpen">
-                  <div class="dropdown-body absolute -left-2 mt-2 origin-top-right bg-white opacity-80  border border-gray-200  rounded-md shadow-xl outline-none">
-                    <div class="flex flex-col  items-center justify-center text-purple-700">
-                        <p class="w-full hover:bg-white  cursor-pointer px-4 py-1 my-2  transition-all ease-in-out duration-300 transform hover:scale-150 rounded-md hover:py-4" @click="changeLang('ar')">Arabne</p>
-                        <p class="w-full hover:bg-white  cursor-pointer px-4 py-1 my-2  transition-all ease-in-out duration-300 transform hover:scale-150 rounded-md hover:py-4"  @click="changeLang('fr')">Francais</p>
-                    </div>
-                  </div>
+          <div class="dropwdown relative" @click="langOpen = !langOpen">
+            <span class="overflow-hidden shadow-lg text-white">
+              <button
+                class="
+                  flew
+                  flex
+                  justify-between
+                  rounded-full
+                  hover:bg-opacity-20 hover:bg-purple-50
+                  hover:text-purple-900
+                  items-center
+                  space-x-4
+                  px-4
+                  py-2
+                  focus:outline-none
+                "
+                type="button"
+                aria-haspopup="true"
+              >
+                <span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"
+                    />
+                  </svg>
+                </span>
+              </button>
+            </span>
+            <!-- dropdown-menu -->
+            <div
+              class="
+                dropdown-menu
+                transition-all
+                duration-300
+                transform
+                origin-top-right
+                -translate-y-2
+                scale-95
+                rounded-sm
+              "
+              v-if="langOpen"
+            >
+              <div
+                class="
+                  dropdown-body
+                  absolute
+                  -left-2
+                  mt-2
+                  origin-top-right
+                  bg-white
+                  opacity-80
+                  border border-gray-200
+                  rounded-md
+                  shadow-xl
+                  outline-none
+                "
+              >
+                <div
+                  class="
+                    flex flex-col
+                    items-center
+                    justify-center
+                    text-purple-700
+                  "
+                >
+                  <p
+                    class="
+                      w-full
+                      hover:bg-white
+                      cursor-pointer
+                      px-4
+                      py-1
+                      my-2
+                      transition-all
+                      ease-in-out
+                      duration-300
+                      transform
+                      hover:scale-150
+                      rounded-md
+                      hover:py-4
+                    "
+                    @click="changeLang('ar')"
+                  >
+                    Arabne
+                  </p>
+                  <p
+                    class="
+                      w-full
+                      hover:bg-white
+                      cursor-pointer
+                      px-4
+                      py-1
+                      my-2
+                      transition-all
+                      ease-in-out
+                      duration-300
+                      transform
+                      hover:scale-150
+                      rounded-md
+                      hover:py-4
+                    "
+                    @click="changeLang('fr')"
+                  >
+                    Francais
+                  </p>
+                </div>
               </div>
             </div>
+          </div>
           <div class="flex justify-center items-center">
             <!-- dark mode toggal -->
-            <span class="h-10 overflow-hidden px-4 py-2  rounded-full hover:bg-opacity-20  hover:bg-purple-50" @click="darkMode">
+            <span
+              class="
+                h-10
+                overflow-hidden
+                px-4
+                py-2
+                rounded-full
+                hover:bg-opacity-20 hover:bg-purple-50
+              "
+              @click="darkMode"
+            >
               <!-- sun -->
               <transition
                 name=""
@@ -363,7 +471,7 @@ export default {
         atTopOfPage: true,
       },
       open: false,
-      langOpen:false,
+      langOpen: false,
       openSettings: false,
       isDark: false,
       navLinks: [
@@ -396,30 +504,28 @@ export default {
     },
     darkMode() {
       if (this.isDark) {
-        localStorage.setItem("dark", false);
-          this.isDark = false
+        this.$store.commit("SET_THEM_DARK", false);
+
+        this.isDark = false;
       } else {
-        localStorage.setItem("dark", true);
-          this.isDark = true
+        this.$store.commit("SET_THEM_DARK", true);
+        this.isDark = true;
       }
       this.$emit("toggalDarkMode", this.isDark);
-      console.log(localStorage.getItem('dark'));
     },
-    changeLang(e){
+    changeLang(e) {
       console.log(e);
-      localStorage.setItem("lange",e)
-    }
+      localStorage.setItem("lange", e);
+    },
   },
-  mounted:{
+  mounted: {
     //  themeMode() {
     //   localStorage.getItem("dark")
     //     ? (this.isDark = true)
     //     : (this.isDark = false);
     // },
   },
-  computed: {
-   
-  },
+  computed: {},
 };
 </script>
 
