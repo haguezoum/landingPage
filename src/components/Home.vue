@@ -186,7 +186,7 @@ export default {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-image: url("/img/deco-wave-light.png");
+  background-image: url("/img/top-wave-light.svg");
   left: 0;
   top: 10px;
   background-size: cover;
@@ -195,7 +195,7 @@ export default {
   z-index: 20;
 }
 .dark-wave::before {
-  background-image: url("/img/deco-wave-dark.png") !important;
+  background-image: url("/img/top-wave-dark.svg") !important;
 }
 .moved-wave::before,
 .moved-wave::after {

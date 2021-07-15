@@ -29,7 +29,6 @@
             </div>
           </div>
         </div>
-        <Dropdown :data="articles" @openden="isOpen" />
       </div>
       <!--end first part content-->
 
@@ -40,11 +39,11 @@
   </section>
 </template>
 <script>
-import Dropdown from "@/components/Dropdown";
+// import Dropdown from "@/components/Dropdown";
 export default {
   name: "FAQ",
   components: {
-    Dropdown,
+    // Dropdown,
   },
   data() {
     return {
