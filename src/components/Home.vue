@@ -99,6 +99,7 @@
                       text-whit
                       font-bold
                       lg:px-0
+                      focus:outline-none
                     "
                   >
                     Watch Video
@@ -123,6 +124,7 @@
                       mb-8
                       sm:mb-0
                       mx-auto
+                      focus:outline-none
                     "
                   >
                     Get started
@@ -186,7 +188,7 @@ export default {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-image: url("/img/top-wave-light.svg");
+  background-image: url("/img/deco-wave-light.png");
   left: 0;
   top: 10px;
   background-size: cover;
@@ -195,7 +197,7 @@ export default {
   z-index: 20;
 }
 .dark-wave::before {
-  background-image: url("/img/top-wave-dark.svg") !important;
+  background-image: url("/img/deco-wave-dark.png") !important;
 }
 .moved-wave::before,
 .moved-wave::after {

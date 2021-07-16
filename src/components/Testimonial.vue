@@ -1,5 +1,5 @@
 <template>
-  <section id="testimonial" class="pt-5 w-full bg-white dark:bg-gray-800">
+  <section id="testimonial" class="pt-5 w-full bg-white dark:bg-dark">
     <div class="testimonialContant w-full h-full flex items-start">
       <!-- start -->
       <div
@@ -13,7 +13,7 @@
           z-20
           space-x-0
           bg-purple-900
-          dark:bg-gray-800
+          dark:bg-dark
           border-t-2 border-b-2
           lg:border-none
           border-transparent border-opacity-50

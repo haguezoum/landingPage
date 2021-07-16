@@ -10,14 +10,15 @@
       bg-transparent
       duration-300
       transform
+      transition-all
       delay-200
       ease-in-out
     "
     id="navbar"
     ref="navbar"
     :class="[
-      { 'bg-gradient-to-r from-purple-900 to-pink-400 p-1': !view.atTopOfPage },
-      { 'p-4': view.atTopOfPage },
+      { 'bg-gradient-to-r from-purple-900 to-pink-400 py-4 px-4': !view.atTopOfPage },
+      { 'p-7 px-8': view.atTopOfPage },
     ]"
   >
     <div

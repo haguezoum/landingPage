@@ -10,7 +10,7 @@
       lg:py-5 lg:px-20
       z-10
       bg-white
-      dark:bg-gray-800
+      dark:bg-dark
     "
   >
     <header class="w-full mx-auto text-center p-3 mb-5 z-40">

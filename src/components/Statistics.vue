@@ -1,5 +1,5 @@
 <template>
-  <section id="statistics" class="py-5 bg-white dark:bg-gray-800">
+  <section id="statistics" class="py-5 bg-white dark:bg-dark">
     <div
       class="
         conatiner

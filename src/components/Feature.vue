@@ -1,5 +1,5 @@
 <template>
-  <section id="feature" class="feature relative py-8 bg-white dark:bg-gray-800">
+  <section id="feature" class="feature relative py-8 bg-white dark:bg-dark">
     <!--  -->
     <div
       class="

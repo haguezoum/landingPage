@@ -1,5 +1,5 @@
 <template>
-  <section id="FAQ" class="w-full lg:px-20 bg-white dark:bg-gray-800">
+  <section id="FAQ" class="w-full lg:px-20 bg-white dark:bg-dark">
     <div class="w-full h-full flex items-center flex-col justify-center">
       <!-- strt content -->
       <div
@@ -29,21 +29,22 @@
             </div>
           </div>
         </div>
+        <Dropdown :data="articles" @openden="isOpen" />
       </div>
       <!--end first part content-->
 
       <!-- start carusol -->
-
+  
       <!-- end carusol -->
     </div>
   </section>
 </template>
 <script>
-// import Dropdown from "@/components/Dropdown";
+import Dropdown from "@/components/Dropdown";
 export default {
   name: "FAQ",
   components: {
-    // Dropdown,
+    Dropdown,
   },
   data() {
     return {
