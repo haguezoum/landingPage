@@ -26,7 +26,7 @@
             lg:flex-row
           "
         >
-          <div class="img w-full lg:w-5/12 p-10 lg:p-0 mb-20 lg:mb-5 border">
+          <div class="img w-full lg:w-4/12 p-10 lg:p-0 mb-20 lg:mb-5 ">
             <figure
               class="
                 transform
@@ -35,8 +35,7 @@
                 shadow-md
                 w-9/12
                 lg:w-full
-                normalViewImage
-                rotateY_
+                left-rotat
               "
             >
               <img
@@ -53,7 +52,7 @@
           >
             <section>
               <strong>
-                <p class="title text-3xl pb-9 dark:text-white">
+                <p class="title first relative text-3xl pb-9 dark:text-white">
                   Act on it-all in one dashboard
                 </p>
               </strong>
@@ -79,7 +78,8 @@
                   text-xl
                   font-semibold
                   rounded-full
-                  bg-purple-800
+                  bg-purple
+                  hover:bg-purple-primary
                   text-white
                 "
               >
@@ -100,7 +100,7 @@
             lg:flex-row-reverse
           "
         >
-          <div class="img w-full lg:w-5/12 p-10 lg:p-0 mb-20 lg:mb-5 border">
+          <div class="img w-full lg:w-4/12 p-10 lg:p-0 mb-20 lg:mb-5">
             <figure
               class="
                 transform
@@ -109,8 +109,7 @@
                 shadow-md
                 w-9/12
                 lg:w-full
-                normalViewImage
-                rotateY
+                right-rotat
               "
             >
               <img
@@ -127,7 +126,7 @@
           >
             <section>
               <strong>
-                <p class="title text-3xl pb-9 dark:text-white">
+                <p class="title second relative text-3xl pb-9 dark:text-white">
                   Act on it-all in one dashboard
                 </p>
               </strong>
@@ -153,7 +152,8 @@
                   text-xl
                   font-semibold
                   rounded-full
-                  bg-purple-800
+                  bg-purple
+                  hover:bg-purple-primary
                   text-white
                 "
               >
@@ -170,7 +170,7 @@
           <div class="text w-full">
             <section class="">
               <strong class="text-center">
-                <p class="title text-3xl dark:text-white">
+                <p class="title last relative text-3xl dark:text-white pb-8">
                   Accelerating to Intelligent Enterprise
                 </p>
               </strong>
@@ -328,7 +328,33 @@ export default {
   /* transform: scale(1.5); */
   overflow: hidden;
 }
-@screen lg {
+.title::after{
+  content: "";
+  position: absolute;
+  width: 20%;
+  height: 12px;
+  background-color: purple;
+  bottom: 0%;
+  border-radius: 15px;
+}
+.title.first::after{
+  left: 0%;
+}
+.title.second::after{
+  right: 0%;
+}
+.title.last::after{
+  left: 50%;
+  transform: translateX(-50%);
+}
+.left-rotat{
+    transform: perspective(5rem) rotateY(3deg) translateX(10%) !important; 
+}
+.right-rotat{
+    transform: perspective(5rem) rotateY(-3deg) translateX(-10%) !important;
+}
+
+/* @screen lg {
   .normalViewImage {
     transform: perspective(5rem) !important;
   }
@@ -338,6 +364,6 @@ export default {
   .rotateY_ {
     transform: rotate(-3deg);
   }
-  /* style="transform: perspective(718px) rotateY(-19deg)" */
-}
+  style="transform: perspective(718px) rotateY(-19deg)"
+} */
 </style>

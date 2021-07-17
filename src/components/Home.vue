@@ -1,7 +1,7 @@
 <template>
   <section
     id="container"
-    class="bg-gradient-to-br from-purple-900 to-pink-400 w-full"
+    class="bg-purple"
   >
     <div class="relative home flex flex-wrap flex-row">
       <!-- start fixed asaid decoration -->
@@ -108,9 +108,9 @@
                 <div class="w-full">
                   <button
                     class="
-                      bg-green-500
+                      bg-green
                       rounded-full
-                      hover:bg-green-600
+                      hover:bg-green-primary
                       md:w-full
                       w-full
                       sm:w-3/4
@@ -163,7 +163,7 @@ export default {
   name: "Home",
   data() {
     return {
-      darkWave: `url("/img/deco-wave-light.png")`,
+      // darkWave: `url("/img/deco-wave-light.png")`,
     };
   },
   computed: {

@@ -66,7 +66,7 @@
         "
       >
         <header
-          class="bg-white dark:bg-gray-700 p-4 text-center z-20 px-4 relative"
+          class="bg-white dark:bg-gray-800 p-4 text-center z-20 px-4 relative"
           :class="plan.title === 'BEST Value' ? 'active text-white' : ''"
         >
           <p
@@ -76,13 +76,13 @@
             {{ plan.title }}
           </p>
           <p
-            class="planPrice text-4xl font-semibold py-2 text-white uppercase"
+            class="planPrice text-4xl font-bold py-2  text-white uppercase"
             :class="plan.title !== 'BEST Value' ? 'text-gray-400' : ''"
           >
-            {{ plan.priceing }}
+            <span v-if="plan.title !=='BASIC'">$</span>{{ plan.priceing }}
           </p>
         </header>
-        <div class="cardContent bg-white dark:bg-gray-700">
+        <div class="cardContent bg-white dark:bg-gray-800">
           <ul
             class="
               flex
@@ -97,7 +97,7 @@
             <li
               v-for="(feature, index) in plan.planfeature"
               :key="index"
-              class="p-2 border-b-2 border-dashed border-gray-400 text-center"
+              class="p-2 border-b-2 border-dashed border-gray-400 border-opacity-40 text-center"
               :class="
                 index === plan.planfeature.length - 1 ? 'border-none' : ''
               "
@@ -106,13 +106,11 @@
             </li>
           </ul>
         </div>
-        <footer class="bg-white dark:bg-gray-700 p-4 text-center relative">
-          <p class="text-gray-500 mb-8">{{ plan.notice }}</p>
+        <footer class=" dark:bg-gray-800 p-4 text-center relative" :class="plan.title==='BASIC'?'bg-green-socondy bg-opacity-90 dark:bg-green-primary':'bg-gray-50'">
+          <p class=" mb-8" :class="plan.title==='BASIC'?'text-gray-500 dark:text-white':'text-gray-500 dark:text-gray-300'">{{ plan.notice }}</p>
           <button
             class="
-              bg-gradient-to-tr
-              from-blue-500
-              to-purple-800
+              bg-purple-primary
               z-40
               text-white
               font-semibold
@@ -215,7 +213,7 @@ export default {
   position: absolute;
   width: 20%;
   height: 12px;
-  background-color: purple;
+  background-image:linear-gradient(to right bottom , rgb(126, 0, 126) , rgb(160, 10, 160));
   left: 50%;
   transform: translate(-50%);
   bottom: -30px;
@@ -251,7 +249,7 @@ header.active::before {
 .card:hover {
   z-index: 99;
 }
-footer::before {
+/* footer::before {
   content: "";
   position: absolute;
   width: 100%;
@@ -261,12 +259,12 @@ footer::before {
   z-index: 2;
   background-color: rgb(62, 158, 86);
   opacity: 0.3;
-}
+} */
 
 /* ************************ */
 .befor-active {
   opacity: 0;
-  transform: translateY(-100%);
+  transform: translateY(100%);
   transition: all 1s cubic-bezier(0.68, -0.6, 0.32, 1.6);
 }
 .active {

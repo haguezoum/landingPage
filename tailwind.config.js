@@ -9,7 +9,13 @@ module.exports = {
         waveRight: "url('/img/bg-wave-right.png')",
       }),
       backgroundColor:(them)=>({
-        'dark':'#303030'
+        'dark'            :'#303030',
+        'purple'          :'rgb(156, 39, 176)',
+        'purple-primary'  :'rgb(106 27 154)',
+        'purple-socondry' :'rgb(225 190 231)',
+        'green'           :'rgb(139, 195, 74)',
+        'green-primary'   :'rgb(85 139 47)',
+        'green-socondy'   :'rgb(220 237 200)'
       }),
       rotate: {
         19: "19deg",

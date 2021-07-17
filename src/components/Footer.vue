@@ -1,6 +1,8 @@
 <template>
   <footer class="w-full bg-gradient-to-br from-purple-900 to-pink-400 relative">
-    <div class="decoration absolute top-0 left-0 w-full">
+    <div class="decoration absolute top-0 left-0 w-full" 
+        :class="{ 'dark-wave': isThemDark }"
+    >
       <!-- wave decoration :) -->
     </div>
 
@@ -49,40 +51,29 @@
 
         <div class="justify-around items-center w-full lg:h-2/4 p-2 lg:px-20">
           <div class="flex flex-col lg:hidden">
-            <el-dropdown type="w-full" class="text-white">
-              <span class="el-dropdown-link">
-                COMPANY<i class="el-icon-arrow-down el-icon--right"></i>
-              </span>
-              <el-dropdown-menu slot="dropdown">
-                <el-dropdown-item>Team</el-dropdown-item>
-                <el-dropdown-item>History</el-dropdown-item>
-                <el-dropdown-item>Contact us</el-dropdown-item>
-                <el-dropdown-item>Location</el-dropdown-item>
-              </el-dropdown-menu>
-            </el-dropdown>
 
-            <el-dropdown type="w-full" class="text-white">
-              <span class="el-dropdown-link">
-                RESOURCES<i class="el-icon-arrow-down el-icon--right"></i>
+            <div class="group dropwdown relative w-1/2 mb-11"  v-for="mapItem,index in siteMap" :key="index">
+              <span class="overflow-hidden shadow-lg text-white">
+                <button class="flew flex justify-between border hover:bg-purple-50 hover:text-purple-900 items-center rounded-md  space-x-4 px-4 py-2  focus:outline-none" type="button" aria-haspopup="true">
+                  <span v-text="mapItem.title"></span>
+                  <span>
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                      </svg>
+                  </span>
+                </button>
               </span>
-              <el-dropdown-menu slot="dropdown">
-                <el-dropdown-item>Resources</el-dropdown-item>
-                <el-dropdown-item>Resources name</el-dropdown-item>
-                <el-dropdown-item>Another resources</el-dropdown-item>
-                <el-dropdown-item>Final resources</el-dropdown-item>
-              </el-dropdown-menu>
-            </el-dropdown>
-
-            <el-dropdown type="w-full" class="text-white">
-              <span class="el-dropdown-link">
-                LEGAL<i class="el-icon-arrow-down el-icon--right"></i>
-              </span>
-              <el-dropdown-menu slot="dropdown">
-                <el-dropdown-item>Privacy policy</el-dropdown-item>
-                <el-dropdown-item>Terms of use</el-dropdown-item>
-              </el-dropdown-menu>
-            </el-dropdown>
+              <!-- dropdown-menu -->
+              <div class="dropdown-menu group-hover:opacity-100 group-hover:z-50 opacity-0 transition-all duration-300 transform origin-top-right -translate-y-2 scale-95 rounded-sm" >
+                  <div class="dropdown-body absolute -left-2 mt-2 origin-top-right bg-white   border border-gray-200  rounded-md shadow-xl outline-none">
+                    <div class="flex flex-col  items-center justify-center text-purple-700">
+                        <p class="w-full hover:bg-white  cursor-pointer px-4 py-1 my-2  transition-all ease-in-out duration-300 transform  rounded-md hover:py-4" v-for="item , index in mapItem.items" :key="index" v-text="item"></p>
+                    </div>
+                  </div>
+              </div>
           </div>
+
+          <!-- ************************ -->
           <div
             class="lg:flex w-full justify-around items-center felx-row hidden"
           >
@@ -115,6 +106,9 @@
             </div>
           </div>
           <!-- ************************ -->
+          
+              <!-- dropdown-menu -->
+            </div>
         </div>
 
         <!-- ---------------------------------------------------------------- -->
@@ -226,6 +220,7 @@
 
 <script>
 // import Dropdown from "@/components/Dropdown";
+import { mapGetters } from "vuex";
 
 export default {
   name: "Footer",
@@ -235,9 +230,29 @@ export default {
   data() {
     return {
       isOpen: false,
+      siteMap:[
+        {
+          title:'COMPANY',
+          items:["Team","Histo","Contact us","Location"]
+        },
+        {
+          title:'RESOURCES',
+          items:["Resources"," Resources name","Another resources","Final resources"]
+        },
+        {
+          title:'LEGAL',
+          items:["Privacy policy","Terms of use"]
+        },
+        
+      ]
     };
   },
   methods: {},
+  computed:{
+     ...mapGetters({
+      isThemDark: "isThemDark",
+    }),
+  }
 };
 </script>
 <style lang="css" scoped>
@@ -248,9 +263,12 @@ export default {
   position: absolute;
   left: 0;
   top: -3px;
-  background-image: url(/img/footer-deco.svg);
+  background-image: url("/img/footer-deco.svg");
   background-size: 100% auto;
   background-position: 0 0;
   background-repeat: no-repeat;
+}
+.dark-wave::before {
+  background-image: url("/img/footer-deco-dark.svg") !important;
 }
 </style>

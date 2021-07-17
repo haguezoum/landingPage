@@ -17,7 +17,7 @@
     id="navbar"
     ref="navbar"
     :class="[
-      { 'bg-gradient-to-r from-purple-900 to-pink-400 py-4 px-4': !view.atTopOfPage },
+      { 'bg-purple-primary py-4 px-4': !view.atTopOfPage },
       { 'p-7 px-8': view.atTopOfPage },
     ]"
   >
