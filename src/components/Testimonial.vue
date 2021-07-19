@@ -123,7 +123,7 @@
                 </div>
               </div>
               <div class="mt-12 sm:w-2/3 duration">
-                <p class="text-lg text-white w-full px-2">
+                <p class="text-lg text-white w-full lg:w-9/12 px-2">
                   {{ currentSlider.content }}
                 </p>
               </div>

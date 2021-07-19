@@ -8,8 +8,18 @@ import ElementUI from "element-ui";
 import "element-ui/lib/theme-chalk/index.css";
 import i18n from "./i18n";
 
+
 Vue.config.productionTip = false;
 Vue.directive("animation", animation);
+
+// router.beforeEach((to,from,next)=>{
+//   let lang = to.params.lang;
+//   if(!lang){
+//     lang ='en'
+//   }else{
+//     lang 
+//   }
+// })
 Vue.use(ElementUI);
 new Vue({
   router,

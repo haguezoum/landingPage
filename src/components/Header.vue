@@ -193,10 +193,11 @@
               "
             >
               <router-link :to="{ path: '/', hash: navLink.id }">
-                {{ navLink.name }}
+                {{ $t(navLink.name) }}
               </router-link>
             </li>
           </ul>
+          <!-- <p class="font-bold text-black text-3xl">{{$t('message')}}</p> -->
         </nav>
       </div>
       <!-- ---------------------------------------------------------------- -->
@@ -278,46 +279,7 @@
                     text-purple-700
                   "
                 >
-                  <p
-                    class="
-                      w-full
-                      hover:bg-white
-                      cursor-pointer
-                      px-4
-                      py-1
-                      my-2
-                      transition-all
-                      ease-in-out
-                      duration-300
-                      transform
-                      hover:scale-150
-                      rounded-md
-                      hover:py-4
-                    "
-                    @click="changeLang('ar')"
-                  >
-                    Arabne
-                  </p>
-                  <p
-                    class="
-                      w-full
-                      hover:bg-white
-                      cursor-pointer
-                      px-4
-                      py-1
-                      my-2
-                      transition-all
-                      ease-in-out
-                      duration-300
-                      transform
-                      hover:scale-150
-                      rounded-md
-                      hover:py-4
-                    "
-                    @click="changeLang('fr')"
-                  >
-                    Francais
-                  </p>
+               <p class="w-full hover:bg-white  cursor-pointer px-4 py-1 my-2 hover:bg-purple-socondry transition-all ease-in-out duration-300 transform  hover:py-4" :tabindex="index+1"  v-for="language,index in languages" :key="index" v-text="language.language"  @click="changeLang(language.languageCode)"></p>                    
                 </div>
               </div>
             </div>
@@ -476,12 +438,15 @@ export default {
       openSettings: false,
       isDark: false,
       navLinks: [
-        { name: "Feature", id: "feature" },
-        { name: "Testimonials", id: "testimonials" },
-        { name: "Pricing", id: "pricing" },
-        { name: "FAQ", id: "faq" },
-        { name: "Contact", id: "contact" },
+        { name: "feature", id: "feature" },
+        { name: "testimonials", id: "testimonials" },
+        { name: "pricing", id: "pricing" },
+        { name: "fAQ", id: "faq" },
+        { name: "contact us", id: "contact" },
       ],
+       languages:[
+        {language:'الداريجة',languageCode:'dr'},{language:'العربية',languageCode:'ar'},{language:'Francais',languageCode:'fr'},{language:'English',languageCode:'en'},
+      ]
     };
   },
   beforeMount() {

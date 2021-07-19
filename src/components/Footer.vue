@@ -1,5 +1,5 @@
 <template>
-  <footer class="w-full bg-gradient-to-br from-purple-900 to-pink-400 relative">
+  <footer class="w-full bg-purple relative">
     <div class="decoration absolute top-0 left-0 w-full" 
         :class="{ 'dark-wave': isThemDark }"
     >
@@ -21,10 +21,11 @@
             px-6
             uppercase
             text-white
-            bg-green-300 bg-opacity-60
+            bg-green-primary
+             bg-opacity-60
             text-lg
             rounded-full
-            hover:bg-green-700
+            hover:bg-green
           "
         >
           Get started
@@ -44,17 +45,17 @@
           p-2
         "
       >
-        <div class="img lg:w-1/4 flex justify-end flex-col items-center mb-2">
+        <div class="img lg:w-1/4 flex justify-end flex-col items-center mb-2 mx-auto">
           <img src="/img/icone-3.png" alt="" srcset="" class="w-1/2" />
-          <p class="text-2xl text-white font-semibold">Hello</p>
+          <p class="text-2xl text-white font-semibold">sKwila.ma</p>
         </div>
 
         <div class="justify-around items-center w-full lg:h-2/4 p-2 lg:px-20">
           <div class="flex flex-col lg:hidden">
 
-            <div class="group dropwdown relative w-1/2 mb-11"  v-for="mapItem,index in siteMap" :key="index">
-              <span class="overflow-hidden shadow-lg text-white">
-                <button class="flew flex justify-between border hover:bg-purple-50 hover:text-purple-900 items-center rounded-md  space-x-4 px-4 py-2  focus:outline-none" type="button" aria-haspopup="true">
+            <div class="group dropwdown relative w-3/4  mx-auto  mb-11"  v-for="mapItem,index in siteMap" :key="index">
+              <span class="overflow-hidden shadow-lg w-full text-white hover:border-white hover:border rounded-md ">
+                <button class="flew flex justify-between w-full hover:text-purple-900 items-center  space-x-4 px-4 py-2  focus:outline-none" type="button" aria-haspopup="true">
                   <span v-text="mapItem.title"></span>
                   <span>
                       <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -71,19 +72,19 @@
                     </div>
                   </div>
               </div>
-          </div>
 
+          </div>
+        </div>
           <!-- ************************ -->
           <div
-            class="lg:flex w-full justify-around items-center felx-row hidden"
+            class="hidden lg:flex w-full justify-around items-start felx-row"
           >
             <div
               class="px-4 text-white"
-              v-for="(item, index) in 3"
-              :key="index"
+             v-for="mapItem,index in siteMap" :key="index"
             >
               <div class="title w-full text-left px-4 mb-9 text-md font-bold">
-                COMPANY
+                {{mapItem.title}}
               </div>
               <div class="list w-full">
                 <ul
@@ -97,23 +98,18 @@
                     px-4
                   "
                 >
-                  <li class="hover:bg-purple-700 cursor-pointer">Team</li>
-                  <li class="hover:bg-purple-700 cursor-pointer">History</li>
-                  <li class="hover:bg-purple-700 cursor-pointer">Contact us</li>
-                  <li class="hover:bg-purple-700 cursor-pointer">Location</li>
+                  <li class="hover:bg-purple-700 cursor-pointer" v-for="item,index in mapItem.items" :key="index">{{item}}</li>
                 </ul>
               </div>
             </div>
           </div>
           <!-- ************************ -->
           
-              <!-- dropdown-menu -->
-            </div>
-        </div>
+          </div>
 
         <!-- ---------------------------------------------------------------- -->
 
-        <div class="flex flex-col w-full lg:w-1/4">
+        <div class="flex flex-col w-3/4 lg:w-1/4 mx-auto">
           <div class="social-media flex flex-col space-y-12 py-20 pt-0">
             <ul class="flex justify-around items-center">
               <li
@@ -183,11 +179,11 @@
             </ul>
           </div>
 
-        <div class="languages w-full text-center">
+        <div class="languages w-full text-center flex justify-center items-center">
 
 
             <!-- dropwdown -->
-            <div class="dropwdown relative" @click="isOpen =!isOpen">
+            <div class="dropwdown relative mx-auto" @click="isOpen =!isOpen">
               <span class="overflow-hidden shadow-lg text-white">
                 <button class="flew flex justify-between border border-white hover:bg-purple-50 hover:text-purple-900 items-center rounded-md  space-x-4 px-4 py-2  focus:outline-none" type="button" aria-haspopup="true">
                   <span>Langueges</span>
@@ -202,8 +198,7 @@
               <div class="dropdown-menu transition-all duration-300 transform origin-top-right -translate-y-2 scale-95 rounded-sm" v-if="isOpen">
                   <div class="dropdown-body absolute -left-2 mt-2 origin-top-right bg-white opacity-80  border border-gray-200  rounded-md shadow-xl outline-none">
                     <div class="flex flex-col  items-center justify-center text-purple-700">
-                        <p class="w-full hover:bg-white  cursor-pointer px-4 py-1 my-2  transition-all ease-in-out duration-300 transform hover:scale-150 rounded-md hover:py-4">Arabne</p>
-                        <p class="w-full hover:bg-white  cursor-pointer px-4 py-1 my-2  transition-all ease-in-out duration-300 transform hover:scale-150 rounded-md hover:py-4">Francais</p>
+                        <p class="w-full hover:bg-white  cursor-pointer px-4 py-1 my-2 hover:bg-purple-socondry transition-all ease-in-out duration-300 transform  hover:py-4" :tabindex="index+1"  v-for="language,index in languages" :key="index" v-text="language.language"></p>
                     </div>
                   </div>
               </div>
@@ -244,6 +239,9 @@ export default {
           items:["Privacy policy","Terms of use"]
         },
         
+      ],
+      languages:[
+        {language:'الداريجة'},{language:'العربية'},{language:'Francais'},{language:'English'},
       ]
     };
   },

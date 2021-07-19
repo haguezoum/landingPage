@@ -1,3 +1,15 @@
 {
-  "message": "hello i18n !!"
+  "nav": {
+      "feature" : "feature",
+      "testimonials":"Testimonials",
+      "pricing":"Pricing",
+      "fAQ":"FAQ",
+      "contact us":"contact us",
+      "home":{
+        "pricipal":"Amazing company deserve amazing software",
+        "seconder":"Millions of happy users work better with our integrated Apps.",
+        "startedButton":"Get Started",
+        "watchedButton":"Watch video"
+      }
+  }
 }

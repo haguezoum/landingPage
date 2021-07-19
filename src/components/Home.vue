@@ -51,7 +51,7 @@
                   leading-relaxed
                 "
               >
-                Amazing company deserve amazing software
+                {{$t('home.pricipal')}}
               </h1>
               <p
                 class="
@@ -67,7 +67,7 @@
                   leading-loose
                 "
               >
-                Millions of happy users work better with our integrated Apps.
+               {{$t('home.seconder')}}
               </p>
               <div
                 class="
@@ -102,7 +102,7 @@
                       focus:outline-none
                     "
                   >
-                    Watch Video
+                    {{$t('home.watchedButton')}}
                   </button>
                 </div>
                 <div class="w-full">
@@ -127,7 +127,7 @@
                       focus:outline-none
                     "
                   >
-                    Get started
+                    {{$t('home.startedButton')}}
                   </button>
                 </div>
               </div>
@@ -149,7 +149,7 @@
         class="h-28 z-20 w-full relative overflow-hidden deco-wave"
         :class="{ 'dark-wave': isThemDark }"
       >
-        <div class="moved-wave relative z-10 w-full h-full"></div>
+        <div class="moved-wave relative z-10 w-full h-full" :class="{'moved-dark-wave':isthemDark}"></div>
       </div>
       <!-- end wave decoration -->
     </div>
@@ -210,6 +210,10 @@ export default {
   opacity: 0.2;
   background-size: cover;
   background-position: 0 0;
+}
+.moved-dark-wave::before ,
+.moved-dark-wave::after {
+  background-image: url("/img/deco-wave-dark.png") !important;
 }
 .moved-wave::before {
   left: 30%;

@@ -1,7 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import LandingPage from "@/views/LandingPage";
-import Testimonial from "@/components/Testimonial";
 Vue.use(VueRouter);
 
 const routes = [
@@ -10,11 +9,8 @@ const routes = [
     name: "Home",
     component: LandingPage,
   },
-  {
-    path: "/Testimonial",
-    name: "Testimonial",
-    component: Testimonial,
-  },
+  
+  
 ];
 
 const router = new VueRouter({

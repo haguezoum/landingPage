@@ -35,6 +35,8 @@
                 shadow-md
                 w-9/12
                 lg:w-full
+                mx-auto
+                lg:mx-0
                 left-rotat
               "
             >
@@ -63,6 +65,8 @@
                   text-gray-800
                   py-10
                   dark:text-gray-300
+                  px-4
+                  lg:px-0
                 "
               >
                 Our audience dashboard shows you pre-built segments like top
@@ -109,6 +113,8 @@
                 shadow-md
                 w-9/12
                 lg:w-full
+                 mx-auto
+                lg:mx-0
                 right-rotat
               "
             >
@@ -137,6 +143,8 @@
                   text-gray-800
                   py-10
                   dark:text-gray-300
+                  px-4
+                  lg:px-0
                 "
               >
                 Our audience dashboard shows you pre-built segments like top
@@ -229,6 +237,8 @@
                         text-gray-800
                         dark:text-gray-300
                         py-10
+                        px-4
+                        lg:px-0
                       "
                     >
                       {{ tab.content }}
