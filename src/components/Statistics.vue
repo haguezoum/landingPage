@@ -1,5 +1,5 @@
 <template>
-  <section id="statistics" class="py-5 bg-white dark:bg-dark">
+  <section id="statistics" class="py-5 bg-white dark:bg-dark" :dir="$t('dir')">
     <div
       class="
         conatiner
@@ -26,7 +26,7 @@
                text-center
             "
           >
-            12 Month
+            12 {{$t('statistics.first.month')}}
           </p></span>
         <span
           class="
@@ -58,7 +58,7 @@
               d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"
             />
           </svg>
-          <p class="text-gray-500 ">Free Trial</p>
+          <p class="text-gray-500 ">{{$t('statistics.first.freeTrial')}}</p>
         </span>
       </div>
 
@@ -77,7 +77,7 @@
               text-center
             "
           >
-            +80M
+            +80{{$t('statistics.second.countUsers')}}
           </p></span
         >
 
@@ -106,7 +106,7 @@
               d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"
             />
           </svg>
-          <p class="text-gray-500">Active users</p>
+          <p class="text-gray-500">{{$t('statistics.second.activeUser')}}</p>
         </span>
       </div>
 
@@ -124,7 +124,7 @@
               text-center
             "
           >
-            +180K
+            +180{{$t('statistics.last.countProviders')}}
           </p></span
         >
 
@@ -157,7 +157,7 @@
               d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
             />
           </svg>
-          <p class="text-gray-500">Providers</p>
+          <p class="text-gray-500">{{$t('statistics.last.providers')}}</p>
         </span>
       </div>
 

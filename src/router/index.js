@@ -9,8 +9,6 @@ const routes = [
     name: "Home",
     component: LandingPage,
   },
-  
-  
 ];
 
 const router = new VueRouter({

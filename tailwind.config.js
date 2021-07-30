@@ -3,7 +3,7 @@ module.exports = {
   darkMode: "class", // or 'media' or 'class'
   // important: true,
   theme: {
-    extend: {
+    extend:{
       backgroundImage: (theme) => ({
         waveLeft: "url('/img/bg-wave-left.png')",
         waveRight: "url('/img/bg-wave-right.png')",
@@ -21,7 +21,16 @@ module.exports = {
         19: "19deg",
         "-19": "-19deg",
       },
-    },
+     textColor:()=> ({
+        'purple'          :'rgb(156, 39, 176)',
+        'purple-primary'  :'rgb(106 27 154)',
+        'purple-secondry' :'rgb(225 190 231)',
+        'green'           :'rgb(139, 195, 74)',
+        'green-primary'   :'rgb(85 139 47)',
+        'green-socondy'   :'rgb(220 237 200)'
+      })
+    } ,
+    
   },
   variants: {
     extend: {},

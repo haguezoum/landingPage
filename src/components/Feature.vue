@@ -1,5 +1,5 @@
 <template>
-  <section id="feature" class="feature relative py-8 bg-white dark:bg-dark">
+  <section id="feature" class="feature relative py-8 bg-white dark:bg-dark" :dir="$t('dir')">
     <!--  -->
     <div
       class="
@@ -55,7 +55,7 @@
             <section>
               <strong>
                 <p class="title first relative text-3xl pb-9 dark:text-white">
-                  Act on it-all in one dashboard
+                  {{$t('features.firstFeatur.title')}}
                 </p>
               </strong>
               <p
@@ -69,9 +69,7 @@
                   lg:px-0
                 "
               >
-                Our audience dashboard shows you pre-built segments like top
-                locations, recent sources of growth, and even customer lifetime
-                value (CLV).
+                 {{$t('features.firstFeatur.content')}}
               </p>
             </section>
             <div class="btn">
@@ -133,7 +131,7 @@
             <section>
               <strong>
                 <p class="title second relative text-3xl pb-9 dark:text-white">
-                  Act on it-all in one dashboard
+                  {{$t('features.secondFeatur.title')}}
                 </p>
               </strong>
               <p
@@ -147,9 +145,7 @@
                   lg:px-0
                 "
               >
-                Our audience dashboard shows you pre-built segments like top
-                locations, recent sources of growth, and even customer lifetime
-                value (CLV).
+                {{$t('features.secondFeatur.content')}}
               </p>
             </section>
             <div class="btn">
@@ -179,7 +175,7 @@
             <section class="">
               <strong class="text-center">
                 <p class="title last relative text-3xl dark:text-white pb-8">
-                  Accelerating to Intelligent Enterprise
+                  {{$t('features.title')}}
                 </p>
               </strong>
               <div class="">
@@ -197,7 +193,7 @@
                   "
                 >
                   <span
-                    v-for="(tab, index) in tabContent"
+                    v-for="(tab, index) in $t('features.lastFeatur.tabContent')"
                     :key="index"
                     class="flex-1 text-center border-b-2 text-lg lg:text-2xl"
                   >

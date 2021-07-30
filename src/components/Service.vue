@@ -3,11 +3,12 @@
     <div
       class="
         mx-auto
-        flex
-        justify-around
-        items-center
-        w-full
+        w-11/12
+        md:w-2/3
         h-full
+        flex 
+        items-center
+        justify-around
         sm:overflow-x-auto
         overflow-x-scroll
       "
@@ -16,7 +17,7 @@
         :src="imgName"
         alt=""
         srcset=""
-        class="icons w-16 filter grayscale transform ease-in-out duration-200"
+        class="icons w-16 filter grayscale transform ease-in-out duration-200  mx-9"
         v-for="(imgName, index) in imgsName"
         :key="index"
       />

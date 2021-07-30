@@ -1,8 +1,12 @@
 <template>
   <section
     id="container"
-    class="bg-purple"
+    class="bg-purple relative"
+    :dir="$t('dir')"
   >
+    <!-- <div class="w-full border-3 border-black p-4"> -->
+      
+    <!-- </div> -->
     <div class="relative home flex flex-wrap flex-row">
       <!-- start fixed asaid decoration -->
       <div
@@ -23,7 +27,8 @@
       <!-- end fixed asaid decoration -->
 
       <!-- start content -->
-      <div class="conent-fixed z-20 w-full lg:h-screen mt-20 lg:px-20">
+      <div class="conent-fixed z-20 w-full lg:h-screen mt-20 lg:px-20 relative">
+        <Model/>
         <div class="slider w-full mt-16 flex justify-center items-center">
           <!--end text -->
           <div class="text w-full lg:w-3/5">
@@ -92,7 +97,8 @@
                       w-full
                       sm:w-3/4
                       uppercase
-                      py-3
+                      py-1
+                      pl-0
                       px-5
                       sm:px-0
                       mx-auto
@@ -100,8 +106,18 @@
                       font-bold
                       lg:px-0
                       focus:outline-none
+                      flex
+                      justify-start
+                      items-center
+                      space-x-24
                     "
+                    @click="openModel"
                   >
+                    <span class="">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-11 w-11 text-purple-secondry hover:text-purple-primary" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
+                      </svg>
+                    </span>
                     {{$t('home.watchedButton')}}
                   </button>
                 </div>
@@ -149,22 +165,31 @@
         class="h-28 z-20 w-full relative overflow-hidden deco-wave"
         :class="{ 'dark-wave': isThemDark }"
       >
-        <div class="moved-wave relative z-10 w-full h-full" :class="{'moved-dark-wave':isthemDark}"></div>
+        <div class="moved-wave relative z-10 w-full h-full"></div>
       </div>
       <!-- end wave decoration -->
     </div>
   </section>
+  
 </template>
 
 <script>
 import { mapGetters } from "vuex";
-
+import Model from "@/components/Model"
 export default {
   name: "Home",
   data() {
     return {
       // darkWave: `url("/img/deco-wave-light.png")`,
     };
+  },
+  methods:{
+     openModel(){
+            this.$store.commit('toggleModel');
+        }
+  },
+  components:{
+    Model
   },
   computed: {
     // isThemeIark() {
@@ -231,19 +256,20 @@ export default {
   height: 100%;
   top: 0;
   opacity: 0.3;
-  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
   background-position: 0 0;
   /* background-attachment: fixed; */
 }
 .left-decoration {
   background-image: url("/img/left-deco.svg");
   transform: rotate(90deg);
-  left: -30%;
+  left: -50%;
 }
 .right-decoration {
   background-image: url("/img/right-deco.svg");
   transform: rotate(-90deg);
-  right: -38%;
+  right: -50%;
 }
 
 @keyframes wavey {

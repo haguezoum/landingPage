@@ -116,7 +116,7 @@ export default {
 
 /* ********************************************** */
 .active {
-  @apply bg-pink-600;
+ 
 }
 .hola {
   background-color: tomato;

@@ -1,8 +1,33 @@
 {
-  "en": { 
-    "key1": "this is message1",
-    "nested": { 
-      "message1": "this is nested message1"
+      "dir":"ltr",
+      "feature" : "Fonctionnalité",
+      "testimonials":"Témoignages",
+      "pricing":"prix",
+      "fAQ":"FAQ",
+      "contact us":"contactez-nous",
+      "home":{
+        "pricipal":"Une entreprise incroyable mérite un logiciel incroyable.",
+        "seconder":"Des millions d'utilisateurs satisfaits travaillent mieux avec nos applications intégrées.",
+        "startedButton":"Commencez",
+        "watchedButton":"Regardez la vidéo"
+      },
+      "statistics":{
+        "first":{
+            "month":"Mois",
+            "freeTrial":"Essi gratuit"
+        },
+        "second":{
+          "countUsers":"M",
+          "activeUser":"Utilisateur actif"
+        },
+        "last":{
+          "countProviders":"K",
+          "providers":"Fournisseurs"
+        }
+      },
+      "features":{
+        "title":"Agissez sur tout dans un seul tableau de bord",
+        "content":"Notre tableau de bord d'audience vous montre des segments prédéfinis tels que les meilleurs emplacements, les sources de croissance récentes et même la valeur à vie du client (CLV)."
     }
-  } 
+  
 }

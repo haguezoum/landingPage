@@ -1,5 +1,5 @@
 {
-  "nav": {
+      "dir":"ltr",
       "feature" : "feature",
       "testimonials":"Testimonials",
       "pricing":"Pricing",
@@ -10,6 +10,23 @@
         "seconder":"Millions of happy users work better with our integrated Apps.",
         "startedButton":"Get Started",
         "watchedButton":"Watch video"
-      }
-  }
+      },
+      "statistics":{
+        "first":{
+            "month":"Month",
+            "freeTrial":"Free Trial"
+        },
+        "second":{
+          "countUsers":"M",
+          "activeUser":"Active User"
+        },
+        "last":{
+          "countProviders":"K",
+          "providers":"Providers"
+        }
+      },
+      "features":{
+        "title":"Act on it-all in one dashboard",
+        "content":"Our audience dashboard shows you pre-built segments like top locations, recent sources of growth, and even customer lifetime value (CLV)."
+    }
 }

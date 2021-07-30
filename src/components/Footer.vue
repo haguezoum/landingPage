@@ -116,7 +116,6 @@
                 class="
                   h-10
                   w-10
-                  p-4
                   rounded-full
                   bg-purple-400
                   hover:bg-purple-600
@@ -124,15 +123,17 @@
                   flex
                   justify-center
                   items-center
+                  overflow-hidden
                 "
               >
-                <a href="">fb</a>
+                <a href="" class="w-full h-full">
+                  <img src="/img/social media icons/facebook_popUp.png" alt="" srcset="">
+                </a>
               </li>
               <li
                 class="
                   h-10
                   w-10
-                  p-4
                   rounded-full
                   bg-purple-400
                   hover:bg-purple-600
@@ -142,13 +143,14 @@
                   items-center
                 "
               >
-                <a href="">tw</a>
+                <a href="" class="w-full h-full">
+                  <img src="/img/social media icons/twitter_popUp.png" alt="" srcset="">
+                </a>
               </li>
               <li
                 class="
                   h-10
                   w-10
-                  p-4
                   rounded-full
                   bg-purple-400
                   hover:bg-purple-600
@@ -158,13 +160,14 @@
                   items-center
                 "
               >
-                <a href="">ig</a>
+                <a href="" class="w-full h-full">
+                  <img src="/img/social media icons/instagram_popUp.png" alt="" srcset="">
+                </a>
               </li>
               <li
                 class="
                   h-10
                   w-10
-                  p-4
                   rounded-full
                   bg-purple-400
                   hover:bg-purple-600
@@ -172,9 +175,13 @@
                   flex
                   justify-center
                   items-center
+                  hover:transition
+                  hover:scale-50
                 "
               >
-                <a href="">gg</a>
+                <a href="" class="w-full h-full">
+                  <img src="/img/social media icons/gmail_popUp.png" alt="" srcset="">
+                </a>
               </li>
             </ul>
           </div>
@@ -198,7 +205,7 @@
               <div class="dropdown-menu transition-all duration-300 transform origin-top-right -translate-y-2 scale-95 rounded-sm" v-if="isOpen">
                   <div class="dropdown-body absolute -left-2 mt-2 origin-top-right bg-white opacity-80  border border-gray-200  rounded-md shadow-xl outline-none">
                     <div class="flex flex-col  items-center justify-center text-purple-700">
-                        <p class="w-full hover:bg-white  cursor-pointer px-4 py-1 my-2 hover:bg-purple-socondry transition-all ease-in-out duration-300 transform  hover:py-4" :tabindex="index+1"  v-for="language,index in languages" :key="index" v-text="language.language"></p>
+                        <p class="w-full hover:bg-white  cursor-pointer px-4 py-1 my-2 hover:bg-purple-socondry transition-all ease-in-out duration-300 transform  hover:py-4" :tabindex="index+1"  v-for="language,index in languages" :key="index" v-text="language.language" @click="changeLang(language.languageCode)"></p>
                     </div>
                   </div>
               </div>
@@ -241,11 +248,17 @@ export default {
         
       ],
       languages:[
-        {language:'الداريجة'},{language:'العربية'},{language:'Francais'},{language:'English'},
+        {language:'الداريجة',languageCode:'dr'},{language:'العربية',languageCode:'ar'},{language:'Francais',languageCode:'fr'},{language:'English',languageCode:'en'},
       ]
     };
   },
-  methods: {},
+  methods: {
+    changeLang(e) {
+      console.log(e);
+      localStorage.setItem("language",e);
+      this.$i18n.locale = localStorage.getItem('language');
+    },
+  },
   computed:{
      ...mapGetters({
       isThemDark: "isThemDark",

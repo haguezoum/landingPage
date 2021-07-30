@@ -1,5 +1,6 @@
 <template>
   <main ref="mainSec">
+    <AsaidMenu  :open="menuOpen"/>
     <Home id="home" />
     <Service id="service" />
     <Statistics id="Statistics" />
@@ -14,6 +15,7 @@
 
 <script>
 // import Button from "@/components/Button";
+import AsaidMenu from "@/components/AsaidMenu"
 import Home from "@/components/Home";
 import Service from "@/components/Service";
 import Statistics from "@/components/Statistics";
@@ -28,6 +30,7 @@ export default {
   name: "Container",
   components: {
     // Button,
+    AsaidMenu,
     Home,
     Service,
     Statistics,
@@ -47,6 +50,11 @@ export default {
     },
   },
   created() {},
+  computed:{
+    menuOpen(){
+      return this.$store.state.menuOpen
+    }
+  }
 };
 </script>
 <style lang="css" scoped></style>

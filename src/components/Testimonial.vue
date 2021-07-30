@@ -12,7 +12,7 @@
           bg-transparentsm
           z-20
           space-x-0
-          bg-purple-900
+          bg-purple
           dark:bg-dark
           border-t-2 border-b-2
           lg:border-none

@@ -20,6 +20,7 @@
       { 'bg-purple-primary py-4 px-4': !view.atTopOfPage },
       { 'p-7 px-8': view.atTopOfPage },
     ]"
+    :dir="$t('dir')"
   >
     <div
       class="
@@ -38,8 +39,8 @@
         transform
         scale-150
       "
-      v-show="open"
-      @click="open = !open"
+      v-show="menuOpen"
+      @click="menuOpen = !menuOpen"
     ></div>
     <div
       class="
@@ -56,10 +57,10 @@
     >
       <!--left-->
       <div
-        class="logo nav-links w-1/2 h-full sm:w-2/5 lg:w-3/5 flex items-center"
+        class="logo nav-links w-1/2 h-full sm:w-2/5 lg:w-3/5 flex items-center "
       >
-        <div class="flex space-x-4 justify-start items-center lg:w-1/5">
-          <div class="lg:hidden relative w-1/3">
+        <div class="flex space-x-4 justify-start items-center lg:w-1/5 ">
+          <div class="lg:hidden relative w-1/3 ">
             <button
               class="
                 text-white
@@ -71,7 +72,7 @@
                 rounded-full
                 ml-3
               "
-              @click="open = !open"
+              @click="menuOpen = !menuOpen"
               style="z-index: 999999"
             >
               <span class="sr-only">Open menu</span>
@@ -101,7 +102,7 @@
                     duration-500
                     ease-in-out
                   "
-                  :class="{ 'rotate-45': open, ' -translate-y-1.5': !open }"
+                  :class="{ 'rotate-45': menuOpen, ' -translate-y-1.5': !menuOpen }"
                 ></span>
                 <span
                   aria-hidden="true"
@@ -116,7 +117,7 @@
                     duration-500
                     ease-in-out
                   "
-                  :class="{ 'opacity-0': open }"
+                  :class="{ 'opacity-0': menuOpen }"
                 ></span>
                 <span
                   aria-hidden="true"
@@ -131,7 +132,7 @@
                     duration-500
                     ease-in-out
                   "
-                  :class="{ '-rotate-45': open, ' translate-y-1.5': !open }"
+                  :class="{ '-rotate-45': menuOpen, ' translate-y-1.5': !menuOpen }"
                 ></span>
               </div>
               <!--end humberger menu-->
@@ -139,7 +140,7 @@
           </div>
           <router-link :to="{ path: '/', hash: '#home' }">
             <div
-              class="logo-img p-4 md:p-0 w-2/3 relative"
+              class="logo-img p-4 md:p-0 w-2/3 relative "
               style="z-index: 999999"
             >
               <svg
@@ -162,11 +163,12 @@
           <ul
             class="
               flex
-              w-3/4
+              w-full
               justify-between
               space-x-4
               font-bold
               text-md text-white
+              
             "
           >
             <li
@@ -214,7 +216,9 @@
                   justify-between
                   rounded-full
                   hover:bg-opacity-20 hover:bg-purple-50
-                  hover:text-purple-900
+                  hover:bg-purple-primary
+                  transition
+                  ease-in-out
                   items-center
                   space-x-4
                   px-4
@@ -293,7 +297,11 @@
                 px-4
                 py-2
                 rounded-full
-                hover:bg-opacity-20 hover:bg-purple-50
+                hover:bg-opacity-20
+                hover:bg-purple-primary
+                cursor-pointer
+                transition
+                  ease-in-out
               "
               @click="darkMode"
             >
@@ -306,7 +314,7 @@
                 <svg
                   v-if="isDark"
                   xmlns="http://www.w3.org/2000/svg"
-                  class="text-yellow-300 h-7 w-7"
+                  class="text-yellow-300 h-7 w-7 cursor-pointer"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -329,7 +337,7 @@
                 <svg
                   v-if="!isDark"
                   xmlns="http://www.w3.org/2000/svg"
-                  class="text-gray-400 h-7 w-7"
+                  class="text-white h-7 w-7"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -352,69 +360,7 @@
         enter-active-class=" animate__animated  animate__backInLeft animate__faster "
         leave-active-class="animate__animated animate__backOutLeft animate__fast"
       >
-        <aside
-          class="
-            h-screen
-            w-screen
-            sm:w-1/3
-            overflow-y-hidden
-            shadow-lg
-            bg-purple-800
-            block
-            lg:hidden
-            absolute
-            z-40
-          "
-          @click="open = !open"
-          v-if="open"
-          :class="!view.atTopOfPage ? '-left-4 -top-4' : 'top-0 left-0'"
-        >
-          <div
-            class="
-              h-full
-              w-full
-              flex flex-col
-              justify-start
-              items-start
-              py-32
-              px-10
-              font-medium
-              relative
-            "
-            v-if="open"
-          >
-            <nav class="pb-10 border-b w-full">
-              <ul class="flex w-full flex-col text-md text-left text-white">
-                <li
-                  v-for="(navLink, index) in navLinks"
-                  :key="index"
-                  :name="navLink.name"
-                  :title="navLink.name"
-                  class="
-                    hover:border-b-4
-                    text-2xl
-                    hover:border-white
-                    cursor-pointer
-                    p-2
-                    px-3
-                    transition-all
-                    ease-in-out
-                    duration-100
-                    delay-100
-                    hover:opacity-40
-                    hover:bg-purple-900
-                    bg-opacity-30
-                  "
-                  role="nav"
-                >
-                  <router-link :to="{ path: '/', hash: navLink.id }">
-                    {{ navLink.name }}
-                  </router-link>
-                </li>
-              </ul>
-            </nav>
-          </div>
-        </aside>
+        
       </transition>
       <!-- end asaid menu -->
     </div>
@@ -433,17 +379,8 @@ export default {
       view: {
         atTopOfPage: true,
       },
-      open: false,
       langOpen: false,
-      openSettings: false,
       isDark: false,
-      navLinks: [
-        { name: "feature", id: "feature" },
-        { name: "testimonials", id: "testimonials" },
-        { name: "pricing", id: "pricing" },
-        { name: "fAQ", id: "faq" },
-        { name: "contact us", id: "contact" },
-      ],
        languages:[
         {language:'الداريجة',languageCode:'dr'},{language:'العربية',languageCode:'ar'},{language:'Francais',languageCode:'fr'},{language:'English',languageCode:'en'},
       ]
@@ -454,11 +391,9 @@ export default {
     // window.addEventListener('load',this.darkMode);
   },
   methods: {
-    closeSettingsbar() {
-      this.openSettings = false;
-    },
+    
     togelNavBar() {
-      if (window.pageYOffset > 150) {
+      if (window.pageYOffset > 130) {
         if (this.view.atTopOfPage) {
           this.view.atTopOfPage = false;
         }
@@ -481,17 +416,20 @@ export default {
     },
     changeLang(e) {
       console.log(e);
-      localStorage.setItem("lange", e);
+      localStorage.setItem("language",e);
+      this.$i18n.locale = e;
     },
   },
   mounted: {
-    //  themeMode() {
-    //   localStorage.getItem("dark")
-    //     ? (this.isDark = true)
-    //     : (this.isDark = false);
-    // },
   },
-  computed: {},
+  computed: {
+    navLinks(){
+      return this.$store.state.navLinks;
+    },
+    menuOpen(){
+      return this.$store.state.menuOpen;
+    }
+  },
 };
 </script>
 
