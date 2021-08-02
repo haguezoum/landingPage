@@ -216,7 +216,7 @@
                   justify-between
                   rounded-full
                   hover:bg-opacity-20 hover:bg-purple-50
-                  hover:bg-purple-primary
+                  hover:bg-purple-socondry
                   transition
                   ease-in-out
                   items-center
@@ -298,7 +298,7 @@
                 py-2
                 rounded-full
                 hover:bg-opacity-20
-                hover:bg-purple-primary
+                hover:bg-purple-socondry
                 cursor-pointer
                 transition
                   ease-in-out

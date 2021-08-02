@@ -1,5 +1,5 @@
 <template>
-    <div class="model backdrop-filter backdrop-blur-xl overflow-hidden border  w-full md:w-2/4   h-4/6  rounded-lg shadow-inner text-center" v-if="modelIsOpen">
+    <div class="model backdrop-filter backdrop-blur-xl overflow-hidden border  w-full lg:w-2/4  h-5/6  lg:h-4/6  rounded-lg shadow-inner text-center" v-if="modelIsOpen">
        
        <div class="w-full h-1/5 p-8 pb-2">
           <div class="flex justify-between items-center">

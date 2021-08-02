@@ -1,4 +1,5 @@
 {
+        "lang":"ar",
         "dir":"rtl",
         "feature" : "الميزات",
         "testimonials":"الشهادات",
@@ -37,16 +38,137 @@
                 "buttonContent":""
             },
               "lastFeatur":{
-                
-                
-                
+                "title":"العمل على كل ذلك في لوحة تحكم واحدة",
                 "tabContent":[
                     { "title":"حماية","content":"عندما يريد العالم أن ‪يتكلّم ‬ ، فهو يتحدّث بلغة يونيكود. تسجّل الآن لحضور المؤتمر الدولي العاشر ليونيكود"},
                     {"title":"قاعدة البيانات","content":"مناقشة سبل استخدام يونكود في النظم القائمة وفيما يخص التطبيقات الحاسوبية"},
                     { "title":"مكاتب","content":"شمس الحياة بِمُقْلَتَيْكِ على عَجَلْ"}
                 ]
               }
-          }
+          },
+          "testimonial":{
+            "title":"ما شهادات عملائنا",
+            "testimonialCustomers":[
+              {
+                "cusotmer_name":"جاك سبارو",
+                "cusotme_job":"مدير تجاري",
+                "testimonal_content":"مثال يوضح اراء الناس و تجربتهم على موقعنا، و تقيمهم لجودته"
+                
+              },
+              {
+                "cusotmer_name":"ديفيد",
+                "cusotme_job":"مطور الواجهة الأمامية",
+                "testimonal_content":"مثال يوضح اراء الناس و تجربتهم على موقعنا، و تقيمهم لجودته"
+                
+              },
+              {
+                "cusotmer_name":"آريا ستارك",
+                "cusotme_job":"مدير عام SGBD",
+                "testimonal_content":"مثال يوضح اراء الناس و تجربتهم على موقعنا، و تقيمهم لجودته"
+                
+              }
+            ]
+          },
+          "pricing_and_plans":{
+            
+              "title":"التسعير والخطة",
+              "sub_title":"أفضل قيمة مصممة لمكان عملك ، بدءًا من 24 دولارًا لكل مستخدم في الشهر.",
+              "plans":[
+                {
+                  "plan_number":"0",
+                  "plan_title":"",
+                  "plan_price":"",
+                  "plan_futears":[
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                  ],
+                  "plan_notice":"",
+                  "button_value":""
+                },
+                {
+                  "plan_number":"",
+                  "plan_title":"",
+                  "plan_price":"",
+                  "plan_futears":[
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                  ],
+                  "plan_notice":"",
+                  "button_value":""
+                },
+                {
+                  "plan_number":"",
+                  "plan_title":"",
+                  "plan_price":"",
+                  "plan_futears":[
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                  ],
+                  "plan_notice":"",
+                  "button_value":""
+                },
+                {
+                  "plan_number":"",
+                  "plan_title":"",
+                  "plan_price":"",
+                  "plan_futears":[
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                  ],
+                  "plan_notice":"",
+                  "button_value":""
+                }
+              ]                        
+            },
+            "faq_plan":{
+              "title":"الأسئلة المتداولة",
+              "sub_title":"هل لديك سؤال؟ راجع الأسئلة الشائعة للعثور على إجابتك.",
+              "faqs":[
+                {
+                  "question":"",
+                  "answer":""
+                },
+                {
+                  "question":"",
+                  "answer":""
+                },
+                {
+                  "question":"",
+                  "answer":""
+                },
+                {
+                  "question":"",
+                  "answer":""
+                }
+              ]
+            },
+            "footer":{
+              "title":"ماذا تنتظر؟",
+              "button_value":"البدء",
+              "site_map":[
+                {
+                  "title":"",
+                  "options":[
+                    "",
+                    "",
+                    "",
+                    ""
+                  ]
+                }
+              ]
+            }
     
 }
 

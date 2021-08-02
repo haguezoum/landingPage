@@ -12,7 +12,7 @@
       <!-- part 1 -->
       <div class="header w-full titile text-center mb-2">
         <h3 class="text-3xl text-white font-bold py-6">
-          What are you waiting for?
+          {{$t('footer.title')}}
         </h3>
         <button
           class="
@@ -28,7 +28,7 @@
             hover:bg-green
           "
         >
-          Get started
+          {{$t('footer.button_value')}}
         </button>
       </div>
 

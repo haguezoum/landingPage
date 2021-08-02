@@ -1,8 +1,9 @@
 <template>
-  <section id="testimonial" class="pt-5 w-full bg-white dark:bg-dark">
+  <section id="testimonial" class="pt-5  w-full bg-white dark:bg-dark ">
     <div class="testimonialContant w-full h-full flex items-start">
       <!-- start -->
       <div
+      
         class="
           relative
           flex
@@ -49,7 +50,7 @@
             z-30
           "
         >
-          What Our Customers Testimonial
+         {{$t('testimonial.title')}}
         </h3>
         <span
           class="
@@ -74,61 +75,39 @@
         ></span>
 
         <div class="w-full relative z-30" ref="testimonials">
-          <transition
+        <!--  <transition
             name="fade"
             enter-active-class="animate__animated animate__flipInY animate__slow"
             leave-active-class="animate__animated animate__flipOutY animate__fast"
-          >
-            <section
-              class="
-                customer
-                flex
-                w-full
-                flex-col
-                sm:flex-row sm:items-start sm:justify-center
-                md:justify-start
-                p-4
-                z-30
-              "
-            >
-              <div
-                class="
-                  user
-                  text-center
-                  sm:w-1/3 sm:mt-5
-                  transform
-                  ease-in-out
-                  delay-500
-                "
+          >-->
+            <section :dir="$t('dir')" class=" customer flex w-full flex-col sm:flex-row sm:items-start sm:justify-center md:justify-start p-4 z-30"
+             
               >
+             
+              <div class=" user text-center sm:w-1/3 sm:mt-5 transform ease-in-out delay-500">  
                 <div class="w-full">
                   <span
-                    class="
-                      rounded-full
-                      border-4 border-white
-                      dark:border-purple-700
-                      overflow-hidden
-                      h-24
-                      w-24
-                      block
-                      mx-auto
-                    "
-                  >
-                    <img :src="currentSlider.avatar" alt="man 1" srcset="" />
+                    class=" rounded-full border-4 border-white dark:border-purple-700 overflow-hidden h-24 w-24 block mx-auto" 
+                    v-for="img,index  in avatarsPath " :key="index" v-show="index===slidIndex">
+                       <img :src="img" alt="man 1" srcset=""/>
                   </span>
                 </div>
+
                 <div class="info mt-8 text-white">
-                  <p class="text-xl font-bold">{{ currentSlider.name }}</p>
-                  <p class="text-lg font-semibold">{{ currentSlider.job }}</p>
+                  <p class="text-xl font-bold">{{ currentSlider.cusotmer_name }}</p>
+                  <p class="text-lg font-semibold">{{ currentSlider.cusotme_job }}</p>
                 </div>
+
               </div>
+
               <div class="mt-12 sm:w-2/3 duration">
                 <p class="text-lg text-white w-full lg:w-9/12 px-2">
-                  {{ currentSlider.content }}
+                  {{ currentSlider.testimonal_content }}
                 </p>
               </div>
+
             </section>
-          </transition>
+          <!-- </transition> -->
         </div>
       </div>
       <!-- end -->
@@ -225,27 +204,10 @@ export default {
           delay: 9000,
         },
       ],
-      sliderInfo: [
-        {
-          avatar: "/img/customer/1.jpg",
-          name: "Jack spparow",
-          job: "Back-end developer",
-          content:
-            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta, animi.",
-        },
-        {
-          avatar: "/img/customer/2.jpg",
-          name: "DevEd",
-          job: "fron-end developer",
-          content:
-            " sit amet consectetur adipisicing elit. Dicta, animi  sit amet consectetur adipisicing elit. Dicta, animi",
-        },
-        {
-          avatar: "/img/customer/3.jpg",
-          name: "Axel  shiftman",
-          job: "Designer",
-          content: " sit amet consectetur adipisicing elit. Dicta, animi",
-        },
+      avatarsPath: [
+         "/img/customer/1.jpg",
+         "/img/customer/2.jpg",
+         "/img/customer/3.jpg",
       ],
       slidIndex: 0,
     };
@@ -257,23 +219,20 @@ export default {
   created() {},
   computed: {
     currentSlider() {
-      return this.sliderInfo[Math.abs(this.slidIndex) % this.sliderInfo.length];
+      return this.$t('testimonial.testimonialCustomers')[Math.abs(this.slidIndex) % this.$t('testimonial.testimonialCustomers').length];
     },
+  
   },
   methods: {
     startSlid() {
       setInterval(this.next, 5000);
     },
     next() {
-      this.slidIndex <= this.sliderInfo.length
+      this.slidIndex < this.$t('testimonial.testimonialCustomers').length-1
         ? this.slidIndex++
-        : this.slidIndex--;
+        : this.slidIndex=0;
     },
-    prev() {
-      this.slidIndex >= this.sliderInfo.length
-        ? this.slidIndex--
-        : this.slidIndex++;
-    },
+   
   },
 };
 </script>

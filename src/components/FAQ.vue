@@ -1,5 +1,5 @@
 <template>
-  <section id="FAQ" class="w-full lg:px-20 bg-white dark:bg-dark">
+  <section id="FAQ" class="w-full lg:px-20 pt-11 lg:pt-28 bg-white dark:bg-dark">
     <div class="w-full h-full flex items-center flex-col justify-center">
       <!-- strt content -->
       <div
@@ -13,13 +13,12 @@
           <div class="heading">
             <div class="title text-3xl font-bold mb-16 lg:text-center">
               <h3 class="titleSection relative dark:text-gray-200">
-                FAQ <span class="font-mono"> & </span> Plan
+                {{$t('faq_plan.title')}}
               </h3>
             </div>
             <div class="text-2xl font-normal text-gray-700 lg:text-left">
               <p class="subtitle dark:text-gray-200">
-                Have a question? Check out our frequently asked questions to
-                find your answer.
+                {{$t('faq_plan.sub_title')}}
               </p>
             </div>
           </div>

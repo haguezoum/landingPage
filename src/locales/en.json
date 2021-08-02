@@ -26,7 +26,23 @@
         }
       },
       "features":{
-        "title":"Act on it-all in one dashboard",
-        "content":"Our audience dashboard shows you pre-built segments like top locations, recent sources of growth, and even customer lifetime value (CLV)."
+        "firstFeatur":{
+          "title":"العمل على كل ذلك في لوحة تحكم واحدة",
+          "content":"تعرض لك لوحة معلومات الجمهور الخاصة بنا شرائح مسبقة الإنشاء مثل المواقع الأعلى ، ومصادر النمو الحديثة ، وحتى القيمة الدائمة للعميل (CLV).",
+          "buttonContent":""
+      },
+        "secondFeatur":{
+          "title":"العمل على كل ذلك في لوحة تحكم واحدة",
+          "content":"تعرض لك لوحة معلومات الجمهور الخاصة بنا شرائح مسبقة الإنشاء مثل المواقع الأعلى ، ومصادر النمو الحديثة ، وحتى القيمة الدائمة للعميل (CLV).",
+          "buttonContent":""
+      },
+        "lastFeatur":{
+          "title":"العمل على كل ذلك في لوحة تحكم واحدة",
+          "tabContent":[
+              { "title":"حماية","content":"We empowers your marketing, sales and services teams to collaborate across the entire customer lifecycle for more meaningful, memorable experiences."},
+              {"title":"قاعدة البيانات","content":"We empowers your marketing, sales and services teams to collaborate across the entire customer lifecycle for more meaningful, memorable experiences."},
+              { "title":"مكاتب","content":"We empowers your marketing, sales and services teams to collaborate across the entire customer lifecycle for more meaningful, memorable experiences."}
+          ]
+        }
     }
 }

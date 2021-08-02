@@ -21,8 +21,8 @@
               text-3xl
               sm:text-4xl
               lg:text-6xl
-              text-purple-600
-              dark:text-purple-300
+              text-purple-primary
+              dark:text-purple
                text-center
             "
           >
@@ -72,8 +72,8 @@
               text-3xl
               sm:text-4xl
               lg:text-6xl
-              text-purple-600
-              dark:text-purple-300
+              text-purple-primary
+              dark:text-purple
               text-center
             "
           >
@@ -119,8 +119,8 @@
               text-3xl
               sm:text-4xl
               lg:text-6xl
-              text-purple-600
-              dark:text-purple-300
+              text-purple-primary
+              dark:text-purple
               text-center
             "
           >

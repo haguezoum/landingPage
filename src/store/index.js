@@ -26,7 +26,7 @@ export default new Vuex.Store({
     toggleModel:state=>{
       state.modelIsOpen = !state.modelIsOpen;
       if(state.modelIsOpen){
-        alert("Hello")
+        console.log('g')
       }
     }
   },

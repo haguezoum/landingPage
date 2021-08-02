@@ -16,7 +16,7 @@
       "
     >
       <!-- -------------- first----------------------------- -->
-      <div class="item w-full z-20" v-animation>
+      <div class="item w-full z-20 " v-animation>
         <section
           class="
             flex
@@ -26,7 +26,7 @@
             lg:flex-row
           "
         >
-          <div class="img w-full lg:w-4/12 p-10 lg:p-0 mb-20 lg:mb-5 ">
+          <div class="img w-full lg:w-4/12 p-10 lg:p-0 mb-14 lg:mb-5 ">
             <figure
               class="
                 transform
@@ -50,11 +50,13 @@
           </div>
 
           <div
-            class="text w-full lg:w-6/12 mb-6 lg:mb-0 text-center lg:text-left"
+            class="text w-full lg:w-6/12 mb-6 lg:mb-0 text-center "
+            :class="$t('dir')==='rtl'?'lg:text-right':'lg:text-left'"
+
           >
             <section>
               <strong>
-                <p class="title first relative text-3xl pb-9 dark:text-white">
+                <p class="title first relative text-3xl pb-9 text-purple-primary dark:text-purple" :class="$t('dir')">
                   {{$t('features.firstFeatur.title')}}
                 </p>
               </strong>
@@ -92,7 +94,7 @@
         </section>
       </div>
       <!-- ---------seconde------------- -->
-      <div class="item w-full my-20 lg:my-40 z-20" v-animation>
+      <div class="item w-full  my-8 lg:my-32 z-20 " v-animation>
         <section
           class="
             flex
@@ -102,7 +104,7 @@
             lg:flex-row-reverse
           "
         >
-          <div class="img w-full lg:w-4/12 p-10 lg:p-0 mb-20 lg:mb-5">
+          <div class="img w-full lg:w-4/12 p-10 lg:p-0 mb-14 lg:mb-5">
             <figure
               class="
                 transform
@@ -126,11 +128,12 @@
           </div>
 
           <div
-            class="text w-full lg:w-6/12 mb-6 lg:mb-0 text-center lg:text-right"
+            class="text w-full lg:w-6/12 mb-6 lg:mb-0 text-center "
+            :class="$t('dir')==='rtl'?'lg:text-left':'lg:text-right'"
           >
             <section>
               <strong>
-                <p class="title second relative text-3xl pb-9 dark:text-white">
+                <p class="title second relative text-3xl pb-9 text-purple-primary dark:text-purple" :class="$t('dir')">
                   {{$t('features.secondFeatur.title')}}
                 </p>
               </strong>
@@ -174,40 +177,21 @@
           <div class="text w-full">
             <section class="">
               <strong class="text-center">
-                <p class="title last relative text-3xl dark:text-white pb-8">
-                  {{$t('features.title')}}
+                <p class="title last relative text-3xl text-purple-primary dark:text-purple pb-8">
+                  {{$t('features.lastFeatur.title')}}
                 </p>
               </strong>
               <div class="">
                 <ul
-                  class="
-                    flex
-                    justify-between
-                    items-center
-                    my-4
-                    w-full
-                    lg:w-3/5
-                    p-1
-                    px-2
-                    mx-auto
-                  "
+                  class="flex justify-between  items-center my-4 w-full lg:w-3/5 p-1 px-2 mx-auto"
                 >
                   <span
                     v-for="(tab, index) in $t('features.lastFeatur.tabContent')"
+
                     :key="index"
-                    class="flex-1 text-center border-b-2 text-lg lg:text-2xl"
+                    class="w-full text-center border-b-2 text-lg lg:text-2xl"
                   >
-                    <li
-                      class="
-                        cursor-pointer
-                        py-2
-                        px-4
-                        border-transparent border-b-4
-                        transition-all
-                        delay-200
-                        ease-in-out
-                        hover:bg-purple-500 hover:bg-opacity-20
-                      "
+                    <li class=" cursor-pointer py-2 px-4 border-transparent border-b-4 transition-all delay-200 ease-in-out hover:bg-purple-500 hover:bg-opacity-20"
                       v-text="tab.title"
                       @click="activeTab = index"
                       :class="
@@ -218,56 +202,38 @@
                     ></li>
                   </span>
                 </ul>
+
                 <div class="w-full p-4 text-center mx-auto">
                   <div
                     v-show="activeTab === index"
-                    v-for="(tab, index) in tabContent"
+                    v-for="(tab, index) in $t('features.lastFeatur.tabContent')"
                     :key="index"
                     class="transform transition-all ease-in-out duration-150"
                   >
-                    <p
-                      class="
-                        w-full
-                        text-lg
-                        lg:text-2xl
-                        text-gray-800
-                        dark:text-gray-300
-                        py-10
-                        px-4
-                        lg:px-0
-                      "
-                    >
+                    <p class=" w-full text-lg lg:text-2xl text-gray-800 dark:text-gray-300 py-10 px-4 lg:px-0" >
                       {{ tab.content }}
                     </p>
                     <div class="w-5/6 md:w-3/4 lg:w-3/6 mx-auto pb-16">
                       <transition name="bounce">
                         <figure
-                          class="
-                            transform
-                            skew-y-12
-                            overflow-hidden
-                            rounded-md
-                            shadow-md
-                            border-2 border-purple-400
-                            top-0
-                            -translate-y-20
-                          "
+                          class=" transform skew-y-12 overflow-hidden rounded-md shadow-md border-2 border-purple-400 top-0 -translate-y-20 "
                           style="
                             transform: perspective(718px) rotateX(19deg)
                               translateX(0rem);
                           "
                         >
-                          <img :src="tab.img" class="w-full" />
+                          <img :src="img.imgSrc" class="w-full" v-show="index === activeTab" v-for="img,index in fuatersImgs " :key="index" />
                         </figure>
                       </transition>
                     </div>
                   </div>
                 </div>
+
               </div>
             </section>
           </div>
         </section>
-      </div>
+      </div> 
     </div>
   </section>
 </template>
@@ -282,29 +248,22 @@ export default {
   data() {
     return {
       activeTab: 0,
-      tabContent: [
+      fuatersImgs: [
         {
-          title: "Lorem",
-          content:
-            "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis nobis aspernatur quasi cumque aliquid voluptas, odit voluptatibus aliquam. Dicta, asperiores.",
-          img: "/img/app-screen-1.jpg",
+         imgSrc: "/img/app-screen-1.jpg",
         },
         {
-          title: "consectetur",
-          content:
-            "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis nobis aspernatur quasi cumque aliquid voluptas, odit voluptatibus aliquam. Dicta, asperiores.",
-          img: "/img/app-screen-2.jpg",
+         imgSrc: "/img/app-screen-2.jpg",
         },
         {
-          title: "Officiis",
-          content:
-            "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officiis nobis aspernatur quasi cumque aliquid voluptas, odit voluptatibus aliquam. Dicta, asperiores.",
-          img: "/img/app-screen-3.jpg",
+         imgSrc: "/img/app-screen-3.jpg",
         },
       ],
     };
   },
-  computed: {},
+  computed: {
+   
+  },
 };
 </script>
 
@@ -346,7 +305,13 @@ export default {
 .title.first::after{
   left: 0%;
 }
+.title.first.rtl::after{
+  right: 0%;
+}
 .title.second::after{
+  right: 0%;
+}
+.title.second.rtl::after{
   right: 0%;
 }
 .title.last::after{

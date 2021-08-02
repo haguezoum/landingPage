@@ -21,7 +21,7 @@
           z-10
         "
       >
-        <div class="relative left-decoration w-2/6 h-100" :style="{}"></div>
+        <div class="relative left-decoration w-2/6 h-100"></div>
         <div class="relative right-decoration w-2/6 h-100"></div>
       </div>
       <!-- end fixed asaid decoration -->
@@ -107,7 +107,8 @@
                       lg:px-0
                       focus:outline-none
                       flex
-                      justify-start
+                      justify-center
+                      md:justify-start
                       items-center
                       space-x-24
                     "

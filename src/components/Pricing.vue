@@ -16,13 +16,12 @@
     <header class="w-full mx-auto text-center p-3 mb-5 z-40">
       <div class="title text-3xl font-bold mb-16">
         <h3 class="titleSection relative dark:text-gray-200 z-50">
-          Pricing <span class="font-mono"> & </span> Plan
+           {{$t('pricing_and_plans.title')}}
         </h3>
       </div>
       <div class="text-md font-normal text-gray-700 dark:text-gray-200">
         <p class="subtitle">
-          The best value designed for your workplace, starting at just
-          $24/user/month.
+         {{$t('pricing_and_plans.sub_title')}}
         </p>
       </div>
     </header>
@@ -120,6 +119,7 @@
             "
           >
             Chose plan
+            
           </button>
         </footer>
       </div>
