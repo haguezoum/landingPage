@@ -1,7 +1,8 @@
 <template>
-  <footer class="w-full bg-purple relative">
+  <footer class="w-full bg-purple relative" :dir="$t('dir')">
     <div class="decoration absolute top-0 left-0 w-full" 
         :class="{ 'dark-wave': isThemDark }"
+        
     >
       <!-- wave decoration :) -->
     </div>

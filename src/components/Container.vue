@@ -1,6 +1,11 @@
 <template>
-  <main ref="mainSec">
-    <AsaidMenu  :open="menuOpen"/>
+  <main ref="mainSec" class="w-full h-full relative " >
+    <div
+      class="overly overflow-y-hidden fixed w-full h-screen bg-gray-900 bg-opacity-50 hidden md:block lg:hidden filter blur-md z-30 transform pointer-events-none backdrop-filter backdrop-blur-xl"
+      v-show="menuOpen"
+      @click="menuOpen = !menuOpen"
+    ></div>
+    <AsaidMenu />
     <Home id="home" />
     <Service id="service" />
     <Statistics id="Statistics" />
@@ -52,9 +57,11 @@ export default {
   created() {},
   computed:{
     menuOpen(){
-      return this.$store.state.menuOpen
+      return this.$store.state.menuIsOpen
     }
   }
 };
 </script>
-<style lang="css" scoped></style>
+<style lang="css" scoped>
+
+</style>

@@ -1,28 +1,21 @@
 <template>
-  <section
-    id="container"
-    class="bg-purple relative"
-    :dir="$t('dir')"
-  >
+
+  <section id="container" class="bg-purple relative" :dir="$t('dir')">
     <!-- <div class="w-full border-3 border-black p-4"> -->
       
     <!-- </div> -->
     <div class="relative home flex flex-wrap flex-row">
       <!-- start fixed asaid decoration -->
-      <div
-        class="
-          absolute
-          decoration
-          w-full
-          h-full
-          flex
-          overflow-hidden
-          justify-between
-          z-10
-        "
-      >
-        <div class="relative left-decoration w-2/6 h-100"></div>
-        <div class="relative right-decoration w-2/6 h-100"></div>
+      <div class="absolute decoration w-full h-full flex overflow-hidden justify-between z-10">
+          <div class="relative w-full h-full">
+            <div class="absolute left-decoration left-0 top-0  h-full w-1/2 ">
+              <!-- <div class="  w-full h-full border border-purple-800"></div> -->
+            </div>
+            <div class="absolute right-decoration  right-0 top-0 h-full w-1/2 ">
+              <!-- <div class=" w-full h-full  border border-purple-800"></div> -->
+            </div>
+          </div>
+          <!--  right-decoration -->
       </div>
       <!-- end fixed asaid decoration -->
 
@@ -258,19 +251,18 @@ export default {
   top: 0;
   opacity: 0.3;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: 100% 100%;
   background-position: 0 0;
+  transform: scale(1.5);
   /* background-attachment: fixed; */
 }
 .left-decoration {
   background-image: url("/img/left-deco.svg");
-  transform: rotate(90deg);
-  left: -50%;
+  left: -18%;
 }
 .right-decoration {
   background-image: url("/img/right-deco.svg");
-  transform: rotate(-90deg);
-  right: -50%;
+  right: -29%;
 }
 
 @keyframes wavey {

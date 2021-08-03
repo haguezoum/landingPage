@@ -1,53 +1,171 @@
 {
-      "dir":"ltr",
-      "feature" : "Fonctionnalité",
-      "testimonials":"Témoignages",
-      "pricing":"prix",
-      "fAQ":"FAQ",
-      "contact us":"contactez-nous",
-      "home":{
-        "pricipal":"Une entreprise incroyable mérite un logiciel incroyable.",
-        "seconder":"Des millions d'utilisateurs satisfaits travaillent mieux avec nos applications intégrées.",
-        "startedButton":"Commencez",
-        "watchedButton":"Regardez la vidéo"
-      },
-      "statistics":{
-        "first":{
-            "month":"Mois",
-            "freeTrial":"Essi gratuit"
-        },
-        "second":{
-          "countUsers":"M",
-          "activeUser":"Utilisateur actif"
-        },
-        "last":{
-          "countProviders":"K",
-          "providers":"Fournisseurs"
-        }
-      },
-      "features":{
-        "firstFeatur":{
-          "title":"العمل على كل ذلك في لوحة تحكم واحدة",
-          "content":"تعرض لك لوحة معلومات الجمهور الخاصة بنا شرائح مسبقة الإنشاء مثل المواقع الأعلى ، ومصادر النمو الحديثة ، وحتى القيمة الدائمة للعميل (CLV).",
-          "buttonContent":""
-      },
-        "secondFeatur":{
-          "title":"العمل على كل ذلك في لوحة تحكم واحدة",
-          "content":"تعرض لك لوحة معلومات الجمهور الخاصة بنا شرائح مسبقة الإنشاء مثل المواقع الأعلى ، ومصادر النمو الحديثة ، وحتى القيمة الدائمة للعميل (CLV).",
-          "buttonContent":""
-      },
-        "lastFeatur":{
-          "title":"العمل على كل ذلك في لوحة تحكم واحدة",
-          "tabContent":[
-              { "title":"حماية","content":"We empowers your marketing, sales and services teams to collaborate across the entire customer lifecycle for more meaningful, memorable experiences."},
-              {"title":"قاعدة البيانات","content":"We empowers your marketing, sales and services teams to collaborate across the entire customer lifecycle for more meaningful, memorable experiences."},
-              { "title":"مكاتب","content":"We empowers your marketing, sales and services teams to collaborate across the entire customer lifecycle for more meaningful, memorable experiences."}
-          ]
-        }
+  "dir":"ltr",
+  "feature" : "Fonctionnalité",
+  "testimonials":"Témoignages",
+  "pricing":"prix",
+  "fAQ":"FAQ",
+  "contact us":"contactez-nous",
+  "home":{
+    "pricipal":"Une entreprise incroyable mérite un logiciel incroyable.",
+    "seconder":"Des millions d'utilisateurs satisfaits travaillent mieux avec nos applications intégrées.",
+    "startedButton":"Commencez",
+    "watchedButton":"Regardez la vidéo"
+  },
+  "statistics":{
+    "first":{
+        "month":"Mois",
+        "freeTrial":"Essi gratuit"
+    },
+    "second":{
+      "countUsers":"M",
+      "activeUser":"Utilisateur actif"
+    },
+    "last":{
+      "countProviders":"K",
+      "providers":"Fournisseurs"
     }
+  },
+  "features":{
+    "firstFeatur":{
+      "title":"",
+      "content":"",
+      "buttonContent":""
+  },
+    "secondFeatur":{
+      "title":"",
+      "content":"",
+      "buttonContent":""
+  },
+    "lastFeatur":{
+      "title":"",
+      "tabContent":[
+          { "title":"","content":""},
+          { "title":"","content":""},
+          { "title":"","content":""}
+      ]
+    }
+},
+"testimonial":{
+  "title":"",
+  "testimonialCustomers":[
+    {
+      "cusotmer_name":"",
+      "cusotme_job":"",
+      "testimonal_content":""
+      
+    },
+    {
+      "cusotmer_name":"",
+      "cusotme_job":"",
+      "testimonal_content":""
+      
+    },
+    {
+      "cusotmer_name":"",
+      "cusotme_job":"",
+      "testimonal_content":""
+      
+    }
+  ]
+},
+"pricing_and_plans":{
   
+    "title":"",
+    "sub_title":"",
+    "plans":[
+      {
+        "plan_number":"0",
+        "plan_title":"",
+        "plan_price":"",
+        "plan_futears":[
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "plan_notice":"",
+        "button_value":""
+      },
+      {
+        "plan_number":"1",
+        "plan_title":"",
+        "plan_price":"",
+        "plan_futears":[
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "plan_notice":"",
+        "button_value":""
+      },
+      {
+        "plan_number":"2",
+        "plan_title":"",
+        "plan_price":"",
+        "plan_futears":[
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "plan_notice":"",
+        "button_value":""
+      },
+      {
+        "plan_number":"3",
+        "plan_title":"",
+        "plan_price":"",
+        "plan_futears":[
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "plan_notice":"",
+        "button_value":""
+      }
+    ]                        
+  },
+  "faq_plan":{
+    "title":"",
+    "sub_title":"",
+    "faqs":[
+      {
+        "question":"",
+        "answer":""
+      },
+      {
+        "question":"",
+        "answer":""
+      },
+      {
+        "question":"",
+        "answer":""
+      },
+      {
+        "question":"",
+        "answer":""
+      }
+    ]
+  },
+  "footer":{
+    "title":"",
+    "button_value":"",
+    "site_map":[
+      {
+        "title":"",
+        "options":[
+          "",
+          "",
+          "",
+          ""
+        ]
+      }
+    ]
+  }
 }
-
-
-
-

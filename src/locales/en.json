@@ -27,22 +27,145 @@
       },
       "features":{
         "firstFeatur":{
-          "title":"العمل على كل ذلك في لوحة تحكم واحدة",
-          "content":"تعرض لك لوحة معلومات الجمهور الخاصة بنا شرائح مسبقة الإنشاء مثل المواقع الأعلى ، ومصادر النمو الحديثة ، وحتى القيمة الدائمة للعميل (CLV).",
+          "title":"Work on it all in one control panel",
+          "content":"Our audience dashboard shows you pre-built segments like top sites, recent growth sources, and even customer lifetime value (CLV).",
           "buttonContent":""
       },
         "secondFeatur":{
-          "title":"العمل على كل ذلك في لوحة تحكم واحدة",
-          "content":"تعرض لك لوحة معلومات الجمهور الخاصة بنا شرائح مسبقة الإنشاء مثل المواقع الأعلى ، ومصادر النمو الحديثة ، وحتى القيمة الدائمة للعميل (CLV).",
+          "title":"Work on it all in one control panel",
+          "content":"Our audience dashboard shows you pre-built segments like top sites, recent growth sources, and even customer lifetime value (CLV).",
           "buttonContent":""
       },
         "lastFeatur":{
-          "title":"العمل على كل ذلك في لوحة تحكم واحدة",
+          "title":"Work on it all in one control panel",
           "tabContent":[
-              { "title":"حماية","content":"We empowers your marketing, sales and services teams to collaborate across the entire customer lifecycle for more meaningful, memorable experiences."},
-              {"title":"قاعدة البيانات","content":"We empowers your marketing, sales and services teams to collaborate across the entire customer lifecycle for more meaningful, memorable experiences."},
-              { "title":"مكاتب","content":"We empowers your marketing, sales and services teams to collaborate across the entire customer lifecycle for more meaningful, memorable experiences."}
+              { "title":"Security","content":"We empowers your marketing, sales and services teams to collaborate across the entire customer lifecycle for more meaningful, memorable experiences."},
+              {"title":"Data Base","content":"We empowers your marketing, sales and services teams to collaborate across the entire customer lifecycle for more meaningful, memorable experiences."},
+              { "title":"offics","content":"We empowers your marketing, sales and services teams to collaborate across the entire customer lifecycle for more meaningful, memorable experiences."}
           ]
         }
-    }
+    },
+    "testimonial":{
+      "title":"What are our clients' testimonials?",
+      "testimonialCustomers":[
+        {
+          "cusotmer_name":"Jack Sparrow",
+          "cusotme_job":"Commercial director",
+          "testimonal_content":"1 - An example showing people's opinions and experiences on our site, and their evaluation of its quality"
+          
+        },
+        {
+          "cusotmer_name":"Dived",
+          "cusotme_job":"Frontend developer",
+          "testimonal_content":"2 - An example showing people's opinions and experiences on our site, and their evaluation of its quality"
+          
+        },
+        {
+          "cusotmer_name":"Arya Stark",
+          "cusotme_job":"General Manager SGBD",
+          "testimonal_content":"3 - An example showing people's opinions and experiences on our site, and their evaluation of its quality"
+          
+        }
+      ]
+    },
+    "pricing_and_plans":{
+      
+        "title":"Pricing & plans",
+        "sub_title":"Best value tailored to your workplace, starting at $24 per user per month.",
+        "plans":[
+          {
+            "plan_number":"0",
+            "plan_title":"",
+            "plan_price":"",
+            "plan_futears":[
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            "plan_notice":"",
+            "button_value":""
+          },
+          {
+            "plan_number":"",
+            "plan_title":"",
+            "plan_price":"",
+            "plan_futears":[
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            "plan_notice":"",
+            "button_value":""
+          },
+          {
+            "plan_number":"",
+            "plan_title":"",
+            "plan_price":"",
+            "plan_futears":[
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            "plan_notice":"",
+            "button_value":""
+          },
+          {
+            "plan_number":"",
+            "plan_title":"",
+            "plan_price":"",
+            "plan_futears":[
+              "",
+              "",
+              "",
+              "",
+              ""
+            ],
+            "plan_notice":"",
+            "button_value":""
+          }
+        ]                        
+      },
+      "faq_plan":{
+        "title":"FAQ",
+        "sub_title":"do you have a question? See the FAQ to find your answer.",
+        "faqs":[
+          {
+            "question":"",
+            "answer":""
+          },
+          {
+            "question":"",
+            "answer":""
+          },
+          {
+            "question":"",
+            "answer":""
+          },
+          {
+            "question":"",
+            "answer":""
+          }
+        ]
+      },
+      "footer":{
+        "title":"what are you waiting for?",
+        "button_value":"GetStarted",
+        "site_map":[
+          {
+            "title":"",
+            "options":[
+              "",
+              "",
+              "",
+              ""
+            ]
+          }
+        ]
+      }
 }

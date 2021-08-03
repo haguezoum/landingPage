@@ -6,7 +6,7 @@
       left-0
       w-full
       fixed
-      z-50
+      z-30
       bg-transparent
       duration-300
       transform
@@ -22,26 +22,7 @@
     ]"
     :dir="$t('dir')"
   >
-    <div
-      class="
-        overly
-        overflow-y-hidden
-        absolute
-        w-full
-        h-screen
-        bg-gray-900 bg-opacity-50
-        hidden
-        md:block
-        lg:hidden
-        filter
-        blur-md
-        z-30
-        transform
-        scale-150
-      "
-      v-show="menuOpen"
-      @click="menuOpen = !menuOpen"
-    ></div>
+    
     <div
       class="
         header-area
@@ -59,7 +40,7 @@
       <div
         class="logo nav-links w-1/2 h-full sm:w-2/5 lg:w-3/5 flex items-center "
       >
-        <div class="flex space-x-4 justify-start items-center lg:w-1/5 ">
+        <div class="flex space-x-4 justify-between lg:justify-start items-center lg:w-1/5">
           <div class="lg:hidden relative w-1/3 ">
             <button
               class="
@@ -72,7 +53,7 @@
                 rounded-full
                 ml-3
               "
-              @click="menuOpen = !menuOpen"
+              @click.prevent="toggleMenu"
               style="z-index: 999999"
             >
               <span class="sr-only">Open menu</span>
@@ -382,7 +363,11 @@ export default {
       langOpen: false,
       isDark: false,
        languages:[
-        {language:'الداريجة',languageCode:'dr'},{language:'العربية',languageCode:'ar'},{language:'Francais',languageCode:'fr'},{language:'English',languageCode:'en'},
+        {language:'الداريجة',languageCode:'dj'},
+        {language:'العربية' ,languageCode:'ar'},
+        {language:'Francais' ,languageCode:'fr'},
+        {language:'English'  ,languageCode:'en'},
+        {language:'ⴰⵎⴰⵣⵉⵖ'   ,languageCode:'mz'},
       ]
     };
   },
@@ -419,6 +404,9 @@ export default {
       localStorage.setItem("language",e);
       this.$i18n.locale = e;
     },
+    toggleMenu(){
+      this.$store.commit('toggleMenu');
+    }
   },
   mounted: {
   },
@@ -427,7 +415,7 @@ export default {
       return this.$store.state.navLinks;
     },
     menuOpen(){
-      return this.$store.state.menuOpen;
+      return this.$store.state.menuIsOpen;
     }
   },
 };

@@ -6,7 +6,7 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     isDark: false,
-    menuOpen: false,
+    menuIsOpen: false,
     modelIsOpen:false,
     navLinks: [
       { name: "feature", id: "feature" },
@@ -27,6 +27,12 @@ export default new Vuex.Store({
       state.modelIsOpen = !state.modelIsOpen;
       if(state.modelIsOpen){
         console.log('g')
+      }
+    },
+    toggleMenu:state=>{
+      state.menuIsOpen = ! state.menuIsOpen;
+      if(state.menuIsOpen){
+        return true;
       }
     }
   },

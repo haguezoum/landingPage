@@ -1,8 +1,10 @@
 <template>
-  <aside class=" h-screen w-screen sm:w-1/3 overflow-y-hidden shadow-lg bg-purple block lg:hidden absolute z-40 top-0 left-0"
+  <aside class="asaidMenu h-screen w-screen sm:w-1/3 overflow-y-hidden shadow-lg bg-purple block lg:hidden fixed z-40 top-0 left-0"
           @blur="close"
           v-if="menuOpen"
+
   >
+  
           <div class="h-full w-full flex flex-col justify-start items-start py-32 px-10 font-medium relative"
             v-if="menuOpen"
           >
@@ -29,10 +31,10 @@
 <script>
 export default {
   name:'AsidMenu',
-  props:["open"],
   methods:{
     close(){
-
+      this.$store.commit('toggleMenu');
+      alert('close')
     }
   },
   computed:{
@@ -40,7 +42,7 @@ export default {
       return this.$store.state.navLinks;
     },
     menuOpen(){
-      return this.$store.state.menuOpen
+      return this.$store.state.menuIsOpen
     }
   }
 }

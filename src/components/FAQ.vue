@@ -1,5 +1,5 @@
 <template>
-  <section id="FAQ" class="w-full lg:px-20 pt-11 lg:pt-28 bg-white dark:bg-dark">
+  <section :dir="$t('dir')" id="FAQ" class="w-full lg:px-20 pt-11 lg:pt-28 bg-white dark:bg-dark">
     <div class="w-full h-full flex items-center flex-col justify-center">
       <!-- strt content -->
       <div
