@@ -353,7 +353,6 @@
 export default {
   name: "Header",
   components: {
-    // Button,
   },
   data() {
     return {
@@ -371,12 +370,10 @@ export default {
       ]
     };
   },
-  beforeMount() {
+  beforeMount(){
     window.addEventListener("scroll", this.togelNavBar);
-    // window.addEventListener('load',this.darkMode);
   },
   methods: {
-    
     togelNavBar() {
       if (window.pageYOffset > 130) {
         if (this.view.atTopOfPage) {
@@ -400,7 +397,6 @@ export default {
       this.$emit("toggalDarkMode", this.isDark);
     },
     changeLang(e) {
-      console.log(e);
       localStorage.setItem("language",e);
       this.$i18n.locale = e;
     },
@@ -408,8 +404,7 @@ export default {
       this.$store.commit('toggleMenu');
     }
   },
-  mounted: {
-  },
+
   computed: {
     navLinks(){
       return this.$store.state.navLinks;

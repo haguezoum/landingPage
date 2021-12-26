@@ -8,7 +8,7 @@
       <!-- start fixed asaid decoration -->
       <div class="absolute decoration w-full h-full flex overflow-hidden justify-between z-10">
           <div class="relative w-full h-full">
-            <div class="absolute left-decoration left-0 top-0  h-full w-1/2 ">
+            <div class="absolute left-decoration left-0 top-0  h-full w-1/2  ">
               <!-- <div class="  w-full h-full border border-purple-800"></div> -->
             </div>
             <div class="absolute right-decoration  right-0 top-0 h-full w-1/2 ">

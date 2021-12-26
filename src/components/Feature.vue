@@ -56,7 +56,7 @@
           >
             <section>
               <strong>
-                <p class="title first relative text-3xl pb-9 text-purple-primary dark:text-purple" :class="$t('dir')">
+                <p class="title first relative w-max  mx-auto lg:mx-4 text-2xl md:text-3xl pb-9 text-purple-primary dark:text-purple" :class="$t('dir')">
                   {{$t('features.firstFeatur.title')}}
                 </p>
               </strong>
@@ -133,13 +133,13 @@
           >
             <section>
               <strong>
-                <p class="title second relative text-3xl pb-9 text-purple-primary dark:text-purple" :class="$t('dir')">
+                <p class="title second relative w-max left-0 mx-auto lg:mx-4 text-2xl md:text-3xl pb-9 text-purple-primary dark:text-purple" :class="$t('dir')">
                   {{$t('features.secondFeatur.title')}}
                 </p>
               </strong>
               <p
                 class="
-                  text text-lg
+                  text-lg
                   lg:text-2xl
                   text-gray-800
                   py-10
@@ -177,7 +177,7 @@
           <div class="text w-full">
             <section class="">
               <strong class="text-center">
-                <p class="title last relative text-3xl text-purple-primary dark:text-purple pb-8">
+                <p class="title last relative text-2xl lg:text-3xl text-purple-primary dark:text-purple pb-8">
                   {{$t('features.lastFeatur.title')}}
                 </p>
               </strong>
@@ -196,7 +196,7 @@
                       @click="activeTab = index"
                       :class="
                         activeTab === index
-                          ? 'text-purple-600 border-purple-500 border-b-4'
+                          ? 'text-purple border-purple-500 border-b-4 transition-all ease-in-out'
                           : 'dark:text-gray-300'
                       "
                     ></li>
@@ -303,13 +303,16 @@ export default {
   border-radius: 15px;
 }
 .title.first::after{
-  left: 0%;
+  left: 50%;
+  transform: translateX(-50%);
 }
 .title.first.rtl::after{
   right: 0%;
 }
 .title.second::after{
-  right: 0%;
+  right: 50%;
+  transform: translateX(50%);
+
 }
 .title.second.rtl::after{
   right: 0%;
@@ -319,22 +322,35 @@ export default {
   transform: translateX(-50%);
 }
 .left-rotat{
+    transform: perspective(0rem) rotateY(0deg) translateX(0%) !important; 
+}
+.right-rotat{
+    transform: perspective(0rem) rotateY(0deg) translateX(0%) !important;
+}
+@screen sm {
+  
+}
+@screen lg {
+  .title.first::after{
+   left: 0%;
+   transform: translateX(0%);
+  } 
+  .title.second::after{
+   right: 0%;
+   transform: translateX(0%);
+  } 
+  .title.second.rtl::after{
+  right: 0%;
+  }
+  .title.first.rtl::after{
+    left: 0%;
+  }
+  .left-rotat{
     transform: perspective(5rem) rotateY(3deg) translateX(10%) !important; 
 }
 .right-rotat{
     transform: perspective(5rem) rotateY(-3deg) translateX(-10%) !important;
 }
+} 
 
-/* @screen lg {
-  .normalViewImage {
-    transform: perspective(5rem) !important;
-  }
-  .rotateY {
-    transform: rotate(3deg);
-  }
-  .rotateY_ {
-    transform: rotate(-3deg);
-  }
-  style="transform: perspective(718px) rotateY(-19deg)"
-} */
 </style>

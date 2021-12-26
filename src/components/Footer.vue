@@ -249,7 +249,11 @@ export default {
         
       ],
       languages:[
-        {language:'الداريجة',languageCode:'dr'},{language:'العربية',languageCode:'ar'},{language:'Francais',languageCode:'fr'},{language:'English',languageCode:'en'},
+         {language:'الداريجة',languageCode:'dj'},
+        {language:'العربية' ,languageCode:'ar'},
+        {language:'Francais' ,languageCode:'fr'},
+        {language:'English'  ,languageCode:'en'},
+        {language:'ⴰⵎⴰⵣⵉⵖ'   ,languageCode:'mz'},
       ]
     };
   },

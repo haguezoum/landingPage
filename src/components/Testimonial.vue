@@ -4,25 +4,9 @@
       <!-- start -->
       <div
       
-        class="
-          relative
-          flex
-          w-full
-          flex-col
-          justify-center
-          bg-transparentsm
-          z-20
-          space-x-0
-          bg-purple
-          dark:bg-dark
-          border-t-2 border-b-2
-          lg:border-none
-          border-transparent border-opacity-50
-          dark:border-gray-500
-          lg:bg-transparent
-        "
-      >
-        <div
+        class=" relative flex w-full flex-col justify-center bg-transparentsm z-20 space-x-0 bg-purple dark:bg-dark border-t-2 border-b-2 lg:border-none border-transparent border-opacity-50 dark:border-gray-500 lg:bg-transparent">
+         
+         <div
           class="
             hidden
             lg:block
@@ -221,7 +205,7 @@ export default {
     currentSlider() {
       return this.$t('testimonial.testimonialCustomers')[Math.abs(this.slidIndex) % this.$t('testimonial.testimonialCustomers').length];
     },
-  
+    
   },
   methods: {
     startSlid() {
