@@ -48,7 +48,7 @@
       >
         <div class="img lg:w-1/4 flex justify-end flex-col items-center mb-2 mx-auto">
           <img src="/img/icone-3.png" alt="" srcset="" class="w-1/2" />
-          <p class="text-2xl text-white font-semibold">sKwila.ma</p>
+          <p class="text-2xl text-white font-semibold">haguezoum</p>
         </div>
 
         <div class="justify-around items-center w-full lg:h-2/4 p-2 lg:px-20">

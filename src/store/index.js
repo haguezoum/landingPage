@@ -22,18 +22,17 @@ export default new Vuex.Store({
   mutations: {
     SET_THEM_DARK(state, value) {
       state.isDark = value;
+      window.document.body.classList.toggle('dark')
     },
     toggleModel:state=>{
       state.modelIsOpen = !state.modelIsOpen;
-      if(state.modelIsOpen){
-        console.log('g')
-      }
+      state.modelIsOpen?window.document.body.style='overflow:hidden;':window.document.body.style='overflow:auto;'
+        
+      
     },
     toggleMenu:state=>{
       state.menuIsOpen = ! state.menuIsOpen;
-      if(state.menuIsOpen){
-        return true;
-      }
+      state.menuIsOpen?window.document.body.style='overflow:hidden;':window.document.body.style='overflow:auto;'
     }
   },
   actions: {},

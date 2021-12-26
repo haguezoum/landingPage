@@ -41,7 +41,7 @@
               "
             >
               <img
-                src="/img/app-screen-2.jpg"
+                src="../assets/public/tech2.jpg"
                 alt=""
                 srcset=""
                 class="w-full"
@@ -56,7 +56,7 @@
           >
             <section>
               <strong>
-                <p class="title first relative w-max  mx-auto lg:mx-4 text-2xl md:text-3xl pb-9 text-purple-primary dark:text-purple" :class="$t('dir')">
+                <p class="title first relative w-full mx-auto text-2xl md:text-3xl pb-9 text-purple-primary dark:text-purple" :class="$t('dir')">
                   {{$t('features.firstFeatur.title')}}
                 </p>
               </strong>
@@ -100,40 +100,17 @@
             flex
             lg:items-center
             justify-between
-            flex-col-reverse
-            lg:flex-row-reverse
+            flex-col
+            lg:flex-row
           "
         >
-          <div class="img w-full lg:w-4/12 p-10 lg:p-0 mb-14 lg:mb-5">
-            <figure
-              class="
-                transform
-                overflow-hidden
-                rounded-md
-                shadow-md
-                w-9/12
-                lg:w-full
-                 mx-auto
-                lg:mx-0
-                right-rotat
-              "
-            >
-              <img
-                src="/img/app-screen-2.jpg"
-                alt=""
-                srcset=""
-                class="w-full"
-              />
-            </figure>
-          </div>
-
-          <div
+           <div
             class="text w-full lg:w-6/12 mb-6 lg:mb-0 text-center "
             :class="$t('dir')==='rtl'?'lg:text-left':'lg:text-right'"
           >
             <section>
               <strong>
-                <p class="title second relative w-max left-0 mx-auto lg:mx-4 text-2xl md:text-3xl pb-9 text-purple-primary dark:text-purple" :class="$t('dir')">
+                <p class="title second relative w-full  left-0 mx-auto  text-2xl md:text-3xl pb-9 text-purple-primary dark:text-purple" :class="$t('dir')">
                   {{$t('features.secondFeatur.title')}}
                 </p>
               </strong>
@@ -168,6 +145,30 @@
               </button>
             </div>
           </div>
+          <div class="img w-full lg:w-4/12 p-10 lg:p-0 mb-14 lg:mb-5">
+            <figure
+              class="
+                transform
+                overflow-hidden
+                rounded-md
+                shadow-md
+                w-9/12
+                lg:w-full
+                 mx-auto
+                lg:mx-0
+                right-rotat
+              "
+            >
+              <img
+                src="../assets/public/tech3.jpg"
+                alt=""
+                srcset=""
+                class="w-full"
+              />
+            </figure>
+          </div>
+
+          
         </section>
       </div>
       <!-- ------------last ---------- -->
@@ -222,7 +223,7 @@
                               translateX(0rem);
                           "
                         >
-                          <img :src="img.imgSrc" class="w-full" v-show="index === activeTab" v-for="img,index in fuatersImgs " :key="index" />
+                          <img :src="require('../assets/public/'+img.imgSrc)" class="w-full" v-show="index === activeTab" v-for="img,index in fuatersImgs " :key="index" />
                         </figure>
                       </transition>
                     </div>
@@ -250,13 +251,13 @@ export default {
       activeTab: 0,
       fuatersImgs: [
         {
-         imgSrc: "/img/app-screen-1.jpg",
+         imgSrc: "tech2.jpg",
         },
         {
-         imgSrc: "/img/app-screen-2.jpg",
+         imgSrc: "tech3.jpg",
         },
         {
-         imgSrc: "/img/app-screen-3.jpg",
+         imgSrc: "tech4.jpg",
         },
       ],
     };
@@ -281,17 +282,11 @@ export default {
 .feature::before {
   content: "";
   position: absolute;
-  /* border:1px solid #000; */
   left: 0%;
-  top: -5%;
-  width: 100%;
-  height: 100%;
-  background-image: url("/img/wave-3.svg");
-  background-size: 100% 100%;
-  background-position: 0 0;
-  background-repeat: no-repeat;
-  /* transform: scale(1.5); */
-  overflow: hidden;
+  top: 0%;
+  background:rgb(168 56 199 / 30%) url('../assets/scanlines.png');
+  width:100%;
+  height:100%;
 }
 .title::after{
   content: "";
@@ -327,24 +322,23 @@ export default {
 .right-rotat{
     transform: perspective(0rem) rotateY(0deg) translateX(0%) !important;
 }
-@screen sm {
-  
-}
+
 @screen lg {
-  .title.first::after{
+   .title.first::after{
    left: 0%;
    transform: translateX(0%);
   } 
   .title.second::after{
    right: 0%;
    transform: translateX(0%);
-  } 
-  .title.second.rtl::after{
-  right: 0%;
-  }
+  } /*
   .title.first.rtl::after{
     left: 0%;
   }
+  .title.second.rtl::after{
+   left: 0%;
+  } */
+  
   .left-rotat{
     transform: perspective(5rem) rotateY(3deg) translateX(10%) !important; 
 }

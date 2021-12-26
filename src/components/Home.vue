@@ -21,7 +21,6 @@
 
       <!-- start content -->
       <div class="conent-fixed z-20 w-full lg:h-screen mt-20 lg:px-20 relative">
-        <Model/>
         <div class="slider w-full mt-16 flex justify-center items-center">
           <!--end text -->
           <div class="text w-full lg:w-3/5">
@@ -147,7 +146,7 @@
 
           <!--start img -->
           <div class="img w-2/5 hidden lg:block">
-            <img src="../../public/img/desktop.png" class="w-full transform" />
+            <img src="../assets/public/tech1.jpg" class="w-full transform rounded-lg border border-white" />
             <!-- end img -->
           </div>
         </div>
@@ -169,7 +168,6 @@
 
 <script>
 import { mapGetters } from "vuex";
-import Model from "@/components/Model"
 export default {
   name: "Home",
   data() {
@@ -183,7 +181,6 @@ export default {
         }
   },
   components:{
-    Model
   },
   computed: {
     // isThemeIark() {

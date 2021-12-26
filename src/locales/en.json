@@ -6,8 +6,9 @@
       "fAQ":"FAQ",
       "contact us":"contact us",
       "home":{
-        "pricipal":"Amazing company deserve amazing software",
-        "seconder":"Millions of happy users work better with our integrated Apps.",
+        "pricipal":"Lorem ipsum dolor sit amet.",
+        
+        "seconder":"Lorem ipsum dolor sit amet consectetur adipisicing elit.",
         "startedButton":"Get Started",
         "watchedButton":"Watch video"
       },
@@ -27,21 +28,21 @@
       },
       "features":{
         "firstFeatur":{
-          "title":"Work on it all in one control panel",
-          "content":"Our audience dashboard shows you pre-built segments like top sites, recent growth sources, and even customer lifetime value (CLV).",
+          "title":"Adipisicing consequat ullamco enim pariatur mollit do.",
+          "content":"Ad ipsum eiusmod amet occaecat commodo culpa sit quis irure mollit Lorem ipsum occaecat. Anim magna pariatur veniam labore eiusmod velit non.",
           "buttonContent":""
       },
         "secondFeatur":{
           "title":"Work on it all in one control panel",
-          "content":"Our audience dashboard shows you pre-built segments like top sites, recent growth sources, and even customer lifetime value (CLV).",
+          "content":" Enim ex commodo exercitation irure veniam laborum quis proident non minim consequat velit. Ut sunt proident amet exercitation elit mollit ullamco eiusmod. Proident Lorem ut tempor eiusmod.",
           "buttonContent":""
       },
         "lastFeatur":{
-          "title":"Work on it all in one control panel",
+          "title":"Labore qui deserunt occaecat tempor labore ullamco dolor proident sit id amet eu.",
           "tabContent":[
-              { "title":"Security","content":"We empowers your marketing, sales and services teams to collaborate across the entire customer lifecycle for more meaningful, memorable experiences."},
-              {"title":"Data Base","content":"We empowers your marketing, sales and services teams to collaborate across the entire customer lifecycle for more meaningful, memorable experiences."},
-              { "title":"offics","content":"We empowers your marketing, sales and services teams to collaborate across the entire customer lifecycle for more meaningful, memorable experiences."}
+              { "title":"Security","content":"Magna cillum laboris Lorem fugiat ex culpa ad."},
+              {"title":"Data Base","content":"Laborum proident fugiat labore consectetur aliqua excepteur occaecat dolor quis proident incididunt deserunt culpa."},
+              { "title":"offics","content":"Dolor in sunt irure consectetur."}
           ]
         }
     },
@@ -71,7 +72,7 @@
     "pricing_and_plans":{
       
         "title":"Pricing & plans",
-        "sub_title":"Best value tailored to your workplace, starting at $24 per user per month.",
+        "sub_title":"Quis laborum est laborum aliquip officia consectetur aute Lorem.",
         "plans":[
           {
             "plan_number":"0",

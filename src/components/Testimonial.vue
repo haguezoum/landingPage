@@ -1,5 +1,5 @@
 <template>
-  <section id="testimonial" class="pt-5  w-full bg-white dark:bg-dark ">
+  <section id="testimonial" class="pt-5  w-full bg-purple dark:bg-dark ">
     <div class="testimonialContant w-full h-full flex items-start">
       <!-- start -->
       <div
@@ -17,9 +17,10 @@
             scale-x-150 scale-y-125
             -translate-x-3 -translate-y-10
             -rotate-2
+
           "
         >
-          <img src="/img/wavy.svg" alt="" srcset="" class="left-0 top-0" />
+          <!-- <img src="/img/wavy.svg" alt="" srcset="" class="left-0 top-0" /> -->
         </div>
         <h3
           class="

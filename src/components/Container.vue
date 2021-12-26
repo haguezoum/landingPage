@@ -5,8 +5,11 @@
       v-show="menuOpen"
       @click="menuOpen = !menuOpen"
     ></div>
+    
+    <Header class="" ref="header" />
     <AsaidMenu />
     <Home id="home" />
+    <Model/>
     <Service id="service" />
     <Statistics id="Statistics" />
     <Feature id="feature" />
@@ -19,9 +22,11 @@
 </template>
 
 <script>
-// import Button from "@/components/Button";
+// import Button from "@/components/Button";*
+import Header from "@/components/Header";
 import AsaidMenu from "@/components/AsaidMenu"
 import Home from "@/components/Home";
+import Model from "@/components/Model"
 import Service from "@/components/Service";
 import Statistics from "@/components/Statistics";
 import Feature from "@/components/Feature";
@@ -35,8 +40,10 @@ export default {
   name: "Container",
   components: {
     // Button,
+    Header,
     AsaidMenu,
     Home,
+    Model,
     Service,
     Statistics,
     Feature,
@@ -47,12 +54,12 @@ export default {
     // Tabs
   },
   data() {
-    return {};
+    return {
+      
+    };
   },
   methods: {
-    showRef() {
-      console.log(this.$refs["mainSec"]);
-    },
+ 
   },
   created() {},
   computed:{

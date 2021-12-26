@@ -7,7 +7,9 @@
 export default {
   name:'App',
   data(){
-
+    return{
+      
+    }
   },
   mounted(){
     if(!localStorage.getItem('language')){
